@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 body {
-  color: theme(colors.white);
+  color: theme(colors.slate.500);
   background-color: theme(colors.midnight);
+}
+
+h2 {
+  @apply font-sans mb-2
+}
+
+p {
+  @apply font-extralight
+}
+
+.container {
+  @apply flex min-h-screen flex-col items-center justify-between mx-auto p-24;
+}
+
+.banner {
+  @apply w-full my-auto text-center
+}
+
+.logo {
+  @apply w-full
 }

@@ -13,17 +13,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      'white': '#ffffff',
-      'midnight': '#0d0221',
-      'green': '#1adc38',
-      'blue': '#2eadda',
-      'turquoise': '#2de2e6',
-      'yellow': '#f9c80e',
-      'red': '#fd1d53'
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'white': '#ffffff',
+        'midnight': '#0d0221',
+        'green': '#1adc38',
+        'blue': '#2eadda',
+        'turquoise': '#2de2e6',
+        'yellow': '#f9c80e',
+        'red': '#fd1d53'
+      },
     },
   },
   plugins: [],

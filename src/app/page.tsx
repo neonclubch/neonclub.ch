@@ -2,8 +2,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Image className="grow" src="logo.svg" alt="NEON Logo" width={500} height={125} />
+    <main className="container">
+      <div className="banner">
+        <Image
+          className="logo"
+          src="/logo.png"
+          alt="NEON Logo"
+          height={800}
+          width={1808}
+        />
+        <h2>Neue Elektronische Organisation für Nachtkultur</h2>
+        <p>Coming Soon!</p>
+      </div>
     </main>
   );
 }
