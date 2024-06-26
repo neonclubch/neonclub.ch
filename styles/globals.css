@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply 2xl:max-w-screen-xl mx-auto;
+}
+
+nav {
+  @apply sticky top-0 w-full;
+}
+
+main {
+  @apply max-w-screen-xl w-full mx-auto flex-grow;
+}
+
+section {
+}
+
+footer {
+  @apply max-w-screen-xl w-full mx-auto;
+}
