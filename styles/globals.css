@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  @apply 2xl:max-w-screen-xl mx-auto;
+  @apply mx-auto;
 }
 
 nav {
@@ -11,7 +11,7 @@ nav {
 }
 
 main {
-  @apply max-w-screen-xl w-full mx-auto flex-grow;
+  @apply max-w-screen-2xl w-full mx-auto flex-grow;
 }
 
 section {
