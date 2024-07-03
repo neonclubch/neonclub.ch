@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import { title, subtitle } from "@/components/primitives";
+import { title } from "@/components/primitives";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
