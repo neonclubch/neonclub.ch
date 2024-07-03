@@ -22,6 +22,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./mdx-components.tsx"
   ],
   theme: {
     extend: {
@@ -35,13 +36,13 @@ module.exports = {
   plugins: [
     nextui({
       addCommonColors: false,
-      
       themes: {
         dark: {
-          colors: { ...colors, background: "#0D0221" },
+          colors: { ...colors, background: "#0D0221", },
         },
         light: { colors },
       },
     }),
+    require('@tailwindcss/typography'),
   ],
 };

@@ -1,3 +1,4 @@
+"use client"
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -18,12 +19,17 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { HeartFilledIcon } from "@/components/icons";
 import Logo from "../public/logo.svg";
+import React from "react";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen)
+  }
   return (
     <header>
       <div className="container">
-        <NextUINavbar maxWidth="full">
+        <NextUINavbar maxWidth="full" isMenuOpen={isMenuOpen} onMenuOpenChange={toggleMenu}>
           <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
             <NavbarBrand as="li" className="gap-3 max-w-fit">
               <NextLink
@@ -80,21 +86,14 @@ export const Navbar = () => {
           <NavbarMenu>
             {/* {searchInput} */}
             <div className="mx-4 mt-2 flex flex-col gap-2">
-              {siteConfig.navMenuItems.map((item, index) => (
+              {siteConfig.navItems.map((item, index) => (
                 <NavbarMenuItem key={`${item}-${index}`}>
-                  <Link
-                    color={
-                      index === 2
-                        ? "primary"
-                        : index === siteConfig.navMenuItems.length - 1
-                        ? "danger"
-                        : "foreground"
-                    }
-                    href="#"
-                    size="lg"
+                  <NextLink
+                    onClick={toggleMenu}
+                    href={item.href}
                   >
                     {item.label}
-                  </Link>
+                  </NextLink>
                 </NavbarMenuItem>
               ))}
             </div>

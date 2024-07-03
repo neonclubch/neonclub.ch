@@ -7,38 +7,33 @@ import { Section } from "@/components/section";
 export default function Home() {
   return (
     <>
-    <Section sectionClassName="bg-[url('/banner.jpg')] bg-cover min-h-[50vh]">
-      <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title()}>Join the&nbsp;</h1>
-        <h1 className={title({ color: "pink", size: "lg" })}>
-          beat&nbsp;
-        </h1>
-        <br />
-        <h1 className={title({ color: "violet", size: "lg" })}>
-          feel&nbsp;
-        </h1>
-        <h1 className={title()}>
-         the pulse.
-        </h1>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          Neue Elektronische Organisation für Nachtkultur
-        </h2>
-      </div>
+      <Section sectionClassName="bg-[url('/banner.jpg')] bg-cover min-h-[50vh]">
+        <div className="inline-block text-center justify-center">
+          <h1 className={title({ size: "lg" })}>Beats for&nbsp;</h1>
+          <h1 className={title({ color: "pink", size: "xl" })}>fun&nbsp;</h1>
+          <h1 className={title({ size: "lg" })}>,</h1>
+          <br />
+          <h1 className={title({ color: "violet", size: "xl" })}>Artists&nbsp;</h1>
+          <h1 className={title({ size: "lg" })}>in the spotlight.</h1>
+          <h2 className={subtitle({ class: "mt-6" })}>
+            Neue Elektronische Organisation für Nachtkultur
+          </h2>
+        </div>
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "success",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.instagram}
-        >
-          Upcoming Events
-        </Link>
-      </div>
-    </Section>
+        <div className="flex gap-3">
+          <Link
+            isExternal
+            className={buttonStyles({
+              color: "success",
+              radius: "full",
+              variant: "shadow",
+            })}
+            href={siteConfig.links.instagram}
+          >
+            Upcoming Events
+          </Link>
+        </div>
+      </Section>
     </>
   );
 }

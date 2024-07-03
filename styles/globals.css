@@ -6,7 +6,7 @@
   @apply mx-auto;
 }
 
-nav {
+header {
   @apply sticky top-0 w-full;
 }
 
@@ -18,5 +18,5 @@ section {
 }
 
 footer {
-  @apply max-w-screen-xl w-full mx-auto;
+  @apply max-w-screen-2xl w-full mx-auto;
 }

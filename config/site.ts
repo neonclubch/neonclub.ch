@@ -52,6 +52,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    instagram: "https://www.instagram.com/neonclubch/",
+    instagram: "https://www.instagram.com/neonclub.ch/",
   },
 };
