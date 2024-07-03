@@ -43,6 +43,5 @@ module.exports = {
         light: { colors },
       },
     }),
-    require('@tailwindcss/typography'),
   ],
 };
