@@ -61,23 +61,6 @@ export const Navbar = () => {
             className="hidden md:flex basis-1/5 sm:basis-full"
             justify="end"
           >
-            <NavbarItem className="hidden md:flex gap-2">
-              <ThemeSwitch />
-            </NavbarItem>
-            <NavbarItem className="hidden md:flex">
-              <Button
-                isExternal
-                as={Link}
-                className="text-sm font-normal text-default-600 bg-default-100"
-                href={siteConfig.links.membership}
-                startContent={<HeartFilledIcon className="text-danger" />}
-                variant="flat"
-              >
-                Join us
-              </Button>
-            </NavbarItem>
-          </NavbarContent>
-
           <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
             <ThemeSwitch />
             <NavbarMenuToggle />

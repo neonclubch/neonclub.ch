@@ -28,9 +28,9 @@ export default function Home() {
               radius: "full",
               variant: "shadow",
             })}
-            href={siteConfig.links.tickets}
+            href={siteConfig.links.membership}
           >
-            Upcoming Events
+            Become a Member
           </Link>
         </div>
       </Section>
