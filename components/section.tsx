@@ -10,7 +10,7 @@ export const Section: React.FC<SectionProps> = (props) => {
     >
       <div
         className={
-          "container flex flex-col items-center justify-center gap-4 py-8 md:py-10 px-6" +
+          "container flex flex-col gap-4 py-8 md:py-10 px-6" +
           (className ? ` ${className}` : "")
         }
       >

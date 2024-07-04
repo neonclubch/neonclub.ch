@@ -69,7 +69,7 @@ export const Navbar = () => {
                 isExternal
                 as={Link}
                 className="text-sm font-normal text-default-600 bg-default-100"
-                href={siteConfig.links.instagram}
+                href={siteConfig.links.membership}
                 startContent={<HeartFilledIcon className="text-danger" />}
                 variant="flat"
               >
