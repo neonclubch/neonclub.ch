@@ -7,10 +7,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ children }) => <h2 className={title({ size: "lg" })}>{children}</h2>,
     h3: ({ children }) => <h3 className={title({ size: "md" })}>{children}</h3>,
     h4: ({ children }) => <h4 className={title({ size: "sm" })}>{children}</h4>,
-    ul: ({ children }) => (
-      <ul className="list-['-_'] list-outside pl-4">{children}</ul>
+    ol: ({ children }) => (
+      <ol className="list-decimal list-outside">{children}</ol>
     ),
-    li: ({ children }) => <li className="list-item">{children}</li>,
+    ul: ({ children }) => (
+      <ul className="list-['-_'] list-outside">{children}</ul>
+    ),
+    li: ({ children }) => <li className="list-item ml-5 pl-2">{children}</li>,
     ...components,
   };
 }
