@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -24,12 +24,16 @@ import React from "react";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <header>
       <div className="container">
-        <NextUINavbar maxWidth="full" isMenuOpen={isMenuOpen} onMenuOpenChange={toggleMenu}>
+        <NextUINavbar
+          maxWidth="full"
+          isMenuOpen={isMenuOpen}
+          onMenuOpenChange={toggleMenu}
+        >
           <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
             <NavbarBrand as="li" className="gap-3 max-w-fit">
               <NextLink
@@ -39,42 +43,33 @@ export const Navbar = () => {
                 <Image height={30} src={Logo} alt="NEON Logo" />
               </NextLink>
             </NavbarBrand>
-            <ul className="hidden md:flex gap-4 justify-start ml-2">
-              {siteConfig.navItems.map((item) => (
-                <NavbarItem key={item.href}>
-                  <NextLink
-                    className={clsx(
-                      linkStyles({ color: "foreground" }),
-                      "data-[active=true]:text-primary data-[active=true]:font-medium"
-                    )}
-                    color="foreground"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </NextLink>
-                </NavbarItem>
-              ))}
-            </ul>
+            <NavbarContent className="basis-1/5 sm:basis-full" justify="end">
+              <ul className="hidden md:flex gap-4 justify-start ml-2">
+                {siteConfig.navItems.map((item) => (
+                  <NavbarItem key={item.href}>
+                    <NextLink
+                      className={clsx(
+                        linkStyles({ color: "foreground" }),
+                        "data-[active=true]:text-primary data-[active=true]:font-medium"
+                      )}
+                      color="foreground"
+                      href={item.href}
+                    >
+                      {item.label}
+                    </NextLink>
+                  </NavbarItem>
+                ))}
+              </ul>
+            </NavbarContent>
           </NavbarContent>
-
-          <NavbarContent
-            className="hidden md:flex basis-1/5 sm:basis-full"
-            justify="end"
-          >
           <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
-            <ThemeSwitch />
             <NavbarMenuToggle />
           </NavbarContent>
-
           <NavbarMenu>
-            {/* {searchInput} */}
             <div className="mx-4 mt-2 flex flex-col gap-2">
               {siteConfig.navItems.map((item, index) => (
                 <NavbarMenuItem key={`${item}-${index}`}>
-                  <NextLink
-                    onClick={toggleMenu}
-                    href={item.href}
-                  >
+                  <NextLink onClick={toggleMenu} href={item.href}>
                     {item.label}
                   </NextLink>
                 </NavbarMenuItem>

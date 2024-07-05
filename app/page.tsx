@@ -3,14 +3,15 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { Section } from "@/components/section";
+import { Events } from "@/components/events"
 
 export default function Home() {
   return (
     <>
       <Section sectionClassName="bg-[url('/banner.jpg')] bg-cover min-h-[50vh]" className="items-center justify-center">
         <div className="inline-block text-center justify-center">
-          <h1 className={title({ size: "lg" })}>Beats for&nbsp;</h1>
-          <h1 className={title({ color: "pink", size: "xl" })}>fun</h1>
+          <h1 className={title({ size: "lg" })}>Love for&nbsp;</h1>
+          <h1 className={title({ color: "pink", size: "xl" })}>beats</h1>
           <h1 className={title({ size: "lg" })}>,</h1>
           <br />
           <h1 className={title({ color: "violet", size: "xl" })}>artists&nbsp;</h1>
@@ -33,6 +34,9 @@ export default function Home() {
             Become a Member
           </Link>
         </div>
+      </Section>
+      <Section>
+        <Events />
       </Section>
     </>
   );

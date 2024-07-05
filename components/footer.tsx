@@ -2,7 +2,7 @@ import { Link } from "@nextui-org/link";
 import { siteConfig } from "@/config/site";
 import { InstagramIcon } from "@/components/icons";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <footer>
       <div className="container flex items-center justify-end flex-col-reverse sm:flex-row py-3 px-6">

@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "NEONclub.ch",
-  description: "Beats for Fun, Artists in the Spotlight",
+  description: "Love for beats, Artists in the Spotlight",
   navItems: [
     {
       label: "Home",
