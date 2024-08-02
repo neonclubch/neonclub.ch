@@ -8,7 +8,7 @@ import { Events } from "@/components/events"
 export default function Home() {
   return (
     <>
-      <Section sectionClassName="bg-[url('/banner.jpg')] bg-cover min-h-[50vh]" className="items-center justify-center">
+      <Section sectionClassName="min-h-[50vh]" className="items-center justify-center" backgroundImage="/banner.jpg">
         <div className="inline-block text-center justify-center">
           <h1 className={title({ size: "lg" })}>Love for&nbsp;</h1>
           <h1 className={title({ color: "pink", size: "xl" })}>beats</h1>
