@@ -5,17 +5,23 @@ import { useDebounce, useMeasure } from "react-use";
 
 export const Section: React.FC<SectionProps> = (props) => {
   const { children, className, sectionClassName, backgroundImage } = props;
-  const [bgSize, setBgSize] = useState<{} | null>(null);
+  const [bgSize, setBgSize] = useState<BgSize>({ width: 0, height: 0 });
   const [ref, { width, height }] = useMeasure<HTMLDivElement>();
 
-  const updateBgSize = () => setBgSize(largestDimension(width, height));
+  const updateBgSize = () => {
+    if (width > 0 && height > 0) setBgSize({ width, height });
+  };
 
   useDebounce(updateBgSize, 300, [width, height]);
+  if( bgSize.width === 0 && bgSize.height === 0 ) updateBgSize();
 
   const bgStyle =
     backgroundImage && bgSize
       ? {
-          backgroundImage: `url("${cloudimage(backgroundImage, bgSize)}")`,
+          backgroundImage: `url("${cloudimage(
+            backgroundImage,
+            largestDimension(bgSize)
+          )}")`,
         }
       : {};
   return (
@@ -39,7 +45,8 @@ export const Section: React.FC<SectionProps> = (props) => {
   );
 };
 
-function largestDimension(width: number, height: number) {
+function largestDimension(bgSize: BgSize) {
+  const { height, width } = bgSize;
   if (height > width) {
     return { height: roundUp(height) };
   } else {
@@ -56,4 +63,9 @@ interface SectionProps {
   sectionClassName?: string;
   className?: string;
   backgroundImage?: string;
+}
+
+interface BgSize {
+  width: number;
+  height: number;
 }
