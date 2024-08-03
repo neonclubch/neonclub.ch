@@ -11,12 +11,13 @@ export const Section: React.FC<SectionProps> = (props) => {
   const updateBgSize = () => {
     if (width > 0 && height > 0) setBgSize({ width, height });
   };
+  const bgReady = ( bgSize.width > 0 && bgSize.height > 0)
 
   useDebounce(updateBgSize, 300, [width, height]);
-  if( bgSize.width === 0 && bgSize.height === 0 ) updateBgSize();
+  if(!bgReady) updateBgSize();
 
   const bgStyle =
-    backgroundImage && bgSize
+    backgroundImage && bgReady 
       ? {
           backgroundImage: `url("${cloudimage(
             backgroundImage,
