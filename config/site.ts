@@ -12,6 +12,10 @@ export const siteConfig = {
       label: "Manifesto",
       href: "/manifesto",
     },
+    {
+      label: "Membership",
+      href: "/membership",
+    },
   ],
   navMenuItems: [],
   links: {

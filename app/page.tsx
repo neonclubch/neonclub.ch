@@ -23,13 +23,12 @@ export default function Home() {
 
         <div className="flex gap-3">
           <Link
-            isExternal
             className={buttonStyles({
               color: "success",
               radius: "full",
               variant: "shadow",
             })}
-            href={siteConfig.links.membership}
+            href="/membership"
           >
             Become a Member
           </Link>
