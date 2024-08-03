@@ -11,13 +11,13 @@ export const Section: React.FC<SectionProps> = (props) => {
   const updateBgSize = () => {
     if (width > 0 && height > 0) setBgSize({ width, height });
   };
-  const bgReady = ( bgSize.width > 0 && bgSize.height > 0)
+  const bgReady = bgSize.width > 0 && bgSize.height > 0;
 
   useDebounce(updateBgSize, 300, [width, height]);
-  if(!bgReady) updateBgSize();
+  if (!bgReady) updateBgSize();
 
   const bgStyle =
-    backgroundImage && bgReady 
+    backgroundImage && bgReady
       ? {
           backgroundImage: `url("${cloudimage(
             backgroundImage,
@@ -46,17 +46,13 @@ export const Section: React.FC<SectionProps> = (props) => {
   );
 };
 
-function largestDimension(bgSize: BgSize) {
+function largestDimension(bgSize: BgSize): BgSize {
   const { height, width } = bgSize;
-  if (height > width) {
-    return { height: roundUp(height) };
-  } else {
-    return { width: roundUp(width) };
-  }
+  return { height: roundUp(height, 256), width: roundUp(width, 128) };
 }
 
-function roundUp(value: number) {
-  return Math.ceil(value / 128) * 128;
+function roundUp(value: number, increment = 128) {
+  return Math.ceil(value / increment) * increment;
 }
 
 interface SectionProps {
