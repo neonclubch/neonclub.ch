@@ -8,14 +8,12 @@ import { Events } from "@/components/events"
 export default function Home() {
   return (
     <>
-      <Section sectionClassName="min-h-[50vh]" className="items-center justify-center" backgroundImage="/banner.jpg">
+      <Section sectionClassName="min-h-[50vh]" className="items-center justify-center" backgroundImage="/djbooth.jpg">
         <div className="inline-block text-center justify-center">
-          <h1 className={title({ size: "lg" })}>Love for&nbsp;</h1>
-          <h1 className={title({ color: "pink", size: "xl" })}>beats</h1>
-          <h1 className={title({ size: "lg" })}>,</h1>
+          <h1 className={title({ size: "lg" })}>celebrating</h1>
           <br />
-          <h1 className={title({ color: "violet", size: "xl" })}>artists&nbsp;</h1>
-          <h1 className={title({ size: "lg" })}>in the spotlight.</h1>
+          <h1 className={title({ color: "violet", size: "xl" })}>electronic&nbsp;</h1>
+          <h1 className={title({ color: "pink", size: "xl" })}>music</h1>
           <h2 className={subtitle({ class: "mt-6" })}>
             Neue Elektronische Organisation für Nachtkultur
           </h2>
