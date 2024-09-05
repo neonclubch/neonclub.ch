@@ -45,7 +45,7 @@ export const Events: React.FC = (props) => {
             href={event.public_url}
             isExternal={true}
           >
-            {event.testmode ? "Tickets Available Soon" : "Buy Tickets"}
+            {event.testmode ? "Tickets Available Soon" : "Join Us!"}
           </Button>
         </CardFooter>
       </Card>
