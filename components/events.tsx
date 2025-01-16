@@ -62,7 +62,7 @@ export const Events: React.FC = (props) => {
 
   return (
     <>
-      <h2 className={title({ size: "md" })}>Upcoming Events</h2>
+      <h2 className={title({ size: "md" })}>Our Events</h2>
       {isLoading ? <Spinner /> : cards}
     </>
   );

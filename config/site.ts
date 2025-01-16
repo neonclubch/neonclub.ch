@@ -20,7 +20,7 @@ export const siteConfig = {
   navMenuItems: [],
   links: {
     instagram: "https://www.instagram.com/neonclub.ch/",
-    membership: "https://tickets.neonclub.ch/account/login?next=/membership-2024/",
+    membership: "https://tickets.neonclub.ch/account/login?next=/membership-2025",
     tickets: "https://tickets.neonclub.ch/"
   },
 };
