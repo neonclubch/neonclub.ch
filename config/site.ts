@@ -21,6 +21,7 @@ export const siteConfig = {
   links: {
     instagram: "https://www.instagram.com/neonclub.ch/",
     membership: "https://tickets.neonclub.ch/account/login?next=/membership-2025",
-    tickets: "https://tickets.neonclub.ch/"
+    tickets: "https://tickets.neonclub.ch/",
+    statutes: "https://drive.google.com/uc?export=download&id=1y8fKbgmIRkfN1GI5aC4IT_RuIgeJV9pP"
   },
 };
