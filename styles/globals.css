@@ -20,3 +20,7 @@ section {
 footer {
   @apply max-w-screen-2xl w-full mx-auto;
 }
+
+a {
+  @apply text-success-500;
+}

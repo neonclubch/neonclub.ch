@@ -13,7 +13,7 @@ const colors = {
   },
   danger: {
     DEFAULT: "#FD1D53",
-  },
+  }
 };
 
 /** @type {import('tailwindcss').Config} */
