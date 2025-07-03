@@ -22,7 +22,7 @@ export const Rsvp: React.FC<RsvpProps> = ({ formLink, className, buttonText, but
           radius: "full",
           variant: buttonVariant || "solid",
         })}
-        href={`${formLink}?id=${data.id}&firstName=${data.firstName}`}
+        href={`${formLink}?id=${data.id}&firstName=${data.firstName}&lastName=${data.lastName || ""}`}
       >
         {buttonText || "RSVP"}
       </Link>
