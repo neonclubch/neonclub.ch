@@ -1,7 +1,6 @@
 "use client";
-
 import React from "react";
-import { useApiGetEvents } from "@/helpers/api";
+import { useApiGetEvents } from "@/helpers/eventApi";
 import {
   Card,
   CardHeader,

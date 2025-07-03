@@ -1,4 +1,7 @@
 "use client";
+import React from "react";
+import { useApiGetRsvp } from "@/helpers/rsvpApi";
+import { Spinner } from "@nextui-org/spinner";
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { useSearchParams } from "next/navigation";
@@ -7,6 +10,9 @@ export const Rsvp: React.FC<RsvpProps> = ({ formLink, className, buttonText, but
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   if (!id) return null;
+  const { data, isLoading, isError, error, isLoadingError, refetch } = useApiGetRsvp(id);
+  if (isLoading) return <Spinner />;
+  if (isError || !data) return <span>Invite not found!</span>;
   return (
     <div className={className}>
       <Link
@@ -16,7 +22,7 @@ export const Rsvp: React.FC<RsvpProps> = ({ formLink, className, buttonText, but
           radius: "full",
           variant: buttonVariant || "solid",
         })}
-        href={`${formLink}?id=${id}`}
+        href={`${formLink}?id=${data.id}&firstName=${data.firstName}`}
       >
         {buttonText || "RSVP"}
       </Link>
