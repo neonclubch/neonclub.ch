@@ -1,13 +1,14 @@
-import { useSearchParams } from 'next/navigation';
 import { Section } from '@/components/section';
 import { Link } from "@nextui-org/link";
 import { button } from "@nextui-org/theme";
 import { Rsvp } from '@/components/rsvp';
-
+import { Suspense } from 'react'
 
 <Section sectionClassName="min-h-[20vh]" className="items-center justify-center" backgroundImage='/technobosco.jpg'>
 # TECHNOBOSCO 2025
-<Rsvp formLink="https://tally.so/r/wdoX1N" className="flex justify-center" buttonText="Prenota il tuo posto" buttonColor="success" buttonVariant="solid" />
+<Suspense fallback={<div>Loading...</div>}>
+  <Rsvp formLink="https://tally.so/r/wdoX1N" className="flex justify-center" buttonText="Prenota il tuo posto" buttonColor="success" buttonVariant="solid" />
+</Suspense>
 </Section>
 <Section className="lg:max-w-5xl px-6">  
 ## Info sull'Evento  
@@ -65,7 +66,9 @@ Conosci qualcuno di fidato? Scrivilo nel RSVP — ogni raccomandazione è benven
 - Sii presente, gentile e porta buona energia ✨  
 
 ## 👉 RSVP  
-<Rsvp formLink="https://tally.so/r/wdoX1N" buttonText="Prenota il tuo posto" buttonColor="success" buttonVariant="flat" />  
+<Suspense fallback={<div>Loading...</div>}>
+  <Rsvp formLink="https://tally.so/r/wdoX1N" buttonText="Prenota il tuo posto" buttonColor="success" buttonVariant="flat" />  
+</Suspense>
 
 ## Altre Informazioni  
 Chi conferma riceverà un welcome kit con:  

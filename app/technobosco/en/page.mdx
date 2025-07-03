@@ -1,13 +1,15 @@
-import { useSearchParams } from 'next/navigation';
 import { Section } from '@/components/section';
 import { Link } from "@nextui-org/link";
 import { button } from "@nextui-org/theme";
 import { Rsvp } from '@/components/rsvp';
+import { Suspense } from 'react'
 
 
 <Section sectionClassName="min-h-[20vh]" className="items-center justify-center" backgroundImage='/technobosco.jpg'>
 # TECHNOBOSCO
-<Rsvp formLink="https://tally.so/r/wdoX1N" className="flex justify-center" buttonText="Save Your Spot" buttonColor="success" buttonVariant="solid" />
+<Suspense fallback={<div>Loading...</div>}>
+  <Rsvp formLink="https://tally.so/r/wdoX1N" className="flex justify-center" buttonText="Save Your Spot" buttonColor="success" buttonVariant="solid" />
+</Suspense>
 </Section>
 
 <Section className="lg:max-w-5xl px-6">
@@ -66,7 +68,9 @@ Know a reliable driver? Let us know in the RSVP — recommendations are very wel
 - Be present, be kind, and bring good energy ✨  
 
 ## 👉 RSVP  
-<Rsvp formLink="https://tally.so/r/wdoX1N" buttonText="Save Your Spot" buttonColor="success" buttonVariant="flat" />
+<Suspense fallback={<div>Loading...</div>}>
+  <Rsvp formLink="https://tally.so/r/wdoX1N" buttonText="Save Your Spot" buttonColor="success" buttonVariant="flat" />
+</Suspense>
 
 
 ## Additional Information  
