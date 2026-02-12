@@ -2,6 +2,7 @@
 
 export interface HomeContent {
   tagline: string;
+  /** Wrap text in {{double braces}} for neon highlighting. */
   quote: string;
   readManifestoLabel: string;
 }
@@ -15,6 +16,7 @@ export interface ManifestoContent {
     intro: string;
     points: { title: string; text: string }[];
   }[];
+  /** Wrap text in {{double braces}} for neon highlighting. */
   closingLines: string[];
 }
 

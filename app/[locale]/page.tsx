@@ -4,6 +4,7 @@ import NextLink from "next/link";
 
 import { getContent } from "@/lib/content";
 import { Events } from "@/components/events";
+import { parseNeonMarkers } from "@/components/neon-text";
 
 type Props = { params: { locale: Locale } };
 
@@ -42,11 +43,7 @@ export default async function Home({ params: { locale } }: Props) {
       <section className="py-24 md:py-36 px-6">
         <div className="max-w-3xl mx-auto">
           <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-foreground/70">
-            &ldquo;
-            {content.quote.split("dancefloor is an idea")[0]}
-            <span className="neon-text font-normal">dancefloor is an idea</span>
-            {content.quote.split("dancefloor is an idea")[1]}
-            &rdquo;
+            &ldquo;{parseNeonMarkers(content.quote)}&rdquo;
           </blockquote>
           <div className="mt-14">
             <NextLink

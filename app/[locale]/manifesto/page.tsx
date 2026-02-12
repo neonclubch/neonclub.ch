@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { Metadata } from "next";
 
 import { getContent } from "@/lib/content";
+import { parseNeonMarkers } from "@/components/neon-text";
 
 type Props = { params: { locale: Locale } };
 
@@ -40,41 +41,7 @@ export default async function ManifestoPage({ params: { locale } }: Props) {
               key={i}
               className={`${i > 0 ? "mt-8 " : ""}text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-foreground/70`}
             >
-              {line.includes("dancefloor is an idea") ? (
-                <>
-                  {line.split("dancefloor is an idea")[0]}
-                  <span className="neon-text font-normal">
-                    dancefloor is an idea
-                  </span>
-                  {line.split("dancefloor is an idea")[1]}
-                </>
-              ) : line.includes("Tanzfläche ist eine Idee") ? (
-                <>
-                  {line.split("Tanzfläche ist eine Idee")[0]}
-                  <span className="neon-text font-normal">
-                    Tanzfläche ist eine Idee
-                  </span>
-                  {line.split("Tanzfläche ist eine Idee")[1]}
-                </>
-              ) : line.includes("light that refuses") ? (
-                <>
-                  NEON is the{" "}
-                  <span className="neon-text font-normal">
-                    light that refuses to go out
-                  </span>
-                  .
-                </>
-              ) : line.includes("Licht, das sich weigert") ? (
-                <>
-                  NEON ist das{" "}
-                  <span className="neon-text font-normal">
-                    Licht, das sich weigert zu erlöschen
-                  </span>
-                  .
-                </>
-              ) : (
-                line
-              )}
+              {parseNeonMarkers(line)}
             </p>
           ))}
         </footer>

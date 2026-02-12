@@ -94,8 +94,8 @@ const content: Record<Locale, ManifestoContent> = {
       },
     ],
     closingLines: [
-      "The walls may shift, but the dancefloor is an idea, not a location.",
-      "NEON is the light that burns through the noise.",
+      "The walls may shift, but the {{dancefloor is an idea}}, not a location.",
+      "NEON is the {{light that burns through the noise}}.",
     ],
   },
   de: {
@@ -190,8 +190,8 @@ const content: Record<Locale, ManifestoContent> = {
       },
     ],
     closingLines: [
-      "Die Wände mögen sich verschieben, doch die Tanzfläche ist eine Idee, kein Ort.",
-      "NEON ist das Licht, das durch den Lärm brennt.",
+      "Die Wände mögen sich verschieben, doch die {{Tanzfläche ist eine Idee}}, kein Ort.",
+      "NEON ist das {{Licht, das durch den Lärm brennt}}.",
     ],
   },
 };
