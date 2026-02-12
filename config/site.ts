@@ -2,18 +2,18 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "NEON",
-  description: "Neue Elektronische Organisation für Nachtkultur",
+  /** Nav items with translation keys (labels come from dictionary). */
   navItems: [
     {
-      label: "Home",
+      key: "home",
       href: "/",
     },
     {
-      label: "Manifesto",
+      key: "manifesto",
       href: "/manifesto",
     },
     {
-      label: "Membership",
+      key: "membership",
       href: "/membership",
     },
   ],

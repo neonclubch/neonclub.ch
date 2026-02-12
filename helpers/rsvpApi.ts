@@ -25,12 +25,14 @@ export function getRsvp(options: Parameters<typeof useQuery>[0]) {
   return request.then(onSuccess).catch(onError);
 }
 
-export const useApiGetRsvp = (id: string,
-  queryParams: AxiosRequestConfig["params"] = {}
+export const useApiGetRsvp = (
+  id: string,
+  queryParams: AxiosRequestConfig["params"] = {},
 ) =>
   useQuery({
     queryKey: ["rsvp", id, queryParams],
     queryFn: getRsvp,
+    enabled: !!id,
   });
 
 interface RsvpResponse {

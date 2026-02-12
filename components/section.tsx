@@ -1,7 +1,8 @@
 "use client";
-import { cloudimage } from "@/helpers/cloudimage";
 import { useState, type ReactNode } from "react";
 import { useDebounce, useMeasure } from "react-use";
+
+import { cloudimage } from "@/helpers/cloudimage";
 
 export const Section: React.FC<SectionProps> = (props) => {
   const { children, className, sectionClassName, backgroundImage } = props;
@@ -21,10 +22,11 @@ export const Section: React.FC<SectionProps> = (props) => {
       ? {
           backgroundImage: `url("${cloudimage(
             backgroundImage,
-            largestDimension(bgSize)
+            largestDimension(bgSize),
           )}")`,
         }
       : {};
+
   return (
     <section
       ref={ref}
@@ -48,6 +50,7 @@ export const Section: React.FC<SectionProps> = (props) => {
 
 function largestDimension(bgSize: BgSize): BgSize {
   const { height, width } = bgSize;
+
   return { height: roundUp(height, 256), width: roundUp(width, 128) };
 }
 

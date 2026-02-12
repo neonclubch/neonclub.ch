@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { QueryClientProvider } from "@tanstack/react-query";
+
 import { queryClient } from "@/helpers/queryClient";
 
 export interface ProvidersProps {

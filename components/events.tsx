@@ -1,17 +1,23 @@
 "use client";
 import React from "react";
-import { useApiGetEvents } from "@/helpers/eventApi";
 import { Button, Link, Spinner } from "@nextui-org/react";
+
+import { useApiGetEvents } from "@/helpers/eventApi";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export const Events: React.FC = () => {
   const { data: events = [], isLoading } = useApiGetEvents({
     is_live: true,
     is_public: true,
   });
+  const { dictionary, locale } = useDictionary();
+
+  const dateLocale = locale === "de" ? "de-CH" : "en-GB";
 
   const cards = events.map((event) => {
     const eventDate = new Date(Date.parse(event.date_from));
     const isPast = eventDate < new Date();
+
     return (
       <div
         key={event.slug}
@@ -19,15 +25,15 @@ export const Events: React.FC = () => {
       >
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-semibold text-foreground/90 truncate">
-            {event.name.en}
+            {event.name[locale] || event.name.en}
           </h3>
           <div className="flex items-center gap-3 mt-1">
             <span className="text-xs font-mono text-foreground/30 uppercase tracking-wider">
-              {event.location.en}
+              {event.location[locale] || event.location.en}
             </span>
             <span className="text-foreground/10">/</span>
             <span className="text-xs font-mono text-foreground/30">
-              {eventDate.toLocaleDateString("en-GB", {
+              {eventDate.toLocaleDateString(dateLocale, {
                 day: "numeric",
                 month: "short",
                 year: "numeric",
@@ -36,19 +42,19 @@ export const Events: React.FC = () => {
           </div>
         </div>
         <Button
+          as={Link}
           className="min-w-[100px] font-mono text-xs uppercase tracking-widest rounded-none"
           color={event.testmode || isPast ? "default" : "success"}
-          size="sm"
-          radius="none"
-          variant={event.testmode || isPast ? "bordered" : "bordered"}
-          as={Link}
-          isDisabled={event.testmode || isPast}
           href={event.public_url}
+          isDisabled={event.testmode || isPast}
           isExternal={true}
+          radius="none"
+          size="sm"
+          variant="bordered"
         >
-          {event.testmode && "Soon"}
-          {!event.testmode && !isPast && "Join"}
-          {isPast && "Past"}
+          {event.testmode && dictionary.events.soon}
+          {!event.testmode && !isPast && dictionary.events.join}
+          {isPast && dictionary.events.past}
         </Button>
       </div>
     );
@@ -57,7 +63,7 @@ export const Events: React.FC = () => {
   return (
     <>
       <h2 className="text-xs font-mono uppercase tracking-widest text-foreground/25 mb-8">
-        Upcoming
+        {dictionary.events.upcoming}
       </h2>
       {isLoading ? (
         <div className="flex justify-center py-12">
@@ -67,7 +73,7 @@ export const Events: React.FC = () => {
         <div>{cards}</div>
       ) : (
         <p className="text-foreground/25 font-mono text-sm">
-          No upcoming events. Stay tuned.
+          {dictionary.events.empty}
         </p>
       )}
     </>

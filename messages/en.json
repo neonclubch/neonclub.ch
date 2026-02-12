@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "description": "Neue Elektronische Organisation für Nachtkultur"
+  },
+  "nav": {
+    "home": "Home",
+    "manifesto": "Manifesto",
+    "membership": "Membership"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Privacy"
+  },
+  "events": {
+    "upcoming": "Upcoming",
+    "join": "Join",
+    "past": "Past",
+    "soon": "Soon",
+    "empty": "No upcoming events. Stay tuned."
+  }
+}
