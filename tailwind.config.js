@@ -1,12 +1,12 @@
 import { nextui } from "@nextui-org/theme";
 
 const colors = {
-  focus: "#1ADC38",
+  focus: "#FF3131",//"#1ADC38",
   primary: {
-    DEFAULT: "#1ADC38",
+    DEFAULT: "#FF3131",//"#1ADC38",
   },
   success: {
-    DEFAULT: "#1ADC38",
+    DEFAULT: "#FF3131",//"#1ADC38",
   },
   warning: {
     DEFAULT: "#F9C80E",
@@ -32,7 +32,7 @@ module.exports = {
         display: ["var(--font-display)"],
       },
       colors: {
-        neon: "#1ADC38",
+        neon: "rgb(var(--neon) / <alpha-value>)",
         surface: "#0A0A0A",
       },
       letterSpacing: {

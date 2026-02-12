@@ -18,14 +18,14 @@ export default async function Home({ params: { locale } }: Props) {
           <h1
             className="text-7xl md:text-8xl lg:text-[10rem] font-display font-black tracking-display leading-none text-transparent neon-flicker-glow"
             style={{
-              WebkitTextStroke: "1.5px #1ADC38",
+              WebkitTextStroke: "1.5px rgb(var(--neon))",
               textIndent: "0.25em",
             }}
           >
             NEON
           </h1>
           <p
-            className="mt-8 text-[11px] md:text-xs font-mono text-foreground/30 uppercase tracking-[0.35em]"
+            className="mt-8 text-[0.6875rem] md:text-xs font-mono text-foreground/30 uppercase tracking-[0.35em]"
             style={{ textIndent: "0.35em" }}
           >
             {content.tagline}
@@ -34,7 +34,7 @@ export default async function Home({ params: { locale } }: Props) {
 
         {/* Scroll line */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <div className="w-px h-14 bg-gradient-to-b from-transparent to-[#1ADC38]/30 animate-pulse-line" />
+          <div className="w-px h-14 bg-gradient-to-b from-transparent to-neon/30 animate-pulse-line" />
         </div>
       </section>
 
@@ -50,7 +50,7 @@ export default async function Home({ params: { locale } }: Props) {
           </blockquote>
           <div className="mt-14">
             <NextLink
-              className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-[#1ADC38]/60 hover:text-[#1ADC38] transition-colors duration-300"
+              className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-neon/60 hover:text-neon transition-colors duration-300"
               href={`/${locale}/manifesto`}
             >
               {content.readManifestoLabel}

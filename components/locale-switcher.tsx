@@ -26,13 +26,13 @@ export function LocaleSwitcher() {
       {locales.map((loc, i) => (
         <span key={loc} className="flex items-center">
           {i > 0 && (
-            <span className="text-foreground/15 mx-1 text-[10px]">/</span>
+            <span className="text-foreground/15 mx-1 text-[0.625rem]">/</span>
           )}
           <NextLink
-            className={`text-[10px] font-mono uppercase tracking-widest transition-colors duration-300 ${
+            className={`text-[0.625rem] font-mono uppercase tracking-widest transition-colors duration-300 ${
               loc === currentLocale
-                ? "text-[#1ADC38]"
-                : "text-foreground/30 hover:text-[#1ADC38]"
+                ? "text-neon"
+                : "text-foreground/30 hover:text-neon"
             }`}
             href={getLocalePath(loc)}
           >

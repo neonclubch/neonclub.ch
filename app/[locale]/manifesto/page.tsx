@@ -101,7 +101,7 @@ function ManifestoSection({
   return (
     <section className="mb-24 md:mb-32">
       <div className="neon-line w-12 mb-8" />
-      <span className="block text-xs font-mono text-[#1ADC38]/40 tracking-[0.3em] uppercase mb-3">
+      <span className="block text-xs font-mono text-neon/40 tracking-[0.3em] uppercase mb-3">
         {number}.
       </span>
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground/90 mb-1">
@@ -118,7 +118,7 @@ function ManifestoSection({
         {points.map((point, i) => (
           <div
             key={i}
-            className="pl-6 border-l border-white/[0.06] hover:border-[#1ADC38]/30 transition-colors duration-500"
+            className="pl-6 border-l border-white/[0.06] hover:border-neon/30 transition-colors duration-500"
           >
             <h4 className="text-sm font-mono font-medium text-foreground/70 mb-2 tracking-wide">
               {point.title}

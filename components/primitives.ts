@@ -4,7 +4,7 @@ export const title = tv({
   base: "tracking-tight inline font-semibold",
   variants: {
     color: {
-      neon: "text-[#1ADC38]",
+      neon: "text-neon",
       foreground: "text-foreground",
       muted: "text-foreground/50",
     },

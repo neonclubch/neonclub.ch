@@ -33,8 +33,8 @@ export const Navbar = () => {
   }));
 
   return (
-    <header className="site-header">
-      <div className="container">
+    <header className="sticky top-0 w-full z-50">
+      <div className="mx-auto">
         <NextUINavbar
           classNames={{
             base: "bg-background border-b border-white/[0.04]",
@@ -50,7 +50,7 @@ export const Navbar = () => {
                 className="flex justify-start items-center gap-1"
                 href={`/${locale}`}
               >
-                <span className="text-lg font-display font-semibold tracking-display text-[#1ADC38] leading-none">
+                <span className="text-lg font-display font-semibold tracking-display text-neon leading-none">
                   NEON
                 </span>
               </NextLink>
@@ -67,8 +67,8 @@ export const Navbar = () => {
                     <NavbarItem key={item.href}>
                       <NextLink
                         className={clsx(
-                          "text-xs font-mono uppercase tracking-widest text-foreground/40 transition-colors duration-300 hover:text-[#1ADC38]",
-                          isActive && "text-[#1ADC38]",
+                          "text-xs font-mono uppercase tracking-widest text-foreground/40 transition-colors duration-300 hover:text-neon",
+                          isActive && "text-neon",
                         )}
                         href={item.href}
                       >
@@ -102,7 +102,7 @@ export const Navbar = () => {
                     <NextLink
                       className={clsx(
                         "text-xl font-mono uppercase tracking-widest text-foreground/40 transition-colors duration-200",
-                        isActive && "text-[#1ADC38]",
+                        isActive && "text-neon",
                       )}
                       href={item.href}
                       onClick={toggleMenu}

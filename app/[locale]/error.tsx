@@ -38,7 +38,7 @@ export default function Error({
     <section className="min-h-[60vh] flex flex-col items-center justify-center px-6 gap-6">
       <h2 className="text-xl font-semibold text-foreground/70">{t.title}</h2>
       <button
-        className="border border-[#1ADC38]/60 px-6 py-2 text-xs font-mono uppercase tracking-widest text-[#1ADC38] hover:bg-[#1ADC38]/10 transition-all duration-300"
+        className="border border-neon/60 px-6 py-2 text-xs font-mono uppercase tracking-widest text-neon hover:bg-neon/10 transition-all duration-300"
         onClick={() => reset()}
       >
         {t.retry}

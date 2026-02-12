@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Single source of truth for the neon accent — matches tailwind.config.js */
+    --neon: 255 49 49;
+  }
+
   ::selection {
-    background-color: rgba(26, 220, 56, 0.2);
+    background-color: rgb(var(--neon) / 0.2);
     color: #f0f0f0;
   }
 
@@ -18,61 +23,23 @@
   }
 }
 
-.container {
-  @apply mx-auto;
-}
-
-header.site-header {
-  @apply sticky top-0 w-full z-50;
-}
-
-main {
-  @apply w-full mx-auto flex-grow;
-}
-
-footer {
-  @apply w-full mx-auto;
-}
-
-a {
-  @apply text-foreground/60 transition-colors duration-200;
-}
-a:hover {
-  color: #1adc38;
-}
-
 /* ── Neon glow ────────────────────────────────── */
 
 .neon-text {
-  color: #1adc38;
+  color: rgb(var(--neon));
   text-shadow:
-    0 0 7px rgba(26, 220, 56, 0.4),
-    0 0 20px rgba(26, 220, 56, 0.2),
-    0 0 42px rgba(26, 220, 56, 0.1);
+    0 0 7px rgb(var(--neon) / 0.4),
+    0 0 20px rgb(var(--neon) / 0.2),
+    0 0 42px rgb(var(--neon) / 0.1);
 }
 
 .neon-line {
   height: 1px;
-  background: linear-gradient(90deg, #1adc38, transparent);
+  background: linear-gradient(90deg, rgb(var(--neon)), transparent);
   opacity: 0.5;
 }
 
 /* ── Animations ───────────────────────────────── */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
 
 @keyframes pulse-line {
   0%,
@@ -95,68 +62,68 @@ a:hover {
   100% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
   4% {
     opacity: 0.9;
     filter:
-      drop-shadow(0 0 4px rgba(26, 220, 56, 0.4))
-      drop-shadow(0 0 16px rgba(26, 220, 56, 0.2));
+      drop-shadow(0 0 4px rgb(var(--neon) / 0.4))
+      drop-shadow(0 0 16px rgb(var(--neon) / 0.2));
   }
   6% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
   41% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
   43% {
     opacity: 0.85;
     filter:
-      drop-shadow(0 0 3px rgba(26, 220, 56, 0.3))
-      drop-shadow(0 0 12px rgba(26, 220, 56, 0.12));
+      drop-shadow(0 0 3px rgb(var(--neon) / 0.3))
+      drop-shadow(0 0 12px rgb(var(--neon) / 0.12));
   }
   45% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
   74% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
   76% {
     opacity: 0.92;
     filter:
-      drop-shadow(0 0 5px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 20px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 5px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 20px rgb(var(--neon) / 0.25));
   }
   77% {
     opacity: 0.8;
     filter:
-      drop-shadow(0 0 3px rgba(26, 220, 56, 0.2))
-      drop-shadow(0 0 10px rgba(26, 220, 56, 0.08));
+      drop-shadow(0 0 3px rgb(var(--neon) / 0.2))
+      drop-shadow(0 0 10px rgb(var(--neon) / 0.08));
   }
   79% {
     opacity: 1;
     filter:
-      drop-shadow(0 0 8px rgba(26, 220, 56, 0.8))
-      drop-shadow(0 0 30px rgba(26, 220, 56, 0.5))
-      drop-shadow(0 0 60px rgba(26, 220, 56, 0.25));
+      drop-shadow(0 0 8px rgb(var(--neon) / 0.8))
+      drop-shadow(0 0 30px rgb(var(--neon) / 0.5))
+      drop-shadow(0 0 60px rgb(var(--neon) / 0.25));
   }
 }
 

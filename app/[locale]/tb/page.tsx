@@ -56,7 +56,7 @@ export default async function TbPage({ params: { locale } }: Props) {
         <p className="text-base text-foreground/50 leading-relaxed mb-4 mt-8">
           Questions?{"\n"}
           <a
-            className="text-[#1ADC38]/60 hover:text-[#1ADC38] underline underline-offset-4 transition-colors duration-300"
+            className="text-neon/60 hover:text-neon underline underline-offset-4 transition-colors duration-300"
             href={content.contactWhatsapp}
             rel="noopener noreferrer"
             target="_blank"
@@ -65,7 +65,7 @@ export default async function TbPage({ params: { locale } }: Props) {
           </a>
           {" | "}
           <a
-            className="text-[#1ADC38]/60 hover:text-[#1ADC38] underline underline-offset-4 transition-colors duration-300"
+            className="text-neon/60 hover:text-neon underline underline-offset-4 transition-colors duration-300"
             href={`mailto:${content.contactEmail}`}
           >
             {content.contactEmail}

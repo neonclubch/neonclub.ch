@@ -44,7 +44,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <strong className="text-foreground/80 font-semibold">{children}</strong>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l border-[#1ADC38]/30 pl-6 my-8 text-foreground/40 italic">
+      <blockquote className="border-l border-neon/30 pl-6 my-8 text-foreground/40 italic">
         {children}
       </blockquote>
     ),

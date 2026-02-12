@@ -21,7 +21,7 @@ function JoinButton({ label }: { label: string }) {
   return (
     <div className="my-14">
       <a
-        className="inline-block border border-[#1ADC38]/60 px-8 py-3 text-xs font-mono uppercase tracking-widest text-[#1ADC38] leading-none hover:bg-[#1ADC38]/10 hover:border-[#1ADC38] transition-all duration-300"
+        className="inline-block border border-neon/60 px-8 py-3 text-xs font-mono uppercase tracking-widest text-neon leading-none hover:bg-neon/10 hover:border-neon transition-all duration-300"
         href={siteConfig.links.membership}
         rel="noopener noreferrer"
         target="_blank"

@@ -47,14 +47,14 @@ const components: Components = {
     <strong className="text-foreground/80 font-semibold">{children}</strong>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l border-[#1ADC38]/30 pl-6 my-8 text-foreground/40 italic">
+    <blockquote className="border-l border-neon/30 pl-6 my-8 text-foreground/40 italic">
       {children}
     </blockquote>
   ),
   hr: () => <div className="neon-line w-16 my-12" />,
   a: ({ href, children }) => (
     <a
-      className="text-[#1ADC38]/60 hover:text-[#1ADC38] underline underline-offset-4 transition-colors duration-300"
+      className="text-neon/60 hover:text-neon underline underline-offset-4 transition-colors duration-300"
       href={href}
       rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
       target={href?.startsWith("http") ? "_blank" : undefined}

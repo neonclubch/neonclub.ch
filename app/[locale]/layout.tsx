@@ -46,7 +46,7 @@ export default async function LocaleLayout({
       <DictionaryProvider dictionary={dictionary} locale={locale}>
         <div className="relative flex flex-col min-h-screen">
           <Navbar />
-          <main>{children}</main>
+          <main className="w-full mx-auto flex-grow">{children}</main>
           <Footer dictionary={dictionary} locale={locale} />
         </div>
       </DictionaryProvider>

@@ -8,94 +8,94 @@ const content: Record<Locale, ManifestoContent> = {
       {
         number: "I",
         verb: "WE OBSERVE",
-        title: "The Erasure of the Urban Soul",
+        title: "The Unyielding Pulse",
         intro:
-          "We observe the systemic thinning of the spaces that once allowed subcultures to breathe, mutate, and thrive.",
+          "We see a city in transformation, where the spaces for subcultures to breathe are threatened by the pressure to conform. We observe, but we do not surrender.",
         points: [
           {
-            title: "The Death of the Vacuum",
-            text: 'We observe the rapid erasure of "urban vacuums"\u2014those marginal, industrial ruins that once provided the low-cost freedom necessary for radical artistic experimentation.',
+            title: "The Value of the Void",
+            text: 'We recognize the immense power of "urban vacuums"\u2014those marginal, industrial spaces that provide the unregulated freedom necessary for radical artistic experimentation.',
           },
           {
-            title: "The Colonization of Culture",
-            text: 'We see our culture being weaponized as "location branding" for city marketing, where the image of a vibrant nightlife is sold while the reality of its practitioners is pushed to the periphery.',
+            title: "Depth Over Surface",
+            text: "We reject the reduction of culture to a mere marketing image. We fight for the raw, unpolished reality of the practitioners who create the city's heartbeat, not just the polished facade.",
           },
           {
-            title: "The Regulatory Stranglehold",
-            text: 'We observe an environment where the "Agent of Change" principle is ignored, allowing luxury residential interests to prioritize silence over the cultural heartbeat of the city.',
+            title: "Harmonizing Sound and Silence",
+            text: 'We advocate for a city where the "Agent of Change" principle is respected, balancing residential needs with the vital, non-negotiable cultural rhythm of the night.',
           },
           {
-            title: "The Rise of Sterile Homogeneity",
-            text: "We see a narrowing of the cultural spectrum, where economic pressure forces venues to favor safe, commercial hits over the risky, the avant-garde, and the subcultural.",
+            title: "The Radical Fringe",
+            text: "We celebrate the risky, the avant-garde, and the subcultural. We resist the pressure to favor safe, predictable standards over the dangerous beauty of the unknown.",
           },
           {
-            title: "The Trap of Festivalization",
-            text: 'We observe the replacement of consistent, place-based community life with temporary, high-priced "spectacles" that prioritize one-off profit over long-term social cohesion.',
+            title: "Deep Roots, Not Fleeting Trends",
+            text: 'We value consistent, place-based community life over temporary "spectacles," prioritizing long-term social cohesion over the pursuit of short-term hype.',
           },
         ],
       },
       {
         number: "II",
         verb: "WE ACKNOWLEDGE",
-        title: "The Loss of the Social Alchemy",
+        title: "The Alchemy of the Underground",
         intro:
-          "We recognize that when a club disappears, society loses far more than a venue; it loses its most vital laboratory of human connection.",
+          "We recognize that a club is more than a venue; it is a temporary autonomous zone for human connection, expression, and joy.",
         points: [
           {
             title: "The Radical Melting Pot",
-            text: "We acknowledge that the dancefloor is one of the last remaining sites of true social mixing\u2014where the CEO and the student, the stranger and the friend, share a single frequency across all socioeconomic divides.",
+            text: "We acknowledge that the dancefloor is a site of true social mixing\u2014where the CEO and the student, the stranger and the friend, share a single frequency across all divides.",
           },
           {
             title: "The Sanctuary of Identity",
-            text: 'We acknowledge that for marginalized groups and the LGBTQ+ community, these spaces are not "leisure"\u2014they are essential "safe spaces" for identity formation and collective survival.',
+            text: 'We celebrate these spaces as essential "safe havens" for marginalized groups and the LGBTQ+ community, fostering identity formation and collective power.',
           },
           {
-            title: "The Power of the Prosumer",
-            text: 'We recognize that in our culture, there is no "audience"; we acknowledge that through dance and participation, every individual acts as a "prosumer" who co-creates the cultural energy of the night.',
+            title: "The Death of the Spectator",
+            text: 'We recognize that in our culture, there are no passengers. We reject passive consumption. Through dance and presence, every individual acts as a "prosumer" who co-creates the night.',
           },
           {
-            title: "The Fragility of Living Heritage",
-            text: 'We acknowledge that electronic music culture is an "intangible heritage" that cannot be archived in a museum; it must be practiced in the physical world, or its rhythmic memory will fade.',
+            title: "Living Heritage",
+            text: 'We acknowledge that electronic music culture is a living "intangible heritage" that thrives only in the physical world, keeping its rhythmic memory vibrant and untamed.',
           },
           {
-            title: "The Void of Spontaneity",
-            text: 'We acknowledge that the loss of physical venues means the loss of serendipity\u2014the "social magic" that happens when people of different backgrounds and orientations collide in an unregulated environment.',
+            title: "The Spark of Chaos",
+            text: 'We celebrate the serendipity and "social magic" that happens when people of different backgrounds collide in an open, unregulated environment free from algorithmic curation.',
           },
         ],
       },
       {
         number: "III",
         verb: "WE STRIVE",
-        title: "To Transcend the Four Walls",
+        title: "The Unbound Future",
         intro:
-          "We commit to a future where culture is defined by its spirit, not its real estate. We will experiment, adapt, and reclaim.",
+          "We build a future where culture is defined by its spirit, not its real estate. We experiment, adapt, and refuse to be contained.",
         points: [
           {
-            title: "To Reclaim the City as a Laboratory",
-            text: 'We strive to move beyond the "stationary club" by reclaiming urban space through nomadic sound systems, pop-up interventions, and the tactical use of "interzone" spaces.',
+            title: "To Reclaim the City",
+            text: 'We strive to explode the "stationary club" model by activating urban space through nomadic sound systems, pop-up interventions, and the tactical occupation of "interzone" spaces.',
           },
           {
             title: "To Design for Radical Inclusivity",
-            text: "We strive to create formats that intentionally mix diverse backgrounds and orientations, ensuring the dancefloor remains a democratic bridge across social divides.",
+            text: "We strive to create formats that intentionally mix diverse backgrounds and orientations, ensuring the dancefloor remains a democratic bridge, not a VIP lounge.",
           },
           {
             title: "To Democratize the Experience",
-            text: "We strive to utilize accessible technology and decentralized organizing to lower barriers to entry, ensuring that our culture remains a participatory act rather than a consumed product.",
+            text: "We strive to utilize accessible technology and decentralized organizing to lower barriers to entry, ensuring that our culture remains a participatory act, not a luxury product.",
           },
           {
-            title: "To Turn Barriers into Catalysts",
-            text: "We strive to co-opt the limitations of the modern city\u2014responding to noise regulations and spatial scarcity with innovative audio formats and invisible, agile gatherings.",
+            title: "Innovation through Resistance",
+            text: "We strive to use limitations as creative sparks\u2014responding to regulations and spatial scarcity with innovative audio formats and agile, invisible gatherings.",
           },
           {
-            title: "To Protect Subcultural Autonomy",
-            text: 'We strive to ensure that our creative mission remains independent of the "for a profit" trap, building a community-supported infrastructure that values social impact over commercial turnover.',
+            title: "Creative Sovereignty",
+            text: "We strive to build a community-supported infrastructure that values social impact and artistic freedom, ensuring our creative mission remains independent and self-determined.",
           },
         ],
       },
     ],
     closingLines: [
-      "The walls may be closing in, but the dancefloor is an idea, not a location.",
-      "NEON is the light that refuses to go out.",
+      "The walls may shift, but the dancefloor is an idea, not a location.",
+      "NEON is the light that burns through the noise.",
     ],
   },
   de: {
@@ -104,94 +104,94 @@ const content: Record<Locale, ManifestoContent> = {
       {
         number: "I",
         verb: "WIR BEOBACHTEN",
-        title: "Die Verdrängung der urbanen Seele",
+        title: "Der unbeugsame Puls",
         intro:
-          "Wir beobachten die systematische Ausdünnung jener Räume, die es Subkulturen einst ermöglichten, zu atmen, sich zu wandeln und zu entfalten.",
+          "Wir sehen eine Stadt im Wandel, in der Räume für Subkulturen von dem Druck zur Konformität bedroht sind. Wir beobachten, aber wir kapitulieren nicht.",
         points: [
           {
-            title: "Das Sterben der Freiräume",
-            text: "Wir beobachten das rasant fortschreitende Verschwinden „urbaner Vakuums“ – jener marginalen Industriebrachen und Nischen, die einst die kostengünstige Freiheit für radikale künstlerische Experimente boten.",
+            title: "Der Wert der Leere",
+            text: "Wir erkennen das enorme Potenzial „urbaner Vakuums“ – jener marginalen Industriebrachen, die die unregulierte Freiheit für radikale künstlerische Experimente bieten.",
           },
           {
-            title: "Die Kolonialisierung der Kultur",
-            text: "Wir erleben, wie unsere Kultur als „Standortmarketing“ instrumentalisiert wird. Das Image eines pulsierenden Nachtlebens wird verkauft, während die Lebensrealität derer, die es erschaffen, an den Rand gedrängt wird.",
+            title: "Tiefe statt Oberfläche",
+            text: "Wir lehnen die Reduktion von Kultur auf ein bloßes Marketingbild ab. Wir kämpfen für die rohe, ungeschliffene Realität derer, die den Herzschlag der Stadt erschaffen, nicht für die polierte Fassade.",
           },
           {
-            title: "Der regulatorische Würgegriff",
-            text: "Wir beobachten ein Umfeld, in dem das „Agent of Change“-Prinzip ignoriert wird, was dazu führt, dass die Ruhebedürfnisse von Luxus-Wohnbauprojekten über den kulturellen Herzschlag der Stadt gestellt werden.",
+            title: "Klang und Stille in Einklang",
+            text: "Wir plädieren für ein Umfeld, in dem das „Agent of Change“-Prinzip respektiert wird und kulturelle Freiräume als nicht verhandelbarer Teil der Stadtentwicklung bestehen.",
           },
           {
-            title: "Der Vormarsch steriler Homogenität",
-            text: "Wir sehen eine Verengung des kulturellen Spektrums: Wirtschaftlicher Druck zwingt Veranstaltungsorte dazu, auf sichere, kommerzielle Hits zu setzen, anstatt dem Riskanten, der Avantgarde und der Subkultur Raum zu geben.",
+            title: "Die radikale Nische",
+            text: "Wir feiern das Riskante, die Avantgarde und die Subkultur. Wir widerstehen dem Druck, sichere, vorhersehbare Standards der gefährlichen Schönheit des Unbekannten vorzuziehen.",
           },
           {
-            title: "Die Falle der Festivalisierung",
-            text: "Wir beobachten, wie beständiges, ortsgebundenes Gemeinschaftsleben durch temporäre, hochpreisige „Spektakel“ ersetzt wird, die kurzfristigen Profit über langfristigen sozialen Zusammenhalt stellen.",
+            title: "Tiefe Wurzeln statt flüchtige Trends",
+            text: "Wir schätzen beständiges, ortsgebundenes Gemeinschaftsleben und stellen langfristigen sozialen Zusammenhalt über die Jagd nach kurzfristigem Hype.",
           },
         ],
       },
       {
         number: "II",
         verb: "WIR ANERKENNEN",
-        title: "Der Verlust der sozialen Alchemie",
+        title: "Die Alchemie des Untergrunds",
         intro:
-          "Wir erkennen an: Wenn ein Club verschwindet, verliert die Gesellschaft weit mehr als einen Veranstaltungsort – sie verliert ihr wichtigstes Labor für menschliche Begegnung.",
+          "Wir erkennen an: Ein Club ist mehr als ein Veranstaltungsort – er ist eine temporäre autonome Zone für menschliche Begegnung, Ausdruck und Freude.",
         points: [
           {
             title: "Der radikale Schmelztiegel",
-            text: "Wir anerkennen, dass die Tanzfläche einer der letzten Orte echter sozialer Durchmischung ist – wo CEO und Student:in, Fremde und Freund:innen über alle sozioökonomischen Gräben hinweg dieselbe Frequenz teilen.",
+            text: "Wir anerkennen, dass die Tanzfläche ein Ort echter sozialer Durchmischung ist – wo CEO und Student:in, Fremde und Freund:innen über alle Grenzen hinweg dieselbe Frequenz teilen.",
           },
           {
             title: "Das Refugium der Identität",
-            text: "Wir anerkennen, dass diese Räume für marginalisierte Gruppen und die LGBTQ+ Community keine „Freizeitbeschäftigung“ sind – sie sind lebensnotwendige „Safe Spaces“ für die Identitätsbildung und das kollektive Überleben.",
+            text: "Wir feiern diese Räume als essentielle „Safe Spaces“ für marginalisierte Gruppen und die LGBTQ+ Community, die Identität und kollektive Stärke fördern.",
           },
           {
-            title: "Die Kraft der Prosumenten",
-            text: "Wir erkennen an, dass es in unserer Kultur kein passives „Publikum“ gibt. Durch Tanz und Teilhabe wird jede:r Einzelne zum „Prosumenten“, der die kulturelle Energie der Nacht aktiv mitgestaltet.",
+            title: "Der Tod des Zuschauers",
+            text: "Wir erkennen an, dass es in unserer Kultur keine Passagiere gibt. Wir lehnen passiven Konsum ab. Durch Tanz und Präsenz wird jede:r Einzelne zum „Prosumenten“, der die Nacht miterschafft.",
           },
           {
-            title: "Die Zerbrechlichkeit des lebendigen Erbes",
-            text: "Wir anerkennen, dass die elektronische Musikkultur ein „immaterielles Kulturerbe“ ist, das nicht im Museum archiviert werden kann. Es muss in der physischen Welt gelebt werden, sonst verblasst sein rhythmisches Gedächtnis.",
+            title: "Lebendiges Erbe",
+            text: "Wir anerkennen, dass die elektronische Musikkultur ein lebendiges „immaterielles Kulturerbe“ ist, das nur in der physischen Welt gedeiht und so sein rhythmisches Gedächtnis wild und lebendig hält.",
           },
           {
-            title: "Die Leere der Spontaneität",
-            text: "Wir anerkennen, dass der Verlust physischer Orte das Ende der Unvorhersehbarkeit bedeutet – jener „sozialen Magie“, die entsteht, wenn Menschen unterschiedlichster Herkunft in einem unregulierten Umfeld aufeinandertreffen.",
+            title: "Der Funke des Chaos",
+            text: "Wir feiern die Serendipität und „soziale Magie“, die entsteht, wenn Menschen unterschiedlichster Herkunft in einem offenen, unregulierten Umfeld frei von algorithmischer Kuratierung aufeinandertreffen.",
           },
         ],
       },
       {
         number: "III",
         verb: "WIR STREBEN",
-        title: "Über die vier Wände hinaus",
+        title: "Die entfesselte Zukunft",
         intro:
-          "Wir bekennen uns zu einer Zukunft, in der Kultur durch ihren Geist definiert wird, nicht durch ihren Grundbesitz. Wir werden experimentieren, uns anpassen und Räume zurückerobern.",
+          "Wir bauen an einer Zukunft, in der Kultur durch ihren Geist definiert wird, nicht durch ihren Grundbesitz. Wir experimentieren, passen uns an und lassen uns nicht einsperren.",
         points: [
           {
-            title: "Die Stadt als Labor zurückerobern",
-            text: "Wir streben danach, das Konzept des „stationären Clubs“ zu erweitern, indem wir uns den urbanen Raum durch nomadische Soundsysteme, Pop-up-Interventionen und die taktische Nutzung von Zwischenzonen aneignen.",
+            title: "Die Stadt zurückerobern",
+            text: "Wir streben danach, das Modell des „stationären Clubs“ zu sprengen, indem wir den urbanen Raum durch nomadische Soundsysteme und die taktische Besetzung von Zwischenzonen aktivieren.",
           },
           {
             title: "Radikale Inklusivität gestalten",
-            text: "Wir streben danach, Formate zu schaffen, die bewusst verschiedene Hintergründe und Orientierungen zusammenbringen, damit die Tanzfläche eine demokratische Brücke über soziale Trennlinien bleibt.",
+            text: "Wir streben danach, Formate zu schaffen, die bewusst verschiedene Hintergründe zusammenbringen, damit die Tanzfläche eine demokratische Brücke bleibt, keine VIP-Lounge.",
           },
           {
             title: "Das Erlebnis demokratisieren",
-            text: "Wir streben danach, zugängliche Technologien und dezentrale Organisation zu nutzen, um Eintrittshürden abzubauen. Unsere Kultur soll ein partizipativer Akt bleiben und kein konsumierbares Produkt werden.",
+            text: "Wir streben danach, zugängliche Technologien zu nutzen, um Eintrittshürden abzubauen. Unsere Kultur soll ein partizipativer Akt bleiben, kein Luxusprodukt.",
           },
           {
-            title: "Barrieren als Katalysatoren nutzen",
-            text: "Wir streben danach, die Einschränkungen der modernen Stadt produktiv zu wenden – auf Lärmschutzverordnungen und Platzmangel antworten wir mit innovativen Audioformaten und agilen, unsichtbaren Zusammenkünften.",
+            title: "Innovation durch Widerstand",
+            text: "Wir nutzen Einschränkungen als kreativen Funken – auf Regulierungen und Platzmangel antworten wir mit innovativen Audioformaten und agilen, unsichtbaren Zusammenkünften.",
           },
           {
-            title: "Subkulturelle Autonomie schützen",
-            text: "Wir streben danach, unsere kreative Mission von der „Profitfalle“ unabhängig zu machen, indem wir eine gemeinschaftsgetragene Infrastruktur aufbauen, die soziale Wirkung über kommerziellen Umsatz stellt.",
+            title: "Kreative Souveränität",
+            text: "Wir streben danach, eine gemeinschaftsgetragene Infrastruktur aufzubauen, die soziale Wirkung und künstlerische Freiheit über alles stellt und unsere Mission unabhängig und selbstbestimmt hält.",
           },
         ],
       },
     ],
     closingLines: [
-      "Die Mauern mögen enger werden, doch die Tanzfläche ist eine Idee, kein Ort.",
-      "NEON ist das Licht, das sich weigert auszugehen.",
+      "Die Wände mögen sich verschieben, doch die Tanzfläche ist eine Idee, kein Ort.",
+      "NEON ist das Licht, das durch den Lärm brennt.",
     ],
   },
 };

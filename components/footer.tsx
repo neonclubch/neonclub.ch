@@ -13,21 +13,21 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ locale, dictionary }) => {
   return (
-    <footer>
+    <footer className="w-full mx-auto">
       <div className="neon-line mx-6" />
-      <div className="container flex items-center justify-between flex-col-reverse sm:flex-row py-8 px-6 gap-4">
-        <span className="text-[10px] font-mono text-foreground/20 uppercase tracking-widest">
+      <div className="mx-auto flex items-center justify-between flex-col-reverse sm:flex-row py-8 px-6 gap-4">
+        <span className="text-[0.625rem] font-mono text-foreground/20 uppercase tracking-widest">
           NEON &copy; {new Date().getFullYear()}
         </span>
         <div className="flex items-center gap-6">
           <Link
-            className="text-[10px] font-mono text-foreground/20 uppercase tracking-widest hover:text-[#1ADC38] transition-colors"
+            className="text-[0.625rem] font-mono text-foreground/20 uppercase tracking-widest hover:text-neon transition-colors"
             href={`/${locale}/impressum`}
           >
             {dictionary.footer.impressum}
           </Link>
           <Link
-            className="text-[10px] font-mono text-foreground/20 uppercase tracking-widest hover:text-[#1ADC38] transition-colors"
+            className="text-[0.625rem] font-mono text-foreground/20 uppercase tracking-widest hover:text-neon transition-colors"
             href={`/${locale}/privacy-policy`}
           >
             {dictionary.footer.privacy}
@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ locale, dictionary }) => {
           <Link
             isExternal
             aria-label="Instagram"
-            className="text-foreground/20 hover:text-[#1ADC38] transition-colors"
+            className="text-foreground/20 hover:text-neon transition-colors"
             href={siteConfig.links.instagram}
           >
             <InstagramIcon className="w-4 h-4" />
