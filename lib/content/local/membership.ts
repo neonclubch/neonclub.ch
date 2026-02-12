@@ -20,7 +20,7 @@ const content: Record<Locale, MembershipContent> = {
         body: "By joining NEON, you are signing up for a mission of Radical Solidarity. You are choosing to be a part of the movement that transcends the four walls of the traditional club.",
       },
     ],
-    ctaLabel: "I\u2019m in",
+    ctaLabel: "I'm in",
     footerLines: [
       "Invest your money to keep the lights on.",
       "Invest your time to keep the spirit alive.",
@@ -29,25 +29,25 @@ const content: Record<Locale, MembershipContent> = {
   de: {
     title: "DIE NACHT IST NICHT KÄUFLICH.",
     intro:
-      "Das *Clubsterben* ist kein Trend \u2014 es ist ein kontrollierter Abriss unseres sozialen Gefüges. Wer hier nach Frühbucher-Tickets oder \u201EMembers-only\u201C-Vorteilen sucht, ist am falschen Ort.",
+      "Das *Clubsterben* ist kein Trend – es ist der kontrollierte Rückbau unseres sozialen Gefüges. Wer hier nach Early-Bird-Tickets oder exklusiven „Members-only“-Vorteilen sucht, ist am falschen Ort.",
     sections: [
       {
-        title: "DER BEITRAG: CHF 35.\u2014",
-        body: "Wir verkaufen keine Mitgliedschaften; wir sammeln Ressourcen für die kulturelle Verteidigung. Deine 35 Franken sind keine Transaktion \u2014 sie sind ein Beitrag zum Überleben des urbanen Vakuums. Dieser Fonds treibt unsere nomadischen Soundsysteme an, umgeht die Barrieren des Immobilienmarktes und hält das Experiment am Leben.",
+        title: "DER BEITRAG: CHF 35.–",
+        body: "Wir verkaufen keine Mitgliedschaften; wir bündeln Ressourcen zur kulturellen Selbstverteidigung. Deine 35 Franken sind keine Transaktion – sie sind ein Beitrag zum Überleben unserer Freiräume. Dieser Fonds finanziert unsere nomadischen Soundsysteme, hebelt die Barrieren des Immobilienmarktes aus und hält das Experiment am Leben.",
       },
       {
         title: "DIE RADIKALE ANFORDERUNG: DEINE ZEIT.",
-        body: "Noch mehr als dein Geld brauchen wir deine Präsenz. Ein Rave ist nichts, was man beobachtet; es ist etwas, das man *ist*. Um die soziale Alchemie der Nacht wirklich zu bewahren, brauchen wir den \u201EProsumenten\u201C \u2014 den aktiven Teilnehmenden, der den Raum mitgestaltet.\n\nWir wollen nicht deine passive Unterstützung; wir wollen deine Arbeit, deine Ideen und deine physische Energie. Ob Lautsprecher in ein geheimes Lagerhaus schleppen, eine taktische Intervention gestalten oder einen Safe Space auf dem Dancefloor schützen \u2014 deine Zeit ist die einzige Währung, die nicht inflationiert oder reguliert werden kann.",
+        body: "Mehr noch als dein Geld brauchen wir deine Präsenz. Ein Rave ist kein Zuschauersport; ein Rave *ist* man. Um die soziale Alchemie der Nacht wirklich zu schützen, brauchen wir „Prosumenten“ – aktive Akteur:innen, die den Raum im Moment seiner Entstehung miterschaffen.\n\nWir suchen keinen passiven Support; wir brauchen deinen Einsatz, deine Ideen und deine physische Energie. Ob du Boxen in ein besetztes Lagerhaus schleppst, eine taktische Intervention planst oder Safe Spaces auf dem Dancefloor schützt – deine Zeit ist die einzige Währung, die weder Inflation noch Regulierung kennt.",
       },
       {
-        title: "MITGESTALTEN ODER UNTERGEHEN.",
-        body: "Mit deinem Beitritt zu NEON meldest du dich für eine Mission der radikalen Solidarität an. Du entscheidest dich, Teil einer Bewegung zu sein, die die vier Wände des traditionellen Clubs überwindet.",
+        title: "KOLLEKTIVITÄT ODER UNTERGANG.",
+        body: "Mit deinem Beitritt zu NEON entscheidest du dich für eine Mission der radikalen Solidarität. Du wirst Teil einer Bewegung, die über die vier Wände des klassischen Clubs hinausgeht.",
       },
     ],
     ctaLabel: "Ich bin dabei",
     footerLines: [
-      "Investiere dein Geld, damit die Lichter nicht ausgehen.",
-      "Investiere deine Zeit, damit der Geist weiterlebt.",
+      "Investiere Geld, um das Licht brennen zu lassen.",
+      "Investiere Zeit, um den Geist am Leben zu erhalten.",
     ],
   },
 };

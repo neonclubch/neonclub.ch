@@ -104,94 +104,94 @@ const content: Record<Locale, ManifestoContent> = {
       {
         number: "I",
         verb: "WIR BEOBACHTEN",
-        title: "Die Auslöschung der urbanen Seele",
+        title: "Die Verdrängung der urbanen Seele",
         intro:
-          "Wir beobachten die systematische Ausdünnung der Räume, die es Subkulturen einst ermöglichten, zu atmen, sich zu wandeln und zu gedeihen.",
+          "Wir beobachten die systematische Ausdünnung jener Räume, die es Subkulturen einst ermöglichten, zu atmen, sich zu wandeln und zu entfalten.",
         points: [
           {
-            title: "Der Tod des Vakuums",
-            text: "Wir beobachten das rasante Verschwinden der \u201Eurbanen Leerstellen\u201C \u2014 jener marginalen, industriellen Ruinen, die einst die kostengünstige Freiheit für radikale künstlerische Experimente boten.",
+            title: "Das Sterben der Freiräume",
+            text: "Wir beobachten das rasant fortschreitende Verschwinden „urbaner Vakuums“ – jener marginalen Industriebrachen und Nischen, die einst die kostengünstige Freiheit für radikale künstlerische Experimente boten.",
           },
           {
             title: "Die Kolonialisierung der Kultur",
-            text: "Wir sehen, wie unsere Kultur als \u201EStandortmarketing\u201C für Städte instrumentalisiert wird \u2014 das Bild eines pulsierenden Nachtlebens wird verkauft, während die Realität seiner Akteur:innen an den Rand gedrängt wird.",
+            text: "Wir erleben, wie unsere Kultur als „Standortmarketing“ instrumentalisiert wird. Das Image eines pulsierenden Nachtlebens wird verkauft, während die Lebensrealität derer, die es erschaffen, an den Rand gedrängt wird.",
           },
           {
             title: "Der regulatorische Würgegriff",
-            text: "Wir beobachten ein Umfeld, in dem das \u201EAgent of Change\u201C-Prinzip ignoriert wird und Luxuswohninteressen Stille über den kulturellen Herzschlag der Stadt stellen.",
+            text: "Wir beobachten ein Umfeld, in dem das „Agent of Change“-Prinzip ignoriert wird, was dazu führt, dass die Ruhebedürfnisse von Luxus-Wohnbauprojekten über den kulturellen Herzschlag der Stadt gestellt werden.",
           },
           {
-            title: "Der Aufstieg steriler Gleichförmigkeit",
-            text: "Wir sehen eine Verengung des kulturellen Spektrums, in der wirtschaftlicher Druck Veranstaltungsorte dazu zwingt, sichere, kommerzielle Hits dem Riskanten, der Avantgarde und dem Subkulturellen vorzuziehen.",
+            title: "Der Vormarsch steriler Homogenität",
+            text: "Wir sehen eine Verengung des kulturellen Spektrums: Wirtschaftlicher Druck zwingt Veranstaltungsorte dazu, auf sichere, kommerzielle Hits zu setzen, anstatt dem Riskanten, der Avantgarde und der Subkultur Raum zu geben.",
           },
           {
             title: "Die Falle der Festivalisierung",
-            text: "Wir beobachten den Ersatz eines beständigen, ortsgebundenen Gemeinschaftslebens durch temporäre, hochpreisige \u201ESpektakel\u201C, die einmaligen Profit über langfristigen sozialen Zusammenhalt stellen.",
+            text: "Wir beobachten, wie beständiges, ortsgebundenes Gemeinschaftsleben durch temporäre, hochpreisige „Spektakel“ ersetzt wird, die kurzfristigen Profit über langfristigen sozialen Zusammenhalt stellen.",
           },
         ],
       },
       {
         number: "II",
         verb: "WIR ANERKENNEN",
-        title: "Den Verlust der sozialen Alchemie",
+        title: "Der Verlust der sozialen Alchemie",
         intro:
-          "Wir erkennen an, dass die Gesellschaft, wenn ein Club verschwindet, weit mehr verliert als einen Veranstaltungsort \u2014 sie verliert ihr wichtigstes Labor menschlicher Verbindung.",
+          "Wir erkennen an: Wenn ein Club verschwindet, verliert die Gesellschaft weit mehr als einen Veranstaltungsort – sie verliert ihr wichtigstes Labor für menschliche Begegnung.",
         points: [
           {
             title: "Der radikale Schmelztiegel",
-            text: "Wir anerkennen, dass die Tanzfläche einer der letzten Orte wahrer sozialer Durchmischung ist \u2014 wo CEO und Student:in, Fremde und Freund:in eine gemeinsame Frequenz über alle sozioökonomischen Grenzen hinweg teilen.",
+            text: "Wir anerkennen, dass die Tanzfläche einer der letzten Orte echter sozialer Durchmischung ist – wo CEO und Student:in, Fremde und Freund:innen über alle sozioökonomischen Gräben hinweg dieselbe Frequenz teilen.",
           },
           {
             title: "Das Refugium der Identität",
-            text: "Wir anerkennen, dass diese Räume für marginalisierte Gruppen und die LGBTQ+ Community nicht \u201EFreizeit\u201C sind \u2014 sie sind essentielle \u201ESafe Spaces\u201C für Identitätsbildung und kollektives Überleben.",
+            text: "Wir anerkennen, dass diese Räume für marginalisierte Gruppen und die LGBTQ+ Community keine „Freizeitbeschäftigung“ sind – sie sind lebensnotwendige „Safe Spaces“ für die Identitätsbildung und das kollektive Überleben.",
           },
           {
-            title: "Die Kraft des Prosumenten",
-            text: "Wir erkennen an, dass es in unserer Kultur kein \u201EPublikum\u201C gibt; durch Tanz und Teilhabe agiert jede:r Einzelne als \u201EProsument:in\u201C, der die kulturelle Energie der Nacht miterschafft.",
+            title: "Die Kraft der Prosumenten",
+            text: "Wir erkennen an, dass es in unserer Kultur kein passives „Publikum“ gibt. Durch Tanz und Teilhabe wird jede:r Einzelne zum „Prosumenten“, der die kulturelle Energie der Nacht aktiv mitgestaltet.",
           },
           {
-            title: "Die Fragilität des lebendigen Erbes",
-            text: "Wir anerkennen, dass die Kultur der elektronischen Musik ein \u201Eimmaterielles Erbe\u201C ist, das nicht in einem Museum archiviert werden kann; es muss in der physischen Welt praktiziert werden, oder seine rhythmische Erinnerung wird verblassen.",
+            title: "Die Zerbrechlichkeit des lebendigen Erbes",
+            text: "Wir anerkennen, dass die elektronische Musikkultur ein „immaterielles Kulturerbe“ ist, das nicht im Museum archiviert werden kann. Es muss in der physischen Welt gelebt werden, sonst verblasst sein rhythmisches Gedächtnis.",
           },
           {
             title: "Die Leere der Spontaneität",
-            text: "Wir anerkennen, dass der Verlust physischer Veranstaltungsorte den Verlust von Zufälligkeit bedeutet \u2014 die \u201Esoziale Magie\u201C, die entsteht, wenn Menschen unterschiedlicher Hintergründe in einem unregulierten Umfeld aufeinandertreffen.",
+            text: "Wir anerkennen, dass der Verlust physischer Orte das Ende der Unvorhersehbarkeit bedeutet – jener „sozialen Magie“, die entsteht, wenn Menschen unterschiedlichster Herkunft in einem unregulierten Umfeld aufeinandertreffen.",
           },
         ],
       },
       {
         number: "III",
         verb: "WIR STREBEN",
-        title: "Die vier Wände zu überwinden",
+        title: "Über die vier Wände hinaus",
         intro:
-          "Wir verpflichten uns zu einer Zukunft, in der Kultur durch ihren Geist definiert wird, nicht durch ihre Immobilien. Wir werden experimentieren, uns anpassen und zurückerobern.",
+          "Wir bekennen uns zu einer Zukunft, in der Kultur durch ihren Geist definiert wird, nicht durch ihren Grundbesitz. Wir werden experimentieren, uns anpassen und Räume zurückerobern.",
         points: [
           {
             title: "Die Stadt als Labor zurückerobern",
-            text: "Wir streben danach, über den \u201Estationären Club\u201C hinauszugehen, indem wir urbanen Raum durch nomadische Soundsysteme, Pop-up-Interventionen und die taktische Nutzung von \u201EInterzone\u201C-Räumen zurückerobern.",
+            text: "Wir streben danach, das Konzept des „stationären Clubs“ zu erweitern, indem wir uns den urbanen Raum durch nomadische Soundsysteme, Pop-up-Interventionen und die taktische Nutzung von Zwischenzonen aneignen.",
           },
           {
             title: "Radikale Inklusivität gestalten",
-            text: "Wir streben danach, Formate zu schaffen, die bewusst verschiedene Hintergründe und Orientierungen zusammenbringen und sicherstellen, dass die Tanzfläche eine demokratische Brücke über soziale Grenzen hinweg bleibt.",
+            text: "Wir streben danach, Formate zu schaffen, die bewusst verschiedene Hintergründe und Orientierungen zusammenbringen, damit die Tanzfläche eine demokratische Brücke über soziale Trennlinien bleibt.",
           },
           {
             title: "Das Erlebnis demokratisieren",
-            text: "Wir streben danach, zugängliche Technologie und dezentrale Organisation zu nutzen, um Barrieren abzubauen und sicherzustellen, dass unsere Kultur ein partizipativer Akt bleibt und kein konsumiertes Produkt.",
+            text: "Wir streben danach, zugängliche Technologien und dezentrale Organisation zu nutzen, um Eintrittshürden abzubauen. Unsere Kultur soll ein partizipativer Akt bleiben und kein konsumierbares Produkt werden.",
           },
           {
-            title: "Barrieren in Katalysatoren verwandeln",
-            text: "Wir streben danach, die Einschränkungen der modernen Stadt zu nutzen \u2014 auf Lärmvorschriften und Raumknappheit mit innovativen Audioformaten und unsichtbaren, agilen Zusammenkünften zu reagieren.",
+            title: "Barrieren als Katalysatoren nutzen",
+            text: "Wir streben danach, die Einschränkungen der modernen Stadt produktiv zu wenden – auf Lärmschutzverordnungen und Platzmangel antworten wir mit innovativen Audioformaten und agilen, unsichtbaren Zusammenkünften.",
           },
           {
             title: "Subkulturelle Autonomie schützen",
-            text: "Wir streben danach, sicherzustellen, dass unsere kreative Mission unabhängig von der \u201EGewinnfalle\u201C bleibt, und bauen eine gemeinschaftsgetragene Infrastruktur auf, die sozialen Impact über kommerziellen Umsatz stellt.",
+            text: "Wir streben danach, unsere kreative Mission von der „Profitfalle“ unabhängig zu machen, indem wir eine gemeinschaftsgetragene Infrastruktur aufbauen, die soziale Wirkung über kommerziellen Umsatz stellt.",
           },
         ],
       },
     ],
     closingLines: [
-      "Die Wände mögen enger werden, aber die Tanzfläche ist eine Idee, kein Ort.",
-      "NEON ist das Licht, das sich weigert zu erlöschen.",
+      "Die Mauern mögen enger werden, doch die Tanzfläche ist eine Idee, kein Ort.",
+      "NEON ist das Licht, das sich weigert auszugehen.",
     ],
   },
 };
