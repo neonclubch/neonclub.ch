@@ -1,40 +1,60 @@
-import { Link } from "@nextui-org/link";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { Section } from "@/components/section";
-import { Events } from "@/components/events"
+import NextLink from "next/link";
+import { Events } from "@/components/events";
 
 export default function Home() {
   return (
     <>
-      <Section sectionClassName="min-h-[50vh]" className="items-center justify-center" backgroundImage="/djbooth.jpg">
-        <div className="inline-block text-center justify-center">
-          <h1 className={title({ size: "lg" })}>celebrating</h1>
-          <br />
-          <h1 className={title({ color: "violet", size: "xl" })}>electronic&nbsp;</h1>
-          <h1 className={title({ color: "pink", size: "xl" })}>music</h1>
-          <h2 className={subtitle({ class: "mt-6" })}>
+      {/* ── Hero ──────────────────────────────────── */}
+      <section className="min-h-[92vh] flex flex-col items-center justify-center px-6 relative">
+        <div className="text-center">
+          <h1
+            className="text-7xl md:text-8xl lg:text-[10rem] font-display font-black tracking-display leading-none text-transparent neon-flicker-glow"
+            style={{
+              WebkitTextStroke: "1.5px #1ADC38",
+              textIndent: "0.25em",
+            }}
+          >
+            NEON
+          </h1>
+          <p className="mt-8 text-[11px] md:text-xs font-mono text-foreground/30 uppercase tracking-[0.35em]" style={{ textIndent: "0.35em" }}>
             Neue Elektronische Organisation für Nachtkultur
-          </h2>
+          </p>
         </div>
 
-        <div className="flex gap-3">
-          <Link
-            className={buttonStyles({
-              color: "success",
-              radius: "full",
-              variant: "shadow",
-            })}
-            href="/membership"
-          >
-            Become a Member
-          </Link>
+        {/* Scroll line */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <div className="w-px h-14 bg-gradient-to-b from-transparent to-[#1ADC38]/30 animate-pulse-line" />
         </div>
-      </Section>
-      <Section>
-        <Events />
-      </Section>
+      </section>
+
+      {/* ── Manifesto excerpt ─────────────────────── */}
+      <section className="py-24 md:py-36 px-6">
+        <div className="max-w-3xl mx-auto">
+          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-foreground/70">
+            &ldquo;The walls may be closing in, but the{" "}
+            <span className="neon-text font-normal">
+              dancefloor is an idea
+            </span>
+            , not a location.&rdquo;
+          </blockquote>
+          <div className="mt-14">
+            <NextLink
+              href="/manifesto"
+              className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-[#1ADC38]/60 hover:text-[#1ADC38] transition-colors duration-300"
+            >
+              Read the Manifesto
+              <span aria-hidden="true">&rarr;</span>
+            </NextLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Events ────────────────────────────────── */}
+      <section className="py-20 md:py-28 px-6 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <Events />
+        </div>
+      </section>
     </>
   );
 }

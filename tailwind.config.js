@@ -1,9 +1,9 @@
 import { nextui } from "@nextui-org/theme";
 
 const colors = {
-  focus: "#2EADDA",
+  focus: "#1ADC38",
   primary: {
-    DEFAULT: "#2EADDA",
+    DEFAULT: "#1ADC38",
   },
   success: {
     DEFAULT: "#1ADC38",
@@ -13,7 +13,7 @@ const colors = {
   },
   danger: {
     DEFAULT: "#FD1D53",
-  }
+  },
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -22,13 +22,21 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    "./mdx-components.tsx"
+    "./mdx-components.tsx",
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        mono: ["var(--font-mono)"],
+        display: ["var(--font-display)"],
+      },
+      colors: {
+        neon: "#1ADC38",
+        surface: "#0A0A0A",
+      },
+      letterSpacing: {
+        display: "0.25em",
       },
     },
   },
@@ -38,9 +46,11 @@ module.exports = {
       addCommonColors: false,
       themes: {
         dark: {
-          colors: { ...colors, background: "#0D0221", },
+          colors: { ...colors, background: "#050505" },
         },
-        light: { colors },
+        light: {
+          colors: { ...colors, background: "#050505" },
+        },
       },
     }),
   ],

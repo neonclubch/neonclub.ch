@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { fontSans, fontMono, fontDisplay } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#050505" },
+    { media: "(prefers-color-scheme: dark)", color: "#050505" },
   ],
 };
 
@@ -38,15 +38,15 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          fontMono.variable,
+          fontDisplay.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col min-h-screen">
             <Navbar />
-            <main>
-              {children}
-            </main>
+            <main>{children}</main>
             <Footer />
           </div>
         </Providers>
