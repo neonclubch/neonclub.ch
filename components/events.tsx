@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { Button, Link, Spinner } from "@heroui/react";
+import { Spinner } from "@heroui/react";
 
+import { NeonButton } from "@/components/neon-button";
 import { useApiGetEvents } from "@/helpers/eventApi";
 import { useDictionary } from "@/i18n/DictionaryContext";
 
@@ -41,21 +42,21 @@ export const Events: React.FC = () => {
             </span>
           </div>
         </div>
-        <Button
-          as={Link}
-          className="min-w-[100px] font-mono text-xs uppercase tracking-widest rounded-none"
+        <NeonButton
+          as="a"
+          className="min-w-[100px] rounded-none"
           color={event.testmode || isPast ? "default" : "success"}
           href={event.public_url}
           isDisabled={event.testmode || isPast}
-          isExternal={true}
           radius="none"
+          rel="noopener noreferrer"
           size="sm"
-          variant="bordered"
+          target="_blank"
         >
           {event.testmode && dictionary.events.soon}
           {!event.testmode && !isPast && dictionary.events.join}
           {isPast && dictionary.events.past}
-        </Button>
+        </NeonButton>
       </div>
     );
   });

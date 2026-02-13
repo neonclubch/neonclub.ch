@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 
 import { Link } from "@heroui/link";
 
+import { NeonLink } from "@/components/neon-link";
 import { siteConfig } from "@/config/site";
 import { InstagramIcon } from "@/components/icons";
 
@@ -20,18 +21,18 @@ export const Footer: React.FC<FooterProps> = ({ locale, dictionary }) => {
           NEON &copy; {new Date().getFullYear()}
         </span>
         <div className="flex items-center gap-6">
-          <Link
-            className="text-[0.625rem] font-mono text-foreground/20 uppercase tracking-widest hover:text-neon transition-colors"
+          <NeonLink
+            neonStyle="footer"
             href={`/${locale}/impressum`}
           >
             {dictionary.footer.impressum}
-          </Link>
-          <Link
-            className="text-[0.625rem] font-mono text-foreground/20 uppercase tracking-widest hover:text-neon transition-colors"
+          </NeonLink>
+          <NeonLink
+            neonStyle="footer"
             href={`/${locale}/privacy-policy`}
           >
             {dictionary.footer.privacy}
-          </Link>
+          </NeonLink>
           <Link
             isExternal
             aria-label="Instagram"

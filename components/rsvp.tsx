@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { Spinner } from "@heroui/spinner";
-import { Link } from "@heroui/link";
-import { button as buttonStyles } from "@heroui/theme";
+import { Button } from "@heroui/button";
 import { useSearchParams } from "next/navigation";
 
 import { useApiGetRsvp } from "@/helpers/rsvpApi";
@@ -24,17 +23,17 @@ export const Rsvp: React.FC<RsvpProps> = ({
 
   return (
     <div className={className}>
-      <Link
-        isExternal
-        className={buttonStyles({
-          color: buttonColor || "success",
-          radius: "full",
-          variant: buttonVariant || "solid",
-        })}
+      <Button
+        as="a"
         href={`${formLink}?id=${data.id}&firstName=${data.firstName}&lastName=${data.lastName || ""}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        color={buttonColor || "success"}
+        radius="full"
+        variant={buttonVariant || "solid"}
       >
         {buttonText || "RSVP"}
-      </Link>
+      </Button>
     </div>
   );
 };

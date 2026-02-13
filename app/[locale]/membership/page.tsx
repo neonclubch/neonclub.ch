@@ -4,6 +4,7 @@ import { Metadata } from "next";
 
 import { getContent } from "@/lib/content";
 import { Markdown } from "@/components/markdown";
+import { NeonLink } from "@/components/neon-link";
 import { siteConfig } from "@/config/site";
 
 type Props = { params: { locale: Locale } };
@@ -20,14 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function JoinButton({ label }: { label: string }) {
   return (
     <div className="my-14">
-      <a
-        className="inline-block border border-neon/60 px-8 py-3 text-xs font-mono uppercase tracking-widest text-neon leading-none hover:bg-neon/10 hover:border-neon transition-all duration-300"
-        href={siteConfig.links.membership}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+      <NeonLink isExternal href={siteConfig.links.membership}>
         {label}
-      </a>
+      </NeonLink>
     </div>
   );
 }
