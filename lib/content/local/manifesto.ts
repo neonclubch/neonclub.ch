@@ -46,7 +46,7 @@ const content: Record<Locale, ManifestoContent> = {
           },
           {
             title: "Sanctuaries of Identity",
-            text: "We celebrate these spaces as essential havens for marginalized voices and the LGBTQ+ community, where identity is expressed and collective power is forged.",
+            text: "We celebrate these spaces as essential havens for marginalized voices and communities, where identity is expressed and collective power is forged.",
           },
           {
             title: "The Rise of the Prosumer",
@@ -104,7 +104,8 @@ const content: Record<Locale, ManifestoContent> = {
         number: "I",
         verb: "WIR BEOBACHTEN",
         title: "Die systematische Erosion",
-        intro: "Strukturelle Veränderungen schränken die Freiheit unserer Kultur ein.",
+        intro:
+          "Strukturelle Veränderungen schränken die Freiheit unserer Kultur ein.",
         points: [
           {
             title: "Das schwindende Vakuum",
@@ -141,7 +142,7 @@ const content: Record<Locale, ManifestoContent> = {
           },
           {
             title: "Refugien der Identität",
-            text: "Wir feiern diese Räume als essentielle Schutzräume für marginalisierte Stimmen und die LGBTQ+ Community, in denen Identität gelebt und kollektive Stärke geschmiedet wird.",
+            text: "Wir feiern diese Räume als essentielle Schutzräume für marginalisierte Stimmen und Communities, in denen Identität gelebt und kollektive Stärke geschmiedet wird.",
           },
           {
             title: "Die Ära der Prosumenten",
