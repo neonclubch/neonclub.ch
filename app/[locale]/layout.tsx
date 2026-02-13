@@ -41,7 +41,7 @@ export default async function LocaleLayout({
   const dictionary = await getDictionary(locale);
 
   return (
-    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+    <Providers>
       <HtmlLang locale={locale} />
       <DictionaryProvider dictionary={dictionary} locale={locale}>
         <div className="relative flex flex-col min-h-screen">

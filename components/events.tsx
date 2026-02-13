@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button, Link, Spinner } from "@nextui-org/react";
+import { Button, Link, Spinner } from "@heroui/react";
 
 import { useApiGetEvents } from "@/helpers/eventApi";
 import { useDictionary } from "@/i18n/DictionaryContext";

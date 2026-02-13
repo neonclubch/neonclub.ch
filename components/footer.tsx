@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
 import { InstagramIcon } from "@/components/icons";

@@ -7,7 +7,7 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
+} from "@heroui/navbar";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";

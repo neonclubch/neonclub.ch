@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { Spinner } from "@nextui-org/spinner";
-import { Link } from "@nextui-org/link";
-import { button as buttonStyles } from "@nextui-org/theme";
+import { Spinner } from "@heroui/spinner";
+import { Link } from "@heroui/link";
+import { button as buttonStyles } from "@heroui/theme";
 import { useSearchParams } from "next/navigation";
 
 import { useApiGetRsvp } from "@/helpers/rsvpApi";
