@@ -51,7 +51,7 @@ export const Navbar = () => {
                 href={`/${locale}`}
               >
                 <span className="text-lg font-display font-semibold tracking-display text-neon leading-none">
-                  NEON
+                  NE
                 </span>
               </NextLink>
             </NavbarBrand>

@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import { getContent } from "@/lib/content";
 import { Events } from "@/components/events";
 import { parseNeonMarkers } from "@/components/neon-text";
+import { NeonHeroTitle } from "@/components/neon-hero-title";
 
 type Props = { params: { locale: Locale } };
 
@@ -14,17 +15,9 @@ export default async function Home({ params: { locale } }: Props) {
   return (
     <>
       {/* ── Hero ──────────────────────────────────── */}
-      <section className="min-h-[92vh] flex flex-col items-center justify-center px-6 relative">
+      <section className="h-dvh -mt-16 flex flex-col items-center justify-center px-6 relative">
         <div className="text-center">
-          <h1
-            className="text-7xl md:text-8xl lg:text-[10rem] font-display font-black tracking-display leading-none text-transparent neon-flicker-glow"
-            style={{
-              WebkitTextStroke: "1.5px rgb(var(--neon))",
-              textIndent: "0.25em",
-            }}
-          >
-            NEON
-          </h1>
+          <NeonHeroTitle />
           <p
             className="mt-8 text-[0.6875rem] md:text-xs font-mono text-foreground/30 uppercase tracking-[0.35em]"
             style={{ textIndent: "0.35em" }}

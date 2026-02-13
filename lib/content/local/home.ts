@@ -5,8 +5,8 @@ const content: Record<Locale, HomeContent> = {
   de: {
     tagline: "Neue Elektronische Organisation für Nachtkultur",
     quote:
-      "Die Mauern mögen enger werden, doch der {{Dancefloor ist eine Idee}}, kein Ort.",
-    readManifestoLabel: "Zum Manifest",
+      "Mauern können weichen, doch {{das Dancefloor ist eine Haltung}}, kein Raum.",
+    readManifestoLabel: "Zum Manifesto",
   },
   en: {
     tagline: "New Electronic Organisation for Nightculture",

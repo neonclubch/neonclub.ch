@@ -190,8 +190,8 @@ const content: Record<Locale, ManifestoContent> = {
       },
     ],
     closingLines: [
-      "Die Wände mögen sich verschieben, doch die {{Tanzfläche ist eine Idee}}, kein Ort.",
-      "NEON ist das {{Licht, das sich nicht löschen lässt}}.",
+      "Mauern können weichen, doch {{das Dancefloor ist eine Haltung}}, kein Raum.",
+      "NEON ist das Licht, das {{niemals verlischt}}."
     ],
   },
 };
