@@ -3,6 +3,7 @@
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 
+import { saveLocale } from "@/i18n/client";
 import { locales, type Locale } from "@/i18n/config";
 
 export function LocaleSwitcher() {
@@ -35,6 +36,7 @@ export function LocaleSwitcher() {
                 : "text-foreground/30 hover:text-neon"
             }`}
             href={getLocalePath(loc)}
+            onClick={() => saveLocale(loc)}
           >
             {loc}
           </NextLink>
