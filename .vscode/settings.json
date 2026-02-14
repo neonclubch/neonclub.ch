@@ -2,5 +2,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "tailwindCSS.includeLanguages": {
     "plaintext": "javascript"
-  }
+  },
+  "simpleBrowser.focusLockIndicator.enabled": false
 }
