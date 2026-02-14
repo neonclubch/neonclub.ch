@@ -2,25 +2,36 @@
 
 import type { DonateContent } from "@/lib/content/types";
 import type { Locale } from "@/i18n/config";
-import type { DonationAmount, DonationMode } from "@/config/donations";
 
 import { useState } from "react";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
+import { Spinner } from "@heroui/react";
 import clsx from "clsx";
 
-import { donationTiers, priceIds } from "@/config/donations";
-import { createCheckoutSession } from "@/helpers/stripeApi";
+import {
+  createCheckoutSession,
+  useDonationTiers,
+  type DonationTier,
+} from "@/helpers/stripeApi";
+
+type DonationMode = "recurring" | "onetime";
 
 interface Props {
   content: DonateContent;
   locale: Locale;
 }
 
+function formatAmount(amount: number): string {
+  return `CHF ${amount}.—`;
+}
+
 export function DonationPicker({ content, locale }: Props) {
   const [mode, setMode] = useState<DonationMode>("recurring");
-  const [loading, setLoading] = useState<DonationAmount | null>(null);
+  const [loadingPriceId, setLoadingPriceId] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  const { data: tiers, isLoading, isError } = useDonationTiers();
 
   // Check for ?success=true in the URL on mount
   if (typeof window !== "undefined" && !success) {
@@ -31,15 +42,14 @@ export function DonationPicker({ content, locale }: Props) {
     }
   }
 
-  async function handleDonate(amount: DonationAmount) {
-    setLoading(amount);
+  async function handleDonate(tier: DonationTier) {
+    setLoadingPriceId(tier.priceId);
 
     try {
       const stripeMode = mode === "recurring" ? "subscription" : "payment";
-      const priceId = priceIds[mode][amount];
 
       const url = await createCheckoutSession({
-        priceId,
+        priceId: tier.priceId,
         mode: stripeMode,
         locale,
         successUrl: `${window.location.origin}/${locale}/donate?success=true`,
@@ -48,13 +58,13 @@ export function DonationPicker({ content, locale }: Props) {
 
       window.location.href = url;
     } catch {
-      setLoading(null);
+      setLoadingPriceId(null);
     }
   }
 
   if (success) {
     return (
-      <Card radius="sm" className="border border-neon/30 bg-transparent">
+      <Card className="border border-neon/30 bg-transparent" radius="sm">
         <CardBody className="px-8 py-10 text-center">
           <p className="text-lg text-neon font-mono uppercase tracking-widest mb-2">
             ✓
@@ -66,6 +76,24 @@ export function DonationPicker({ content, locale }: Props) {
       </Card>
     );
   }
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center py-16">
+        <Spinner color="success" size="lg" />
+      </div>
+    );
+  }
+
+  if (isError || !tiers) {
+    return (
+      <p className="text-sm text-red-400/80 py-8">
+        Could not load donation options. Please try again later.
+      </p>
+    );
+  }
+
+  const currentTiers = tiers[mode] ?? [];
 
   return (
     <div>
@@ -101,25 +129,25 @@ export function DonationPicker({ content, locale }: Props) {
 
       {/* Tier cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {donationTiers.map((tier) => {
-          const isLoading = loading === tier.amount;
+        {currentTiers.map((tier) => {
+          const isItemLoading = loadingPriceId === tier.priceId;
 
           return (
             <Card
-              key={tier.amount}
+              key={tier.priceId}
               isPressable
               className={clsx(
                 "border border-foreground/10 bg-transparent transition-all duration-300",
                 "hover:border-neon/60 hover:bg-neon/5",
-                isLoading && "opacity-60",
+                isItemLoading && "opacity-60",
               )}
-              isDisabled={loading !== null}
+              isDisabled={loadingPriceId !== null}
               radius="none"
-              onPress={() => handleDonate(tier.amount)}
+              onPress={() => handleDonate(tier)}
             >
               <CardBody className="px-6 py-10 text-center">
                 <span className="block text-2xl md:text-3xl font-bold text-foreground/90 mb-2 group-hover:text-neon transition-colors duration-300">
-                  {tier.label}
+                  {formatAmount(tier.amount)}
                 </span>
                 {mode === "recurring" && (
                   <span className="block text-xs font-mono text-foreground/30 uppercase tracking-widest">
@@ -127,7 +155,7 @@ export function DonationPicker({ content, locale }: Props) {
                   </span>
                 )}
                 <span className="block mt-6 font-mono text-xs uppercase tracking-widest text-foreground/25 group-hover:text-neon/60 transition-colors duration-300">
-                  {isLoading ? "…" : content.ctaLabel}
+                  {isItemLoading ? "…" : content.ctaLabel}
                 </span>
               </CardBody>
             </Card>

@@ -11,7 +11,7 @@ import {
 } from "./schemas.js";
 import { stripe } from "./stripe.js";
 import { createToken, verifyToken } from "./token.js";
-import { sendMagicLinkEmail } from "./email.js";
+import { sendMagicLinkEmail, isEmailEnabled } from "./email.js";
 
 const app = new Hono();
 
@@ -77,6 +77,10 @@ app.post(
   "/portal/request",
   arktypeValidator("json", portalRequestSchema),
   async (c) => {
+    if (!isEmailEnabled) {
+      return c.json({ error: "Email service is not configured." }, 503);
+    }
+
     const { email, locale, returnUrl } = c.req.valid("json");
 
     const customers = await stripe.customers.list({ email, limit: 1 });
@@ -137,6 +141,37 @@ app.get("/portal/verify", async (c) => {
   });
 
   return c.redirect(portalSession.url);
+});
+
+/**
+ * GET /donations
+ * Returns active donation products and their prices, queried by metadata.
+ * Products must have metadata: category=donation, donation_type=recurring|onetime.
+ */
+app.get("/donations", async (c) => {
+  const products = await stripe.products.search({
+    query: "metadata['category']:'donation' AND active:'true'",
+  });
+
+  const tiers: Record<string, { priceId: string; amount: number }[]> = {};
+
+  for (const product of products.data) {
+    const type = product.metadata.donation_type;
+    const prices = await stripe.prices.list({
+      product: product.id,
+      active: true,
+      currency: "chf",
+    });
+
+    tiers[type] = prices.data
+      .sort((a, b) => (a.unit_amount ?? 0) - (b.unit_amount ?? 0))
+      .map((p) => ({
+        priceId: p.id,
+        amount: (p.unit_amount ?? 0) / 100,
+      }));
+  }
+
+  return c.json(tiers);
 });
 
 // One-line adapter: Hono fetch -> Node.js (req, res) -> functions-framework

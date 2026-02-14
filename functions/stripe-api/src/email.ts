@@ -1,10 +1,15 @@
 import { Resend } from "resend";
 
-if (!process.env.RESEND_API_KEY) {
-  console.warn("RESEND_API_KEY not set — magic link emails will fail.");
-}
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+/** Whether email sending is available. */
+export const isEmailEnabled = resend !== null;
+
+if (!isEmailEnabled) {
+  console.warn("RESEND_API_KEY not set — magic link emails are disabled.");
+}
 
 const templates = {
   de: {
@@ -54,6 +59,10 @@ export async function sendMagicLinkEmail(params: {
   magicLink: string;
   locale: "de" | "en";
 }): Promise<void> {
+  if (!resend) {
+    throw new Error("Email sending is disabled (RESEND_API_KEY not set).");
+  }
+
   const t = templates[params.locale];
 
   await resend.emails.send({

@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "gcp-build": "tsc",
-    "dev": "tsx watch src/dev.ts",
+    "dev": "tsx watch --env-file=.env.local src/dev.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

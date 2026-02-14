@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const STRIPE_API_URL = process.env.NEXT_PUBLIC_STRIPE_API_URL;
 
@@ -47,4 +48,35 @@ export async function requestPortalLink(
   params: PortalRequestParams,
 ): Promise<void> {
   await stripeClient.post("/portal/request", params);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Donation tiers                                                     */
+/* ------------------------------------------------------------------ */
+
+export interface DonationTier {
+  priceId: string;
+  amount: number;
+}
+
+export type DonationTiers = Record<"recurring" | "onetime", DonationTier[]>;
+
+/**
+ * Fetches active donation products and prices from the Cloud Function.
+ */
+export async function fetchDonationTiers(): Promise<DonationTiers> {
+  const { data } = await stripeClient.get<DonationTiers>("/donations");
+
+  return data;
+}
+
+/**
+ * React Query hook for donation tiers. Cached for 5 minutes.
+ */
+export function useDonationTiers() {
+  return useQuery({
+    queryKey: ["donation-tiers"],
+    queryFn: fetchDonationTiers,
+    staleTime: 5 * 60 * 1000,
+  });
 }

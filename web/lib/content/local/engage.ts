@@ -54,7 +54,7 @@ const content: Record<Locale, EngageContent> = {
         title: "Souveränität durch Kapital",
         body: "Finanzielle Autonomie ist das Fundament für die Evolution der elektronischen Szene. Für jene, welche diese Vision teilen, aber von der Peripherie aus agieren möchten, schafft eine Spende (ab CHF 35.–) das notwendige Kapital für neue räumliche und zeitliche Modelle. Diese Mittel werden genutzt, um Standorte und Technologien zu sichern, die soziale Tiefe und akustische Qualität in den Vordergrund stellen – damit unsere Kultur ein funktionaler, geachteter und lebensnotwendiger Teil der Stadt bleibt.",
         cta: {
-          label: "UNTERSTÜTZEN",
+          label: "SPENDEN",
           href: "/de/donate",
         },
       },
