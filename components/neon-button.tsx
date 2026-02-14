@@ -1,32 +1,21 @@
 import { Button, ButtonProps } from "@heroui/button";
-import { tv } from "tailwind-variants";
+import clsx from "clsx";
 
-const neonButton = tv({
-  base: "font-mono text-xs uppercase tracking-widest transition-all duration-300",
-  variants: {
-    neonStyle: {
-      bordered:
-        "border-neon/60 text-neon hover:bg-neon/10 hover:border-neon",
-    },
-  },
-  defaultVariants: {
-    neonStyle: "bordered",
-  },
-});
-
-export type NeonButtonProps = ButtonProps & {
-  neonStyle?: "bordered";
-};
+const base = "font-mono text-xs uppercase tracking-widest transition-all duration-300";
+const neon = "border-neon/60 text-neon hover:bg-neon/10 hover:border-neon";
 
 export function NeonButton({
   className,
-  neonStyle = "bordered",
   variant = "bordered",
+  radius = "none",
+  isDisabled,
   ...props
-}: NeonButtonProps) {
+}: ButtonProps) {
   return (
     <Button
-      className={neonButton({ neonStyle, className })}
+      className={clsx(base, !isDisabled && neon, className)}
+      isDisabled={isDisabled}
+      radius={radius}
       variant={variant}
       {...props}
     />

@@ -44,11 +44,10 @@ export const Events: React.FC = () => {
         </div>
         <NeonButton
           as="a"
-          className="min-w-[100px] rounded-none"
+          className="min-w-[100px]"
           color={event.testmode || isPast ? "default" : "success"}
           href={event.public_url}
           isDisabled={event.testmode || isPast}
-          radius="none"
           rel="noopener noreferrer"
           size="sm"
           target="_blank"
