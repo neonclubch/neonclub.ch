@@ -17,10 +17,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.locale);
-  const url = `${siteConfig.url}/${params.locale}`;
+  const locale = (await params).locale as Locale;
+  const dictionary = await getDictionary(locale);
+  const url = `${siteConfig.url}/${locale}`;
 
   return {
     title: {
@@ -31,7 +32,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteConfig.url),
     openGraph: {
       type: "website",
-      locale: params.locale === "de" ? "de_CH" : "en",
+      locale: locale === "de" ? "de_CH" : "en",
       url,
       siteName: siteConfig.name,
       title: `${siteConfig.name} — ${dictionary.meta.description}`,
@@ -65,11 +66,12 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }) {
+  const locale = (await params).locale as Locale;
   const dictionary = await getDictionary(locale);
 
   return (

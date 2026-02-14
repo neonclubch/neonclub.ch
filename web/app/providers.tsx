@@ -12,9 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HeroUIProvider navigate={router.push}>
-        {children}
-      </HeroUIProvider>
+      <HeroUIProvider navigate={router.push}>{children}</HeroUIProvider>
     </QueryClientProvider>
   );
 }

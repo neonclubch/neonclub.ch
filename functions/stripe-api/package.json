@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "gcp-build": "tsc",
     "dev": "tsx watch src/dev.ts",
     "typecheck": "tsc --noEmit"
   },

@@ -6,8 +6,7 @@ const neonLink = tv({
   variants: {
     neonStyle: {
       cta: "inline-block border border-neon/60 px-8 py-3 text-xs text-neon leading-none hover:bg-neon/10 hover:border-neon no-underline",
-      footer:
-        "text-[0.625rem] text-foreground/20 hover:text-neon",
+      footer: "text-[0.625rem] text-foreground/20 hover:text-neon",
     },
   },
   defaultVariants: {
@@ -24,7 +23,5 @@ export function NeonLink({
   neonStyle = "cta",
   ...props
 }: NeonLinkProps) {
-  return (
-    <Link className={neonLink({ neonStyle, className })} {...props} />
-  );
+  return <Link className={neonLink({ neonStyle, className })} {...props} />;
 }

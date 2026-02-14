@@ -3,6 +3,7 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 const EVENTS_BASE_URL =
   "https://europe-west6-neo-tickets-shop.cloudfunctions.net/neo-event-api";
+
 export const pretixClient = axios.create({
   baseURL: EVENTS_BASE_URL,
 });
@@ -26,7 +27,7 @@ export function getEvents(options: Parameters<typeof useQuery>[0]) {
 }
 
 export const useApiGetEvents = (
-  queryParams: AxiosRequestConfig["params"] = {}
+  queryParams: AxiosRequestConfig["params"] = {},
 ) =>
   useQuery({
     queryKey: ["events", queryParams],

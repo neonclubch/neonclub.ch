@@ -25,11 +25,11 @@ export const Rsvp: React.FC<RsvpProps> = ({
     <div className={className}>
       <Button
         as="a"
-        href={`${formLink}?id=${data.id}&firstName=${data.firstName}&lastName=${data.lastName || ""}`}
-        target="_blank"
-        rel="noopener noreferrer"
         color={buttonColor || "success"}
+        href={`${formLink}?id=${data.id}&firstName=${data.firstName}&lastName=${data.lastName || ""}`}
         radius="full"
+        rel="noopener noreferrer"
+        target="_blank"
         variant={buttonVariant || "solid"}
       >
         {buttonText || "RSVP"}

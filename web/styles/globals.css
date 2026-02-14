@@ -1,10 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "../hero.ts";
+
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: sans-serif;
+  --font-mono: monospace;
+  --font-display: sans-serif;
+  --color-neon: rgb(255 49 49);
+  --color-surface: #0A0A0A;
+  --tracking-display: 0.25em;
+}
 
 @layer base {
   :root {
-    /* Single source of truth for the neon accent — matches tailwind.config.js */
+    /* Raw RGB channels for custom CSS (shadows, gradients, filters) */
     --neon: 255 49 49;
   }
 

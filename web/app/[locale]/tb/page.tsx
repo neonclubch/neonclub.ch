@@ -8,13 +8,14 @@ import { Markdown } from "@/components/markdown";
 import { Section } from "@/components/section";
 import { Rsvp } from "@/components/rsvp";
 
-type Props = { params: { locale: Locale } };
+type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: "TechnoBosco 2025" };
 }
 
-export default async function TbPage({ params: { locale } }: Props) {
+export default async function TbPage({ params }: Props) {
+  const locale = (await params).locale as Locale;
   const content = await getContent("tb", locale);
 
   return (

@@ -21,16 +21,10 @@ export const Footer: React.FC<FooterProps> = ({ locale, dictionary }) => {
           NEON &copy; {new Date().getFullYear()}
         </span>
         <div className="flex items-center gap-6">
-          <NeonLink
-            neonStyle="footer"
-            href={`/${locale}/impressum`}
-          >
+          <NeonLink href={`/${locale}/impressum`} neonStyle="footer">
             {dictionary.footer.impressum}
           </NeonLink>
-          <NeonLink
-            neonStyle="footer"
-            href={`/${locale}/privacy-policy`}
-          >
+          <NeonLink href={`/${locale}/privacy-policy`} neonStyle="footer">
             {dictionary.footer.privacy}
           </NeonLink>
           <Link

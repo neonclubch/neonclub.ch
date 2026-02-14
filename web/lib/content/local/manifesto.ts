@@ -9,7 +9,8 @@ const content: Record<Locale, ManifestoContent> = {
         number: "I",
         verb: "WE OBSERVE",
         title: "The Systemic Erosion",
-        intro: "Structural and social shifts are narrowing the parameters of our shared spaces.",
+        intro:
+          "Structural and social shifts are narrowing the parameters of our shared spaces.",
         points: [
           {
             title: "The Vanishing Void",

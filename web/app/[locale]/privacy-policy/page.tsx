@@ -5,15 +5,17 @@ import { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { Markdown } from "@/components/markdown";
 
-type Props = { params: { locale: Locale } };
+type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const content = await getContent("privacy-policy", params.locale);
+  const locale = (await params).locale as Locale;
+  const content = await getContent("privacy-policy", locale);
 
   return { title: content.title };
 }
 
-export default async function PrivacyPolicyPage({ params: { locale } }: Props) {
+export default async function PrivacyPolicyPage({ params }: Props) {
+  const locale = (await params).locale as Locale;
   const content = await getContent("privacy-policy", locale);
 
   return (

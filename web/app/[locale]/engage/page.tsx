@@ -6,13 +6,14 @@ import { getContent } from "@/lib/content";
 import { Markdown } from "@/components/markdown";
 import { NeonLink } from "@/components/neon-link";
 
-type Props = { params: { locale: Locale } };
+type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const content = await getContent("engage", params.locale);
+  const locale = (await params).locale as Locale;
+  const content = await getContent("engage", locale);
 
   return {
-    title: params.locale === "de" ? "Mitwirken" : "Engage",
+    title: locale === "de" ? "Mitwirken" : "Engage",
     description: content.intro.slice(0, 160),
   };
 }
@@ -27,7 +28,8 @@ function CtaButton({ label, href }: { label: string; href: string }) {
   );
 }
 
-export default async function EngagePage({ params: { locale } }: Props) {
+export default async function EngagePage({ params }: Props) {
+  const locale = (await params).locale as Locale;
   const content = await getContent("engage", locale);
 
   return (
@@ -57,10 +59,7 @@ export default async function EngagePage({ params: { locale } }: Props) {
               <Markdown content={section.body} />
             </div>
             {section.cta && (
-              <CtaButton
-                href={section.cta.href}
-                label={section.cta.label}
-              />
+              <CtaButton href={section.cta.href} label={section.cta.label} />
             )}
           </section>
         ))}

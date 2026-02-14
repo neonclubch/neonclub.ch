@@ -1,8 +1,9 @@
 "use client";
 
-import { createContext, useContext, type ReactNode } from "react";
 import type { Dictionary } from "./getDictionary";
 import type { Locale } from "./config";
+
+import { createContext, useContext, type ReactNode } from "react";
 
 interface DictionaryContextValue {
   dictionary: Dictionary;
@@ -29,8 +30,10 @@ export function DictionaryProvider({
 
 export function useDictionary(): DictionaryContextValue {
   const ctx = useContext(DictionaryContext);
+
   if (!ctx) {
     throw new Error("useDictionary must be used within a DictionaryProvider");
   }
+
   return ctx;
 }

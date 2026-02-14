@@ -5,15 +5,18 @@ import { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { parseNeonMarkers } from "@/components/neon-text";
 
-type Props = { params: { locale: Locale } };
+type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const locale = (await params).locale as Locale;
+
   return {
-    title: params.locale === "de" ? "Manifest" : "Manifesto",
+    title: locale === "de" ? "Manifest" : "Manifesto",
   };
 }
 
-export default async function ManifestoPage({ params: { locale } }: Props) {
+export default async function ManifestoPage({ params }: Props) {
+  const locale = (await params).locale as Locale;
   const content = await getContent("manifesto", locale);
 
   return (
