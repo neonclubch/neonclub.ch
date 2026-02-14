@@ -19,9 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function CtaButton({ label, href }: { label: string; href: string }) {
+  const isExternal = href.startsWith("http");
+
   return (
     <div className="my-14">
-      <NeonLink isExternal href={href}>
+      <NeonLink href={href} isExternal={isExternal}>
         {label}
       </NeonLink>
     </div>

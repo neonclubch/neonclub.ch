@@ -1,0 +1,48 @@
+import { createHmac, timingSafeEqual } from "node:crypto";
+
+const SECRET = process.env.MAGIC_LINK_SECRET;
+const TOKEN_TTL_MS = 15 * 60 * 1000; // 15 minutes
+
+if (!SECRET) {
+  console.warn("MAGIC_LINK_SECRET not set — magic link tokens will fail.");
+}
+
+/**
+ * Create an HMAC-signed magic link token.
+ * Payload: email|expiry  →  signed with HMAC-SHA256.
+ */
+export function createToken(email: string): {
+  token: string;
+  email: string;
+  exp: string;
+} {
+  const exp = String(Date.now() + TOKEN_TTL_MS);
+  const data = `${email}|${exp}`;
+  const token = createHmac("sha256", SECRET!).update(data).digest("hex");
+
+  return { token, email, exp };
+}
+
+/**
+ * Verify an HMAC-signed magic link token.
+ * Returns true if the signature is valid and the token has not expired.
+ */
+export function verifyToken(
+  token: string,
+  email: string,
+  exp: string,
+): boolean {
+  if (Date.now() > Number(exp)) {
+    return false;
+  }
+
+  const data = `${email}|${exp}`;
+  const expected = createHmac("sha256", SECRET!).update(data).digest("hex");
+
+  // Constant-time comparison to prevent timing attacks
+  try {
+    return timingSafeEqual(Buffer.from(token), Buffer.from(expected));
+  } catch {
+    return false;
+  }
+}

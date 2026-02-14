@@ -60,6 +60,22 @@ export interface TbContent {
   contactEmail: string;
 }
 
+export interface DonateContent {
+  title: string;
+  subtitle: string;
+  recurringLabel: string;
+  onetimeLabel: string;
+  ctaLabel: string;
+  successMessage: string;
+  perYear: string;
+  manageTitle: string;
+  manageDescription: string;
+  manageEmailPlaceholder: string;
+  manageCta: string;
+  manageEmailSent: string;
+  manageNotFound: string;
+}
+
 /** Type-safe slug-to-content mapping. */
 export interface ContentMap {
   home: HomeContent;
@@ -69,4 +85,5 @@ export interface ContentMap {
   impressum: ImpressumContent;
   "privacy-policy": PrivacyPolicyContent;
   tb: TbContent;
+  donate: DonateContent;
 }
