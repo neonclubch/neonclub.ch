@@ -39,7 +39,10 @@ export function NeonHero({
         {typeof title === "string" ? (
           <h1
             className="text-7xl md:text-8xl lg:text-[10rem] font-display font-black tracking-display leading-none text-transparent neon-flicker-glow"
-            style={{ WebkitTextStroke: "1.5px rgb(var(--neon))", textIndent: "0.25em" }}
+            style={{
+              WebkitTextStroke: "1.5px rgb(var(--neon))",
+              textIndent: "0.25em",
+            }}
           >
             {title}
           </h1>

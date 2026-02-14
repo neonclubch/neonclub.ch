@@ -27,9 +27,9 @@ export default async function ContactPage({ params: { locale } }: Props) {
       </section>
       <section className="flex flex-grow">
         <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 lg:max-w-5xl px-6">
-          <h3 className="text-lg font-semibold mt-10 mb-3 text-foreground/90">
+          <h2 className="text-lg font-semibold mt-10 mb-3 text-foreground/90">
             {content.subtitle}
-          </h3>
+          </h2>
           <Markdown content={content.body} />
         </div>
       </section>

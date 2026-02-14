@@ -2,6 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "NEON",
+  url: "https://neonclub.ch",
   /** Nav items with translation keys (labels come from dictionary). */
   navItems: [
     {
@@ -13,8 +14,8 @@ export const siteConfig = {
       href: "/manifesto",
     },
     {
-      key: "membership",
-      href: "/membership",
+      key: "engage",
+      href: "/engage",
     },
   ],
   navMenuItems: [],

@@ -20,14 +20,16 @@ export interface ManifestoContent {
   closingLines: string[];
 }
 
-export interface MembershipContent {
+export interface EngageContent {
   title: string;
   intro: string;
   sections: {
+    number: string;
+    verb: string;
     title: string;
     body: string;
+    cta?: { label: string; href: string };
   }[];
-  ctaLabel: string;
   footerLines: string[];
 }
 
@@ -62,7 +64,7 @@ export interface TbContent {
 export interface ContentMap {
   home: HomeContent;
   manifesto: ManifestoContent;
-  membership: MembershipContent;
+  engage: EngageContent;
   contact: ContactContent;
   impressum: ImpressumContent;
   "privacy-policy": PrivacyPolicyContent;

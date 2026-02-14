@@ -19,9 +19,9 @@ export default async function ManifestoPage({ params: { locale } }: Props) {
   return (
     <article className="py-16 md:py-28 px-6">
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs font-mono text-foreground/20 uppercase tracking-widest mb-16 md:mb-24">
+        <h1 className="text-xs font-mono text-foreground/20 uppercase tracking-widest mb-16 md:mb-24">
           {content.subtitle}
-        </p>
+        </h1>
 
         {content.sections.map((section) => (
           <ManifestoSection

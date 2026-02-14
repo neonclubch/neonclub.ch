@@ -9,27 +9,27 @@ const content: Record<Locale, ManifestoContent> = {
         number: "I",
         verb: "WE OBSERVE",
         title: "The Systemic Erosion",
-        intro: "Structural changes are limiting the freedom of our culture.",
+        intro: "Structural and social shifts are narrowing the parameters of our shared spaces.",
         points: [
           {
             title: "The Vanishing Void",
-            text: 'We observe the disappearance of "urban vacuums"—those marginal, industrial voids where low-cost freedom once allowed for radical electronic experimentation.',
+            text: 'We observe the disappearance of "urban vacuums"—the marginal industrial zones that once provided the spatial agency required for cultural experimentation.',
           },
           {
             title: "Regulatory Friction",
-            text: "We observe a growing imbalance where noise regulations and urban development prioritize silence over the vital, non-negotiable sonic rhythm of the night.",
+            text: "We observe an urban policy that prioritizes sterile silence over the vital, functional rhythm of the city’s sonic identity.",
+          },
+          {
+            title: "Temporal Monoculture",
+            text: "We observe a rigid adherence to late-night clubbing structures that fails to account for evolving urban lifestyles and the post-pandemic shift toward conscious, daytime, or early-evening engagement.",
           },
           {
             title: "Economic Displacement",
-            text: "We observe how rising real estate pressures convert subcultural sanctuaries into exclusive spaces, pushing the underground further to the fringes of the city.",
+            text: "We observe how real estate pressures convert cultural sanctuaries into high-yield assets, forcing the community to justify its existence through purely financial metrics.",
           },
           {
-            title: "Cultural Standardization",
-            text: "We observe a shift toward safe, commercialized formats that favor high-profit spectacles over the diverse, unpredictable beauty of the avant-garde.",
-          },
-          {
-            title: "The Loss of Rhythmic Memory",
-            text: "We observe how the closing of permanent spaces breaks the continuity of our community, replacing deep-rooted culture with fleeting, disconnected events.",
+            title: "The Loss of Continuity",
+            text: "We observe how the closing of permanent spaces erodes our collective memory, replacing deep cultural roots with disconnected, transactional events.",
           },
         ],
       },
@@ -38,56 +38,56 @@ const content: Record<Locale, ManifestoContent> = {
         verb: "WE ACKNOWLEDGE",
         title: "The Alchemy of the Collective",
         intro:
-          "The night is more than entertainment; it is a sociological necessity. It is a space where the rigid structures of the day dissolve into a shared electronic frequency.",
+          "Electronic music culture is a sociological necessity. We recognize that the ritual of the dancefloor must evolve to remain relevant to shifting urban rhythms.",
         points: [
           {
-            title: "The Radical Melting Pot",
-            text: "We acknowledge the dancefloor as a site of true social mixing—where diverse backgrounds and orientations synchronize to a single synthetic pulse.",
+            title: "The Authentic Melting Pot",
+            text: "We acknowledge the dancefloor as a site of social synchronization—where diverse backgrounds align to a single frequency, regardless of the hour.",
           },
           {
-            title: "Sanctuaries of Identity",
-            text: "We celebrate these spaces as essential havens for marginalized voices and communities, where identity is expressed and collective power is forged.",
+            title: "The Conscious Ritual",
+            text: "We acknowledge that the value of the electronic experience is not tied to excess. We respect the shift toward health-conscious participation and sustainable social habits.",
           },
           {
-            title: "The Rise of the Prosumer",
-            text: 'We reject passive consumption. In our world, every individual is a "prosumer" who co-creates the energy, the safety, and the cultural depth of the night.',
+            title: "Collective Responsibility",
+            text: "We acknowledge that the safety, energy, and depth of our culture are not products to be consumed, but are co-created by every person in the room.",
           },
           {
-            title: "Intangible Sonic Heritage",
-            text: "We acknowledge that electronic music culture is a living heritage that must be practiced physically to remain vibrant, untamed, and relevant.",
+            title: "Living Sonic Heritage",
+            text: "We acknowledge electronic music as an intangible heritage that requires physical practice and high-quality environments to survive.",
           },
           {
-            title: "The Spark of Serendipity",
-            text: "We celebrate the social magic that happens when people collide in unregulated, open environments, free from the curation of digital algorithms.",
+            title: "The Value of Presence",
+            text: "We celebrate the magic of physical collision in a digital age—creating spaces where human connection is the primary objective.",
           },
         ],
       },
       {
         number: "III",
         verb: "WE STRIVE",
-        title: "The Path Forward",
+        title: "Strategic Implementation",
         intro:
-          "The walls of a venue are temporary, but our culture is fluid. We build the infrastructure for a resilient, independent, and unbound future.",
+          "We build professional, resilient infrastructures that operate within the city’s reality to secure a future for electronic culture.",
         points: [
           {
-            title: "To Reclaim Urban Space",
-            text: "We strive to decouple culture from fixed real estate, utilizing nomadic sound systems and tactical interventions to activate the city's hidden zones.",
+            title: "To Redefine the Format",
+            text: "We strive to design cultural experiences that respect new constraints; by redefining temporal boundaries and spatial constraints, we ensure social mixing remains accessible and relevant.",
           },
           {
-            title: "To Design for Inclusivity",
-            text: "We strive to create formats that intentionally bridge social divides, ensuring the dancefloor remains a democratic bridge for all.",
+            title: "New Spatial Approaches",
+            text: "We strive to find new approaches to activate underutilized spaces, decoupling culture from traditional real estate through agile, professional execution.",
           },
           {
-            title: "To Democratize Production",
-            text: "We utilize accessible technology to lower barriers, ensuring that our culture remains a participatory act driven by the collective labor of the community.",
+            title: "Sustainable Cultural Models",
+            text: "We build community-supported frameworks that prioritize long-term sociological impact over short-term commercial turnover.",
           },
           {
-            title: "Innovation through Resistance",
-            text: "We respond to spatial and regulatory limitations with creative agility, developing innovative formats and agile, invisible gatherings.",
+            title: "Inclusive Design",
+            text: "We strive to create formats that intentionally bridge social divides, maintaining the dancefloor as a democratic and inclusive communal space.",
           },
           {
-            title: "Subcultural Sovereignty",
-            text: "We strive for creative independence, building community-supported models that prioritize sociological impact over commercial turnover.",
+            title: "Collective Sovereignty",
+            text: "We recruit a force of strategic thinkers and operators to ENGAGE / MITWIRKEN in building an independent, standard-setting cultural ecosystem.",
           },
         ],
       },
@@ -104,27 +104,27 @@ const content: Record<Locale, ManifestoContent> = {
         verb: "WIR BEOBACHTEN",
         title: "Die systematische Erosion",
         intro:
-          "Strukturelle Veränderungen schränken die Freiheit unserer Kultur ein.",
+          "Strukturelle und gesellschaftliche Veränderungen schränken den Spielraum unserer gemeinsamen Räume ein.",
         points: [
           {
             title: "Das schwindende Vakuum",
-            text: "Wir beobachten das Verschwinden „urbaner Vakuums“ – jener marginalen Industriebrachen, die den akustischen Freiraum für radikale elektronische Experimente boten.",
+            text: "Wir beobachten das Verschwinden „urbaner Vakuums“ – jener marginalen Räume, die den nötigen Handlungsspielraum für kulturelle Experimente boten.",
           },
           {
             title: "Regulatorische Reibung",
-            text: "Wir beobachten ein Ungleichgewicht, in dem Lärmschutz und Stadtentwicklung Stille über den lebensnotwendigen, klanglichen Rhythmus der Nacht stellen.",
+            text: "Wir beobachten eine Stadtentwicklung, die sterile Stille über den funktionalen, klanglichen Rhythmus der städtischen Identität stellt.",
+          },
+          {
+            title: "Temporale Monokultur",
+            text: "Wir beobachten eine starre Fixierung auf nächtliche Clubstrukturen, die moderne Lebensentwürfe und den Trend zu bewussteren Formaten am Tag oder frühen Abend ignoriert.",
           },
           {
             title: "Ökonomische Verdrängung",
-            text: "Wir beobachten, wie Immobilienfaktoren subkulturelle Zufluchtsorte in exklusive Räume verwandeln und den Untergrund an den Rand der Stadt drängen.",
+            text: "Wir beobachten, wie Immobilienfaktoren kulturelle Zufluchtsorte in Renditeobjekte verwandeln und die Gemeinschaft zwingen, ihren Wert rein finanziell zu rechtfertigen.",
           },
           {
-            title: "Kulturelle Standardisierung",
-            text: "Wir beobachten einen Trend zu kommerzialisierten Formaten, die kurzfristigen Profit über die unvorhersehbare Schönheit der Avantgarde stellen.",
-          },
-          {
-            title: "Verlust des rhythmischen Gedächtnisses",
-            text: "Wir beobachten, wie die Schließung fester Orte die Kontinuität unserer Gemeinschaft bricht und tiefe Verwurzelung durch flüchtige Events ersetzt wird.",
+            title: "Verlust der Kontinuität",
+            text: "Wir beobachten, wie die Schließung fester Orte unser kollektives Gedächtnis erodiert und tiefe Verwurzelung durch flüchtige, transaktionale Events ersetzt wird.",
           },
         ],
       },
@@ -133,56 +133,56 @@ const content: Record<Locale, ManifestoContent> = {
         verb: "WIR ANERKENNEN",
         title: "Die Alchemie des Kollektivs",
         intro:
-          "Die Nacht ist mehr als Unterhaltung; sie ist eine soziologische Notwendigkeit – ein Raum, in dem starre Tagesstrukturen in einer gemeinsamen elektronischen Frequenz zerfließen.",
+          "Die elektronische Musikkultur ist eine soziologische Notwendigkeit. Wir erkennen an, dass sich das Ritual der Tanzfläche weiterentwickeln muss, um für sich wandelnde urbane Rhythmen relevant zu bleiben.",
         points: [
           {
-            title: "Der radikale Schmelztiegel",
-            text: "Wir anerkennen die Tanzfläche als Ort echter sozialer Durchmischung, an dem alle Teilnehmenden zu einem einzigen synthetischen Puls verschmelzen.",
+            title: "Der authentische Schmelztiegel",
+            text: "Wir anerkennen die Tanzfläche als Ort sozialer Synchronisation, an dem Menschen unterschiedlicher Herkunft zu einem gemeinsamen Puls finden – unabhängig von der Uhrzeit.",
           },
           {
-            title: "Refugien der Identität",
-            text: "Wir feiern diese Räume als essentielle Schutzräume für marginalisierte Stimmen und Communities, in denen Identität gelebt und kollektive Stärke geschmiedet wird.",
+            title: "Das bewusste Ritual",
+            text: "Wir anerkennen, dass der Wert der elektronischen Erfahrung nicht an Exzess gebunden ist. Wir respektieren den Wunsch nach einem gesundheitsbewussten und nachhaltigen Sozialleben.",
           },
           {
-            title: "Die Ära der Prosumenten",
-            text: "Wir lehnen passiven Konsum ab. In unserer Welt ist jede:r Einzelne ein „Prosument“, der die Energie, die Sicherheit und die kulturelle Tiefe der Nacht mitgestaltet.",
+            title: "Kollektive Verantwortung",
+            text: "Wir anerkennen, dass Sicherheit, Energie und Tiefe unserer Kultur keine Konsumgüter sind, sondern von jedem Einzelnen im Raum mitgestaltet werden.",
           },
           {
-            title: "Immaterielles klangliches Erbe",
-            text: "Die elektronische Musikkultur ist ein lebendiges Erbe, das physisch praktiziert werden muss, um rhythmisch wild, ungezähmt und relevant zu bleiben.",
+            title: "Lebendiges klangliches Erbe",
+            text: "Die elektronische Musikkultur ist ein immaterielles Erbe, das physische Praxis und hochwertige Umgebungen braucht, um zu überdauern.",
           },
           {
-            title: "Der Funke der Serendipität",
-            text: "Wir feiern die soziale Magie, die entsteht, wenn Menschen in unregulierten, offenen Räumen frei von digitalen Algorithmen aufeinandertreffen.",
+            title: "Der Wert der Präsenz",
+            text: "Wir feiern die Magie der physischen Begegnung im digitalen Zeitalter – wir schaffen Räume, in denen menschliche Verbindung das primäre Ziel ist.",
           },
         ],
       },
       {
         number: "III",
         verb: "WIR STREBEN",
-        title: "Der Weg nach vorn",
+        title: "Strategische Umsetzung",
         intro:
-          "Die Wände eines Ortes sind temporär, doch unsere Kultur ist flüssig. Wir bauen die Infrastruktur für eine resiliente, unabhängige und freie Zukunft.",
+          "Wir bauen professionelle, resiliente Infrastrukturen innerhalb der städtischen Realität, um die Zukunft der elektronischen Kultur zu sichern.",
         points: [
           {
-            title: "Stadtraum zurückerobern",
-            text: "Wir entkoppeln Kultur von festen Immobilien und nutzen nomadische Soundsysteme sowie taktische Interventionen, um die verborgenen Zonen der Stadt zu aktivieren.",
+            title: "Formate neu definieren",
+            text: "Wir gestalten kulturelle Erlebnisse, welche die neuen Rahmenbedingungen respektieren. Durch die Neudefinition zeitlicher Grenzen und örtlicher Parameter bleibt die soziale Durchmischung zugänglich und relevant.",
           },
           {
-            title: "Inklusivität gestalten",
-            text: "Wir schaffen Formate, die bewusst soziale Schichten mischen und die Tanzfläche als demokratische Brücke für alle erhalten.",
+            title: "Neue räumliche Ansätze",
+            text: "Wir suchen neue Ansätze, um ungenutzte Flächen zu aktivieren und Kultur durch agiles, professionelles Handeln von traditionellen Immobilienzwängen zu entkoppeln.",
           },
           {
-            title: "Teilhabe demokratisieren",
-            text: "Wir nutzen zugängliche Technologien, um Hürden abzubauen, damit unsere Kultur ein gemeinschaftliches Projekt bleibt, getragen von der Arbeit des Kollektivs.",
+            title: "Nachhaltige Kulturmodelle",
+            text: "Wir entwickeln gemeinschaftsgetragene Strukturen, die langfristige soziologische Wirkung über kurzfristigen kommerziellen Profit stellen.",
           },
           {
-            title: "Innovation durch Widerstand",
-            text: "Wir antworten auf räumliche und regulatorische Grenzen mit kreativer Agilität und entwickeln neue Formate sowie unsichtbare Zusammenkünfte.",
+            title: "Inklusives Design",
+            text: "Wir schaffen Formate, die bewusst soziale Schichten mischen und die Tanzfläche als demokratischen und inklusiven Gemeinschaftsraum erhalten.",
           },
           {
-            title: "Subkulturelle Souveränität",
-            text: "Wir streben nach kreativer Unabhängigkeit und bauen gemeinschaftsgetragene Modelle auf, die soziale Wirkung über kommerziellen Profit stellen.",
+            title: "Kollektive Souveränität",
+            text: "Wir versammeln strategische Denker und Macher, um sich zu ENGAGIEREN / MITWIRKEN und gemeinsam ein unabhängiges Kultur-Ökosystem aufzubauen.",
           },
         ],
       },

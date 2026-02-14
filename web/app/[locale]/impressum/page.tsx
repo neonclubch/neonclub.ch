@@ -19,6 +19,9 @@ export default async function ImpressumPage({ params: { locale } }: Props) {
   return (
     <section className="flex flex-grow">
       <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 lg:max-w-5xl px-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
+          {content.title}
+        </h1>
         <Markdown content={content.body} />
       </div>
     </section>

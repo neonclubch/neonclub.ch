@@ -1,11 +1,12 @@
 {
   "meta": {
-    "description": "Neue Elektronische Organisation für Nachtkultur"
+    "description": "Neue Elektronische Organisation für Nachtkultur",
+    "ogDescription": "NEON is a collective defending electronic music culture as a space for human connection, inclusion, and community. The dancefloor is an idea, not a location."
   },
   "nav": {
     "home": "Home",
     "manifesto": "Manifesto",
-    "membership": "Engage"
+    "engage": "Engage"
   },
   "footer": {
     "impressum": "Impressum",
