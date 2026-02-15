@@ -7,6 +7,6 @@
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
-    "deploy:stripe-api": "gcloud functions deploy neo-stripe-api --project=neo-tickets-shop --gen2 --runtime=nodejs22 --region=europe-west6 --source=functions/stripe-api --entry-point=stripeApi --trigger-http --allow-unauthenticated --env-vars-file=functions/stripe-api/env.yaml --memory=256Mi --max-instances=10"
+    "deploy:stripe-api": "gcloud functions deploy neo-stripe-api --project=neo-tickets-shop --gen2 --runtime=nodejs22 --region=europe-west6 --source=functions/stripe-api --entry-point=stripeApi --trigger-http --allow-unauthenticated --env-vars-file=functions/stripe-api/env.yaml --memory=256Mi --max-instances=1"
   }
 }

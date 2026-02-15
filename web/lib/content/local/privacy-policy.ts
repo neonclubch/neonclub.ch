@@ -1,11 +1,16 @@
-import type { PrivacyPolicyContent } from "../types";
+import type { PageContent } from "../types";
 import type { Locale } from "@/i18n/config";
 
-const content: Record<Locale, PrivacyPolicyContent> = {
+const content: Record<Locale, PageContent> = {
   en: {
-    title: "Privacy Policy",
-    lastUpdated: "03.07.2024",
-    body: `Transparent handling of personal data is very important to us. This data protection statement provides information on what personal data we collect, for what purpose and to whom we pass it on. We regularly review and update this privacy policy to ensure the highest level of transparency.
+    meta: { title: "Privacy Policy" },
+    blocks: [
+      { component: "heading", text: "Privacy Policy", level: 1 },
+      { component: "metaText", text: "Last updated: 03.07.2024" },
+      { component: "spacer", size: "sm" },
+      {
+        component: "markdown",
+        content: `Transparent handling of personal data is very important to us. This data protection statement provides information on what personal data we collect, for what purpose and to whom we pass it on. We regularly review and update this privacy policy to ensure the highest level of transparency.
 
 ## 1. What services we use
 - Cart Functionality
@@ -153,11 +158,18 @@ If you do not want Google to associate the data collected through our web servic
 BrainBox Generators is a service of [BrainBox Solutions GmbH](https://brainbox.swiss/) to recognize all data protection-relevant services on a website and, among other things, to help with the creation of the privacy policy.
 
 No personal data is collected or processed in the process.`,
+      },
+    ],
   },
   de: {
-    title: "Datenschutzerklärung",
-    lastUpdated: "03.07.2024",
-    body: `Der transparente Umgang mit personenbezogenen Daten ist uns sehr wichtig. Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten wir erheben, zu welchem Zweck und an wen wir sie weitergeben. Wir überprüfen und aktualisieren diese Datenschutzerklärung regelmässig, um ein Höchstmass an Transparenz zu gewährleisten.
+    meta: { title: "Datenschutzerklärung" },
+    blocks: [
+      { component: "heading", text: "Datenschutzerklärung", level: 1 },
+      { component: "metaText", text: "Letzte Aktualisierung: 03.07.2024" },
+      { component: "spacer", size: "sm" },
+      {
+        component: "markdown",
+        content: `Der transparente Umgang mit personenbezogenen Daten ist uns sehr wichtig. Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten wir erheben, zu welchem Zweck und an wen wir sie weitergeben. Wir überprüfen und aktualisieren diese Datenschutzerklärung regelmässig, um ein Höchstmass an Transparenz zu gewährleisten.
 
 ## 1. Welche Dienste wir nutzen
 - Warenkorb-Funktionalität
@@ -287,14 +299,14 @@ Die im Rahmen der Warenkorb-Funktionalität erhobenen Daten werden auf unseren S
 Zur Verbesserung des Nutzererlebnisses verwendet unsere Website auch Cookies, die es ermöglichen, den Inhalt Ihres Warenkorbs zu speichern, auch wenn Sie die Website verlassen und später zurückkehren. Sie können diese Cookies jederzeit über Ihre Browsereinstellungen löschen oder blockieren.
 
 ### 4.3 Google Pay
-Für die Abwicklung von Zahlungsvorgängen auf unserer Website bieten wir unter anderem Google Pay als Zahlungsoption an, einen Dienst der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; \"Google\"). Google Pay ermöglicht es Ihnen, Zahlungen über die in Ihrem Google-Konto hinterlegten Zahlungsmethoden vorzunehmen, ohne diese Zahlungsinformationen erneut auf unserer Website eingeben zu müssen.
+Für die Abwicklung von Zahlungsvorgängen auf unserer Website bieten wir unter anderem Google Pay als Zahlungsoption an, einen Dienst der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; "Google"). Google Pay ermöglicht es Ihnen, Zahlungen über die in Ihrem Google-Konto hinterlegten Zahlungsmethoden vorzunehmen, ohne diese Zahlungsinformationen erneut auf unserer Website eingeben zu müssen.
 
 Wenn Sie sich für die Zahlung mit Google Pay entscheiden, werden bestimmte Transaktionsdaten, einschliesslich der Details des gekauften Produkts oder der Dienstleistung und des Transaktionsbetrags, an Google übermittelt. Darüber hinaus kann Google weitere Informationen erheben, wie z.B. Ihre IP-Adresse oder Informationen über Ihr Endgerät.
 
 Google verwendet diese Informationen zur Zahlungsabwicklung, Betrugsprävention und Verbesserung seiner Dienste. Dabei kann Google diese Informationen mit anderen Informationen kombinieren, die bei Ihrer Nutzung anderer Google-Dienste erhoben wurden.
 
 ### 4.4 Google Sign-in
-Auf unserer Website bieten wir die Möglichkeit, sich über Google Sign-in anzumelden, einen Dienst der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; \"Google\"). Google Sign-in ermöglicht es Ihnen, sich auf unserer Website mit Ihrem Google-Konto anzumelden, ohne einen separaten Benutzernamen und ein Passwort für unsere Website erstellen zu müssen.
+Auf unserer Website bieten wir die Möglichkeit, sich über Google Sign-in anzumelden, einen Dienst der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; "Google"). Google Sign-in ermöglicht es Ihnen, sich auf unserer Website mit Ihrem Google-Konto anzumelden, ohne einen separaten Benutzernamen und ein Passwort für unsere Website erstellen zu müssen.
 
 Bei der Anmeldung über Google Sign-in bittet Google Sie, bestimmte Berechtigungen zu erteilen, die uns den Zugriff auf ausgewählte Informationen in Ihrem Google-Konto ermöglichen. Dies kann Ihren Namen, Ihre E-Mail-Adresse und Ihr Profilbild umfassen. Diese Informationen werden verwendet, um Ihr Benutzerprofil auf unserer Website zu erstellen oder zu aktualisieren.
 
@@ -305,6 +317,8 @@ Wenn Sie nicht möchten, dass Google die über unseren Webdienst erhobenen Daten
 BrainBox Generators ist ein Dienst der [BrainBox Solutions GmbH](https://brainbox.swiss/) zur Erkennung aller datenschutzrelevanten Dienste auf einer Website und unterstützt unter anderem bei der Erstellung der Datenschutzerklärung.
 
 Dabei werden keine personenbezogenen Daten erhoben oder verarbeitet.`,
+      },
+    ],
   },
 };
 

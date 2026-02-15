@@ -3,7 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { Metadata } from "next";
 
 import { getContent } from "@/lib/content";
-import { Markdown } from "@/components/markdown";
+import { BlockRenderer } from "@/components/block-renderer";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = (await params).locale as Locale;
   const content = await getContent("contact", locale);
 
-  return { title: content.title };
+  return { title: content.meta.title };
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -19,22 +19,10 @@ export default async function ContactPage({ params }: Props) {
   const content = await getContent("contact", locale);
 
   return (
-    <>
-      <section className="min-h-[20vh] flex flex-grow items-center justify-center">
-        <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 px-6 items-center justify-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
-            {content.title}
-          </h1>
-        </div>
-      </section>
-      <section className="flex flex-grow">
-        <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 lg:max-w-5xl px-6">
-          <h2 className="text-lg font-semibold mt-10 mb-3 text-foreground/90">
-            {content.subtitle}
-          </h2>
-          <Markdown content={content.body} />
-        </div>
-      </section>
-    </>
+    <section className="flex flex-grow">
+      <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 lg:max-w-5xl px-6">
+        <BlockRenderer blocks={content.blocks} locale={locale} />
+      </div>
+    </section>
   );
 }

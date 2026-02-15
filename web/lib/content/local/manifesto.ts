@@ -1,14 +1,24 @@
-import type { ManifestoContent } from "../types";
+import type { PageContent } from "../types";
 import type { Locale } from "@/i18n/config";
 
-const content: Record<Locale, ManifestoContent> = {
+const content: Record<Locale, PageContent> = {
   en: {
-    subtitle: "A Manifesto for the Night",
-    sections: [
+    meta: {
+      title: "Manifesto",
+      description: "A Manifesto for the Night",
+    },
+    blocks: [
       {
+        component: "heading",
+        text: "A Manifesto for the Night",
+        level: 1,
+        variant: "mono",
+      },
+      {
+        component: "section",
         number: "I",
-        verb: "WE OBSERVE",
-        title: "The Systemic Erosion",
+        title: "WE OBSERVE",
+        subtitle: "The Systemic Erosion",
         intro:
           "Structural and social shifts are narrowing the parameters of our shared spaces.",
         points: [
@@ -18,7 +28,7 @@ const content: Record<Locale, ManifestoContent> = {
           },
           {
             title: "Regulatory Friction",
-            text: "We observe an urban policy that prioritizes sterile silence over the vital, functional rhythm of the city’s sonic identity.",
+            text: "We observe an urban policy that prioritizes sterile silence over the vital, functional rhythm of the city's sonic identity.",
           },
           {
             title: "Temporal Monoculture",
@@ -35,9 +45,10 @@ const content: Record<Locale, ManifestoContent> = {
         ],
       },
       {
+        component: "section",
         number: "II",
-        verb: "WE ACKNOWLEDGE",
-        title: "The Alchemy of the Collective",
+        title: "WE ACKNOWLEDGE",
+        subtitle: "The Alchemy of the Collective",
         intro:
           "Electronic music culture is a sociological necessity. We recognize that the ritual of the dancefloor must evolve to remain relevant to shifting urban rhythms.",
         points: [
@@ -64,11 +75,12 @@ const content: Record<Locale, ManifestoContent> = {
         ],
       },
       {
+        component: "section",
         number: "III",
-        verb: "WE STRIVE",
-        title: "Strategic Implementation",
+        title: "WE STRIVE",
+        subtitle: "Strategic Implementation",
         intro:
-          "We build professional, resilient infrastructures that operate within the city’s reality to secure a future for electronic culture.",
+          "We build professional, resilient infrastructures that operate within the city's reality to secure a future for electronic culture.",
         points: [
           {
             title: "To Redefine the Format",
@@ -92,24 +104,38 @@ const content: Record<Locale, ManifestoContent> = {
           },
         ],
       },
-    ],
-    closingLines: [
-      "The walls may shift, but the {{dancefloor is an idea}}, not a location.",
+      { component: "spacer", size: "lg" },
+      {
+        component: "neonQuote",
+        lines: [
+          '"The walls may shift, but the {{dancefloor is an idea}}, not a location."',
+        ],
+      },
     ],
   },
   de: {
-    subtitle: "Ein Manifest für die Nacht",
-    sections: [
+    meta: {
+      title: "Manifest",
+      description: "Ein Manifest für die Nacht",
+    },
+    blocks: [
       {
+        component: "heading",
+        text: "Ein Manifest für die Nacht",
+        level: 1,
+        variant: "mono",
+      },
+      {
+        component: "section",
         number: "I",
-        verb: "WIR BEOBACHTEN",
-        title: "Die systematische Erosion",
+        title: "WIR BEOBACHTEN",
+        subtitle: "Die systematische Erosion",
         intro:
           "Strukturelle und gesellschaftliche Veränderungen schränken den Spielraum unserer gemeinsamen Räume ein.",
         points: [
           {
             title: "Das schwindende Vakuum",
-            text: "Wir beobachten das Verschwinden „urbaner Vakuums“ – jener marginalen Räume, die den nötigen Handlungsspielraum für kulturelle Experimente boten.",
+            text: "Wir beobachten das Verschwinden \u201Eurbaner Vakuums\u201C \u2013 jener marginalen R\u00E4ume, die den n\u00F6tigen Handlungsspielraum f\u00FCr kulturelle Experimente boten.",
           },
           {
             title: "Regulatorische Reibung",
@@ -130,9 +156,10 @@ const content: Record<Locale, ManifestoContent> = {
         ],
       },
       {
+        component: "section",
         number: "II",
-        verb: "WIR ANERKENNEN",
-        title: "Die Alchemie des Kollektivs",
+        title: "WIR ANERKENNEN",
+        subtitle: "Die Alchemie des Kollektivs",
         intro:
           "Die elektronische Musikkultur ist eine soziologische Notwendigkeit. Wir erkennen an, dass sich das Ritual der Tanzfläche weiterentwickeln muss, um für sich wandelnde urbane Rhythmen relevant zu bleiben.",
         points: [
@@ -159,9 +186,10 @@ const content: Record<Locale, ManifestoContent> = {
         ],
       },
       {
+        component: "section",
         number: "III",
-        verb: "WIR STREBEN",
-        title: "Strategische Umsetzung",
+        title: "WIR STREBEN",
+        subtitle: "Strategische Umsetzung",
         intro:
           "Wir bauen professionelle, resiliente Infrastrukturen innerhalb der städtischen Realität, um die Zukunft der elektronischen Kultur zu sichern.",
         points: [
@@ -187,9 +215,13 @@ const content: Record<Locale, ManifestoContent> = {
           },
         ],
       },
-    ],
-    closingLines: [
-      "Mauern mögen weichen, doch die {{Tanzfläche ist eine Haltung}}, kein Ort.",
+      { component: "spacer", size: "lg" },
+      {
+        component: "neonQuote",
+        lines: [
+          '"Mauern mögen weichen, doch die {{Tanzfläche ist eine Haltung}}, kein Ort."',
+        ],
+      },
     ],
   },
 };

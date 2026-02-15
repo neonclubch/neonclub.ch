@@ -1,89 +1,135 @@
-/** Content types that mirror future Strapi single-type models. */
+/** Content types — block-based content system. */
 
-export interface HomeContent {
-  tagline: string;
-  /** Wrap text in {{double braces}} for neon highlighting. */
-  quote: string;
-  readManifestoLabel: string;
+/* ── Content Block Types ───────────────────────────────────── */
+
+/** Base interface for all content blocks. */
+export interface BlockBase {
+  component: string;
 }
 
-export interface ManifestoContent {
-  subtitle: string;
-  sections: {
-    number: string;
-    verb: string;
-    title: string;
-    intro: string;
-    points: { title: string; text: string }[];
-  }[];
-  /** Wrap text in {{double braces}} for neon highlighting. */
-  closingLines: string[];
+export interface HeroBlock extends BlockBase {
+  component: "hero";
+  /** true = use animated NeonHeroTitle. */
+  animated?: boolean;
+  title?: string;
+  subtitle?: string;
+  fullHeight?: boolean;
 }
 
-export interface EngageContent {
-  title: string;
-  intro: string;
-  sections: {
-    number: string;
-    verb: string;
-    title: string;
-    body: string;
-    cta?: { label: string; href: string };
-  }[];
-  footerLines: string[];
+export interface HeadingBlock extends BlockBase {
+  component: "heading";
+  text: string;
+  level: 1 | 2 | 3;
+  /**
+   * "mono"     — small mono uppercase tracking (page titles like Engage).
+   * "semibold" — subtitle style (Contact).
+   * "default"  — bold display heading.
+   */
+  variant?: "default" | "mono" | "semibold";
 }
 
-export interface ContactContent {
-  title: string;
-  subtitle: string;
-  body: string;
+export interface MarkdownBlock extends BlockBase {
+  component: "markdown";
+  content: string;
 }
 
-export interface ImpressumContent {
-  title: string;
-  body: string;
+export interface NeonQuoteBlock extends BlockBase {
+  component: "neonQuote";
+  /** Each line supports {{markers}} for neon highlighting. */
+  lines: string[];
 }
 
-export interface PrivacyPolicyContent {
-  title: string;
-  lastUpdated: string;
-  body: string;
+export interface CtaLinkBlock extends BlockBase {
+  component: "ctaLink";
+  label: string;
+  href: string;
+  external?: boolean;
 }
 
-export interface TbContent {
-  title: string;
-  rsvpButtonText: string;
-  rsvpFormLink: string;
-  body: string;
-  rsvpFooterButtonText: string;
-  contactWhatsapp: string;
-  contactEmail: string;
+export interface InternalLinkBlock extends BlockBase {
+  component: "internalLink";
+  label: string;
+  /** Locale-relative path (e.g., "/manifesto"). */
+  href: string;
 }
 
-export interface DonateContent {
+export interface SectionBlock extends BlockBase {
+  component: "section";
+  number?: string;
   title: string;
   subtitle: string;
-  recurringLabel: string;
-  onetimeLabel: string;
-  ctaLabel: string;
-  successMessage: string;
-  perYear: string;
-  manageTitle: string;
-  manageDescription: string;
-  manageEmailPlaceholder: string;
-  manageCta: string;
-  manageEmailSent: string;
-  manageNotFound: string;
+  intro?: string;
+  /** Markdown body — used by Engage-style sections. */
+  body?: string;
+  /** Structured points — used by Manifesto-style sections. */
+  points?: { title: string; text: string }[];
+  cta?: { label: string; href: string };
 }
+
+export interface TextBlock extends BlockBase {
+  component: "text";
+  text: string;
+  italic?: boolean;
+}
+
+export interface NeonLineBlock extends BlockBase {
+  component: "neonLine";
+  width?: string;
+}
+
+export interface SpacerBlock extends BlockBase {
+  component: "spacer";
+  size?: "sm" | "md" | "lg";
+}
+
+/** Small mono meta text — e.g. "Last updated" dates. */
+export interface MetaTextBlock extends BlockBase {
+  component: "metaText";
+  text: string;
+}
+
+/** Marker block — renders the DonationPicker client component. Labels come from i18n messages. */
+export interface DonationPickerBlock extends BlockBase {
+  component: "donationPicker";
+}
+
+/** Marker block — renders the ManageDonation client component. Labels come from i18n messages. */
+export interface ManageDonationBlock extends BlockBase {
+  component: "manageDonation";
+}
+
+export type ContentBlock =
+  | HeroBlock
+  | HeadingBlock
+  | MarkdownBlock
+  | NeonQuoteBlock
+  | CtaLinkBlock
+  | InternalLinkBlock
+  | SectionBlock
+  | TextBlock
+  | NeonLineBlock
+  | SpacerBlock
+  | MetaTextBlock
+  | DonationPickerBlock
+  | ManageDonationBlock;
+
+/* ── Page Content ──────────────────────────────────────────── */
+
+/** Standardized page content shape: metadata + blocks array. */
+export interface PageContent {
+  meta: { title: string; description?: string };
+  blocks: ContentBlock[];
+}
+
+/* ── Slug-to-content mapping ─────────────────────────────── */
 
 /** Type-safe slug-to-content mapping. */
 export interface ContentMap {
-  home: HomeContent;
-  manifesto: ManifestoContent;
-  engage: EngageContent;
-  contact: ContactContent;
-  impressum: ImpressumContent;
-  "privacy-policy": PrivacyPolicyContent;
-  tb: TbContent;
-  donate: DonateContent;
+  home: PageContent;
+  manifesto: PageContent;
+  engage: PageContent;
+  contact: PageContent;
+  impressum: PageContent;
+  "privacy-policy": PageContent;
+  donate: PageContent;
 }

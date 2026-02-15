@@ -1,43 +1,46 @@
-import type { DonateContent } from "../types";
+import type { PageContent } from "../types";
 import type { Locale } from "@/i18n/config";
 
-const content: Record<Locale, DonateContent> = {
+const content: Record<Locale, PageContent> = {
   en: {
-    title: "SUPPORT THE MOVEMENT.",
-    subtitle:
-      "Your contribution fuels the evolution of electronic culture — securing spaces, sound, and community for the city.",
-    recurringLabel: "Yearly",
-    onetimeLabel: "One-time",
-    ctaLabel: "Donate",
-    successMessage:
-      "Thank you for your contribution. You are part of the evolution.",
-    perYear: "/ year",
-    manageTitle: "Manage your yearly donation",
-    manageDescription:
-      "Enter the email address you used when donating to manage or cancel your recurring contribution.",
-    manageEmailPlaceholder: "your@email.com",
-    manageCta: "Send management link",
-    manageEmailSent:
-      "Check your inbox — we sent you a secure link to manage your donation.",
-    manageNotFound: "No active donation found for this email address.",
+    meta: {
+      title: "Donate",
+      description:
+        "Your contribution fuels the evolution of electronic culture — securing spaces, sound, and community for the city.",
+    },
+    blocks: [
+      {
+        component: "section",
+        title: "DONATE",
+        subtitle: "Support The Movement",
+        body: "Financial autonomy is the foundation for the evolution of the electronic scene. For those who share this vision but operate from the periphery, a donation (starting at CHF 35.—) provides the capital necessary to activate new spatial and temporal models. These resources are utilized to secure the locations and technology required for gatherings that prioritize social depth and acoustic quality, ensuring our culture remains a functional, respected, and vital fixture of the city.",
+      },
+      { component: "donationPicker" },
+      { component: "spacer", size: "lg" },
+      { component: "neonLine", width: "w-12" },
+      { component: "spacer", size: "md" },
+      { component: "manageDonation" },
+    ],
   },
   de: {
-    title: "UNTERSTÜTZE DIE BEWEGUNG.",
-    subtitle:
-      "Dein Beitrag treibt die Evolution der elektronischen Kultur voran — für Räume, Sound und Gemeinschaft in der Stadt.",
-    recurringLabel: "Jährlich",
-    onetimeLabel: "Einmalig",
-    ctaLabel: "Spenden",
-    successMessage: "Danke für deinen Beitrag. Du bist Teil der Evolution.",
-    perYear: "/ Jahr",
-    manageTitle: "Jährliche Spende verwalten",
-    manageDescription:
-      "Gib die E-Mail-Adresse ein, mit der du gespendet hast, um deine wiederkehrende Spende zu verwalten oder zu kündigen.",
-    manageEmailPlaceholder: "deine@email.com",
-    manageCta: "Verwaltungslink senden",
-    manageEmailSent:
-      "Prüfe dein Postfach — wir haben dir einen sicheren Link zur Verwaltung deiner Spende gesendet.",
-    manageNotFound: "Keine aktive Spende für diese E-Mail-Adresse gefunden.",
+    meta: {
+      title: "Spenden",
+      description:
+        "Dein Beitrag treibt die Evolution der elektronischen Kultur voran — für Räume, Sound und Gemeinschaft in der Stadt.",
+    },
+    blocks: [
+      {
+        component: "section",
+        title: "SPENDEN",
+        subtitle: "UNTERSTÜTZE DIE BEWEGUNG.",
+        body: "Finanzielle Autonomie ist das Fundament für die Evolution der elektronischen Szene. Für jene, welche diese Vision teilen, aber von der Peripherie aus agieren möchten, schafft eine Spende (ab CHF 35.–) das notwendige Kapital für neue räumliche und zeitliche Modelle. Diese Mittel werden genutzt, um Standorte und Technologien zu sichern, die soziale Tiefe und akustische Qualität in den Vordergrund stellen – damit unsere Kultur ein funktionaler, geachteter und lebensnotwendiger Teil der Stadt bleibt.",
+      },
+      { component: "donationPicker" },
+      { component: "spacer", size: "lg" },
+      { component: "neonLine", width: "w-12" },
+      { component: "spacer", size: "md" },
+      { component: "manageDonation" },
+    ],
   },
 };
 

@@ -1,10 +1,14 @@
-import type { ImpressumContent } from "../types";
+import type { PageContent } from "../types";
 import type { Locale } from "@/i18n/config";
 
-const content: Record<Locale, ImpressumContent> = {
+const content: Record<Locale, PageContent> = {
   en: {
-    title: "Impressum",
-    body: `**Responsible entity**
+    meta: { title: "Impressum" },
+    blocks: [
+      { component: "heading", text: "Impressum", level: 1 },
+      {
+        component: "markdown",
+        content: `**Responsible entity**
 NEON - Neue Elektronische Organisation für Nachtkultur
 CH-8000 Zürich
 Switzerland
@@ -35,10 +39,16 @@ References and links to third party websites are outside our area of responsibil
 The copyrights and all other rights to content, images, photos or other files on this website belong exclusively to NEON - Neue Elektronische Organisation für Nachtkultur or the specifically named rights holders. The written consent of the copyright holder must be obtained in advance for the reproduction of any elements.
 
 Source: BrainBox Solutions`,
+      },
+    ],
   },
   de: {
-    title: "Impressum",
-    body: `**Verantwortliche Stelle**
+    meta: { title: "Impressum" },
+    blocks: [
+      { component: "heading", text: "Impressum", level: 1 },
+      {
+        component: "markdown",
+        content: `**Verantwortliche Stelle**
 NEON - Neue Elektronische Organisation für Nachtkultur
 CH-8000 Zürich
 Schweiz
@@ -69,6 +79,8 @@ Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortung
 Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich NEON - Neue Elektronische Organisation für Nachtkultur oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
 
 Quelle: BrainBox Solutions`,
+      },
+    ],
   },
 };
 

@@ -13,11 +13,19 @@
     "impressum": "Impressum",
     "privacy": "Privacy"
   },
-  "events": {
-    "upcoming": "Upcoming",
-    "join": "Join",
-    "past": "Past",
-    "soon": "Soon",
-    "empty": "No upcoming events. Stay tuned."
+  "donationPicker": {
+    "recurringLabel": "Yearly",
+    "onetimeLabel": "One-time",
+    "ctaLabel": "Donate",
+    "successMessage": "Thank you for your contribution. You are part of the evolution.",
+    "perYear": "/ year"
+  },
+  "manageDonation": {
+    "title": "Manage your yearly donation",
+    "description": "Enter the email address you used when donating to manage or cancel your recurring contribution.",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Send management link",
+    "emailSent": "Check your inbox — we sent you a secure link to manage your donation.",
+    "notFound": "No active donation found for this email address."
   }
 }

@@ -3,7 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { Metadata } from "next";
 
 import { getContent } from "@/lib/content";
-import { Markdown } from "@/components/markdown";
+import { BlockRenderer } from "@/components/block-renderer";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = (await params).locale as Locale;
   const content = await getContent("impressum", locale);
 
-  return { title: content.title };
+  return { title: content.meta.title };
 }
 
 export default async function ImpressumPage({ params }: Props) {
@@ -19,12 +19,9 @@ export default async function ImpressumPage({ params }: Props) {
   const content = await getContent("impressum", locale);
 
   return (
-    <section className="flex flex-grow">
+    <section className="flex grow">
       <div className="mx-auto flex flex-col gap-4 py-8 md:py-10 lg:max-w-5xl px-6">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8">
-          {content.title}
-        </h1>
-        <Markdown content={content.body} />
+        <BlockRenderer blocks={content.blocks} locale={locale} />
       </div>
     </section>
   );

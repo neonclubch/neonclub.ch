@@ -1,14 +1,12 @@
 "use client";
 
-import type { DonateContent } from "@/lib/content/types";
-import type { Locale } from "@/i18n/config";
-
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Spinner } from "@heroui/react";
 import clsx from "clsx";
 
+import { useDictionary } from "@/i18n/DictionaryContext";
 import {
   createCheckoutSession,
   useDonationTiers,
@@ -17,23 +15,20 @@ import {
 
 type DonationMode = "recurring" | "onetime";
 
-interface Props {
-  content: DonateContent;
-  locale: Locale;
-}
-
 function formatAmount(amount: number): string {
   return `CHF ${amount}.—`;
 }
 
-export function DonationPicker({ content, locale }: Props) {
+export function DonationPicker() {
+  const { dictionary, locale } = useDictionary();
+  const t = dictionary.donationPicker;
+
   const [mode, setMode] = useState<DonationMode>("recurring");
   const [loadingPriceId, setLoadingPriceId] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
   const { data: tiers, isLoading, isError } = useDonationTiers();
 
-  // Check for ?success=true in the URL after hydration
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
@@ -70,7 +65,7 @@ export function DonationPicker({ content, locale }: Props) {
             ✓
           </p>
           <p className="text-base md:text-lg text-foreground/60 leading-relaxed">
-            {content.successMessage}
+            {t.successMessage}
           </p>
         </CardBody>
       </Card>
@@ -110,7 +105,7 @@ export function DonationPicker({ content, locale }: Props) {
           variant="bordered"
           onPress={() => setMode("recurring")}
         >
-          {content.recurringLabel}
+          {t.recurringLabel}
         </Button>
         <Button
           className={clsx(
@@ -123,7 +118,7 @@ export function DonationPicker({ content, locale }: Props) {
           variant="bordered"
           onPress={() => setMode("onetime")}
         >
-          {content.onetimeLabel}
+          {t.onetimeLabel}
         </Button>
       </div>
 
@@ -151,11 +146,11 @@ export function DonationPicker({ content, locale }: Props) {
                 </span>
                 {mode === "recurring" && (
                   <span className="block text-xs font-mono text-foreground/30 uppercase tracking-widest">
-                    {content.perYear}
+                    {t.perYear}
                   </span>
                 )}
                 <span className="block mt-6 font-mono text-xs uppercase tracking-widest text-foreground/25 group-hover:text-neon/60 transition-colors duration-300">
-                  {isItemLoading ? "…" : content.ctaLabel}
+                  {isItemLoading ? "…" : t.ctaLabel}
                 </span>
               </CardBody>
             </Card>

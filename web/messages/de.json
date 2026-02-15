@@ -13,11 +13,19 @@
     "impressum": "Impressum",
     "privacy": "Datenschutz"
   },
-  "events": {
-    "upcoming": "Bevorstehende Events",
-    "join": "Dabei sein",
-    "past": "Vergangen",
-    "soon": "Bald",
-    "empty": "Keine bevorstehenden Events. Bleib dran."
+  "donationPicker": {
+    "recurringLabel": "Jährlich",
+    "onetimeLabel": "Einmalig",
+    "ctaLabel": "Spenden",
+    "successMessage": "Danke für deinen Beitrag. Du bist Teil der Evolution.",
+    "perYear": "/ Jahr"
+  },
+  "manageDonation": {
+    "title": "Jährliche Spende verwalten",
+    "description": "Gib die E-Mail-Adresse ein, mit der du gespendet hast, um deine wiederkehrende Spende zu verwalten oder zu kündigen.",
+    "emailPlaceholder": "deine@email.com",
+    "cta": "Verwaltungslink senden",
+    "emailSent": "Prüfe dein Postfach — wir haben dir einen sicheren Link zur Verwaltung deiner Spende gesendet.",
+    "notFound": "Keine aktive Spende für diese E-Mail-Adresse gefunden."
   }
 }
