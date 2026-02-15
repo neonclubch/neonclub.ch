@@ -22,11 +22,16 @@ neo-neoncollective.ch/
 ├── web/                          # @neon/web — Next.js static site
 │   ├── app/                      # App Router pages and layouts
 │   ├── components/               # React components
+│   │   └── blocks/              # Block components (one per ContentBlock type)
 │   ├── config/                   # Site config, fonts
-│   ├── helpers/                  # API helpers (eventApi, stripeApi, etc.)
+│   ├── helpers/                  # API helpers (stripeApi, etc.)
 │   ├── i18n/                     # i18n config, dictionary, client utilities
-│   ├── lib/                      # Content layer (local TS content files)
-│   ├── messages/                 # JSON dictionaries (de, en)
+│   ├── lib/                      # Content layer
+│   │   └── content/
+│   │       ├── types.ts         # Block interfaces, PageContent, ContentMap
+│   │       ├── index.ts         # getContent() — single swap-point for CMS
+│   │       └── local/           # Per-page TS content (swappable with Strapi)
+│   ├── messages/                 # JSON dictionaries (de, en) — UI labels
 │   ├── public/                   # Static assets
 │   ├── styles/                   # Global CSS (Tailwind v4 CSS-first config)
 │   ├── types/                    # Shared TypeScript types
@@ -74,24 +79,82 @@ web/app/
     page.tsx             # Home (/{locale})
     manifesto/page.tsx
     engage/page.tsx
+    donate/page.tsx
     contact/page.tsx
     impressum/page.tsx
     privacy-policy/page.tsx
-    tb/page.tsx
 ```
 
+- Every page follows the same pattern: `getContent(slug, locale)` → `<BlockRenderer blocks={content.blocks} />`. No page-specific component imports.
 - Use route groups `(groupName)` for shared layouts without affecting the URL.
 - Use parallel routes `@slot` for simultaneously rendering multiple pages in the same layout.
 - Use intercepting routes `(.)modal` for modal patterns that preserve the URL.
+
+## Block-Based Content System
+
+All page content is modeled as a flat array of typed content blocks. Each block has a `component` discriminant that the `BlockRenderer` maps to a React component via a registry.
+
+### Architecture
+
+```
+PageContent { meta, blocks[] }
+     ↓
+getContent(slug, locale)    ← single swap-point (local TS → Strapi)
+     ↓
+BlockRenderer               ← iterates blocks, looks up BLOCK_REGISTRY
+     ↓
+Block Components            ← one per block type, own their styling
+```
+
+### Content Types (`lib/content/types.ts`)
+
+- `BlockBase` — base interface with `component: string` only. **No `className`** — styling is owned by components, not content.
+- `PageContent` — `{ meta: { title, description? }, blocks: ContentBlock[] }`. Every page uses this shape.
+- `ContentMap` — type-safe slug → `PageContent` mapping for all pages.
+- `ContentBlock` — discriminated union of all block types:
+
+| Block            | Discriminant       | Purpose                                      |
+|------------------|--------------------|----------------------------------------------|
+| `HeroBlock`      | `"hero"`           | Animated or static hero section               |
+| `HeadingBlock`   | `"heading"`        | h1/h2/h3 with `variant` (default/mono/semibold) |
+| `MarkdownBlock`  | `"markdown"`       | Rendered via `react-markdown`                 |
+| `NeonQuoteBlock` | `"neonQuote"`      | Large quote lines with `{{neon}}` highlighting |
+| `SectionBlock`   | `"section"`        | Title/subtitle + optional intro/body/points/cta |
+| `TextBlock`      | `"text"`           | Body paragraph, optional `italic`             |
+| `MetaTextBlock`  | `"metaText"`       | Small mono metadata (e.g. "Last updated")     |
+| `CtaLinkBlock`   | `"ctaLink"`        | External CTA via NeonLink                     |
+| `InternalLinkBlock` | `"internalLink"` | Locale-prefixed internal link                |
+| `NeonLineBlock`  | `"neonLine"`       | Decorative neon accent line                   |
+| `SpacerBlock`    | `"spacer"`         | Vertical spacing (sm/md/lg)                   |
+| `DonationPickerBlock` | `"donationPicker"` | Marker — renders DonationPicker client component |
+| `ManageDonationBlock` | `"manageDonation"` | Marker — renders ManageDonation client component |
+
+### Block Components (`components/blocks/`)
+
+- One file per block type, barrel-exported from `blocks/index.ts`.
+- Registered in `BLOCK_REGISTRY` inside `block-renderer.tsx`.
+- **Components own all styling.** Content payloads are pure data — no CSS classes leak into content.
+- Interactive "marker" blocks (e.g. `donationPicker`, `manageDonation`) are thin wrappers that render existing client components. Their i18n labels come from `messages/*.json` via `useDictionary()`, not from the content layer.
+
+### Content Layer (`lib/content/`)
+
+- `getContent(slug, locale)` is the **single integration point**. Currently reads from `local/*.ts` files; when Strapi is integrated, only this function body changes.
+- Each `local/*.ts` file exports `Record<Locale, PageContent>`.
+- Content files contain only serializable data — no JSX, no CSS, no component references. This makes them 1:1 swappable with a CMS API response.
+
+### i18n Split
+
+- **Content** (page-specific text, blocks) → `lib/content/local/*.ts` (future: Strapi)
+- **UI labels** (nav, footer, interactive component strings) → `messages/{en,de}.json` via `DictionaryProvider` / `useDictionary()`
 
 ## Data Fetching
 
 - Fetch data in Server Components using `async` component functions with direct database or API calls.
 - Route params are async in Next.js 16. Every page/layout that reads `params` must `await` it: `const locale = (await params).locale as Locale;`.
 - Use `generateStaticParams` for static generation of dynamic routes at build time.
-- Content is loaded from `lib/content/local/` TypeScript files (designed to be swappable with a CMS later).
-- Client components call Cloud Functions via axios helpers in `helpers/` (e.g., `stripeApi.ts`, `eventApi.ts`).
-- **TanStack React Query** (`@tanstack/react-query`) is the standard for all client-side data operations in `"use client"` components. The `QueryClientProvider` is set up in `app/providers.tsx`. Use `useQuery` for reads (see `helpers/eventApi.ts`, `helpers/rsvpApi.ts`) and `useMutation` for writes/POSTs. The only exception: fire-and-forget calls that return no UI-relevant payload and merely trigger a side effect (e.g., redirecting to a Stripe Checkout URL) can use plain `async/await` with axios.
+- Content is loaded via `getContent(slug, locale)` from `lib/content/local/` TypeScript files (designed to be swappable with Strapi — only the function body changes).
+- Client components call Cloud Functions via axios helpers in `helpers/` (e.g., `stripeApi.ts`).
+- **TanStack React Query** (`@tanstack/react-query`) is the standard for all client-side data operations in `"use client"` components. The `QueryClientProvider` is set up in `app/providers.tsx`. Use `useQuery` for reads and `useMutation` for writes/POSTs. The only exception: fire-and-forget calls that return no UI-relevant payload and merely trigger a side effect (e.g., redirecting to a Stripe Checkout URL) can use plain `async/await` with axios.
 - Never use `getServerSideProps` or `getStaticProps`. Those are Pages Router patterns.
 - Note: Server Actions, middleware, ISR, and API routes are NOT available because the site uses `output: "export"` (fully static). All server-side logic lives in Cloud Functions.
 

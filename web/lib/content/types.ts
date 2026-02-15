@@ -88,6 +88,22 @@ export interface MetaTextBlock extends BlockBase {
   text: string;
 }
 
+/** Single entry in the intervention dispatch feed. */
+export interface InterventionEntry {
+  codename: string;
+  status: "incubation" | "live" | "archived";
+  objective: string;
+  location: string;
+  coordinates?: string;
+  cta?: { label: string; href: string; external?: boolean };
+}
+
+/** Tactical dispatch feed — renders a live-feeling intelligence dashboard. */
+export interface InterventionFeedBlock extends BlockBase {
+  component: "interventionFeed";
+  entries: InterventionEntry[];
+}
+
 /** Marker block — renders the DonationPicker client component. Labels come from i18n messages. */
 export interface DonationPickerBlock extends BlockBase {
   component: "donationPicker";
@@ -110,6 +126,7 @@ export type ContentBlock =
   | NeonLineBlock
   | SpacerBlock
   | MetaTextBlock
+  | InterventionFeedBlock
   | DonationPickerBlock
   | ManageDonationBlock;
 

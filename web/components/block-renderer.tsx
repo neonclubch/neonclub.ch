@@ -15,6 +15,7 @@ import {
   MetaTextBlockComponent,
   DonationPickerBlockComponent,
   ManageDonationBlockComponent,
+  InterventionFeedBlockComponent,
 } from "@/components/blocks";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -32,6 +33,7 @@ const BLOCK_REGISTRY: Record<string, ComponentType<any>> = {
   metaText: MetaTextBlockComponent,
   donationPicker: DonationPickerBlockComponent,
   manageDonation: ManageDonationBlockComponent,
+  interventionFeed: InterventionFeedBlockComponent,
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 

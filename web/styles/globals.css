@@ -222,3 +222,19 @@
 .neon-letter-out {
   animation: letter-out 0.9s ease-out;
 }
+
+/* ── Dispatch feed cursor ────────────────────── */
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
