@@ -12,7 +12,7 @@ const content: Record<Locale, DonateContent> = {
     successMessage:
       "Thank you for your contribution. You are part of the evolution.",
     perYear: "/ year",
-    manageTitle: "Manage your donation",
+    manageTitle: "Manage your yearly donation",
     manageDescription:
       "Enter the email address you used when donating to manage or cancel your recurring contribution.",
     manageEmailPlaceholder: "your@email.com",
@@ -30,7 +30,7 @@ const content: Record<Locale, DonateContent> = {
     ctaLabel: "Spenden",
     successMessage: "Danke für deinen Beitrag. Du bist Teil der Evolution.",
     perYear: "/ Jahr",
-    manageTitle: "Spende verwalten",
+    manageTitle: "Jährliche Spende verwalten",
     manageDescription:
       "Gib die E-Mail-Adresse ein, mit der du gespendet hast, um deine wiederkehrende Spende zu verwalten oder zu kündigen.",
     manageEmailPlaceholder: "deine@email.com",

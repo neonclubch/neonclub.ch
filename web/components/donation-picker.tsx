@@ -3,7 +3,7 @@
 import type { DonateContent } from "@/lib/content/types";
 import type { Locale } from "@/i18n/config";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Spinner } from "@heroui/react";
@@ -33,14 +33,14 @@ export function DonationPicker({ content, locale }: Props) {
 
   const { data: tiers, isLoading, isError } = useDonationTiers();
 
-  // Check for ?success=true in the URL on mount
-  if (typeof window !== "undefined" && !success) {
+  // Check for ?success=true in the URL after hydration
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("success") === "true") {
       setSuccess(true);
     }
-  }
+  }, []);
 
   async function handleDonate(tier: DonationTier) {
     setLoadingPriceId(tier.priceId);

@@ -1,10 +1,14 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
+import { createLogger } from "./logger.js";
+
+const log = createLogger("token");
+
 const SECRET = process.env.MAGIC_LINK_SECRET;
 const TOKEN_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 if (!SECRET) {
-  console.warn("MAGIC_LINK_SECRET not set — magic link tokens will fail.");
+  log.warn("MAGIC_LINK_SECRET not set — magic link tokens will fail");
 }
 
 /**
@@ -20,6 +24,8 @@ export function createToken(email: string): {
   const data = `${email}|${exp}`;
   const token = createHmac("sha256", SECRET!).update(data).digest("hex");
 
+  log.debug({ email }, "Token created");
+
   return { token, email, exp };
 }
 
@@ -33,6 +39,8 @@ export function verifyToken(
   exp: string,
 ): boolean {
   if (Date.now() > Number(exp)) {
+    log.debug({ email }, "Token expired");
+
     return false;
   }
 
@@ -41,8 +49,14 @@ export function verifyToken(
 
   // Constant-time comparison to prevent timing attacks
   try {
-    return timingSafeEqual(Buffer.from(token), Buffer.from(expected));
+    const valid = timingSafeEqual(Buffer.from(token), Buffer.from(expected));
+
+    log.debug({ email, valid }, "Token verified");
+
+    return valid;
   } catch {
+    log.debug({ email }, "Token verification failed (length mismatch)");
+
     return false;
   }
 }

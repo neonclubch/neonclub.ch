@@ -2,6 +2,7 @@ import * as functions from "@google-cloud/functions-framework";
 import { getRequestListener } from "@hono/node-server";
 import { arktypeValidator } from "@hono/arktype-validator";
 import { Hono } from "hono";
+import type { ContentfulStatusCode } from "hono/utils/http-status";
 import { cors } from "hono/cors";
 
 import {
@@ -12,8 +13,15 @@ import {
 import { stripe } from "./stripe.js";
 import { createToken, verifyToken } from "./token.js";
 import { sendMagicLinkEmail, isEmailEnabled } from "./email.js";
+import { createLogger } from "./logger.js";
+
+const log = createLogger("http");
 
 const app = new Hono();
+
+/* ------------------------------------------------------------------ */
+/*  Middleware                                                          */
+/* ------------------------------------------------------------------ */
 
 app.use(
   "*",
@@ -23,6 +31,33 @@ app.use(
     allowHeaders: ["Content-Type"],
   }),
 );
+
+/** Request logger — logs method, path, status, and duration. */
+app.use("*", async (c, next) => {
+  const start = Date.now();
+
+  await next();
+
+  const ms = Date.now() - start;
+
+  log.info(
+    { method: c.req.method, path: c.req.path, status: c.res.status, ms },
+    `${c.req.method} ${c.req.path} ${c.res.status} ${ms}ms`,
+  );
+});
+
+/** Global error handler — logs the error and returns structured JSON. */
+app.onError((err, c) => {
+  log.error({ err, path: c.req.path, method: c.req.method }, err.message);
+
+  const status = ("statusCode" in err ? err.statusCode : 500) as ContentfulStatusCode;
+
+  return c.json({ error: err.message || "Internal server error" }, status);
+});
+
+/* ------------------------------------------------------------------ */
+/*  Routes                                                             */
+/* ------------------------------------------------------------------ */
 
 /**
  * POST /checkout
@@ -36,6 +71,8 @@ app.post(
     const { priceId, mode, locale, successUrl, cancelUrl } =
       c.req.valid("json");
 
+    log.debug({ priceId, mode, locale }, "Creating checkout session");
+
     const session = await stripe.checkout.sessions.create({
       mode,
       line_items: [{ price: priceId, quantity: 1 }],
@@ -43,6 +80,8 @@ app.post(
       success_url: successUrl,
       cancel_url: cancelUrl,
     });
+
+    log.debug({ sessionId: session.id, url: session.url }, "Checkout session created");
 
     return c.json({ url: session.url });
   },
@@ -55,16 +94,26 @@ app.post(
 app.post("/portal", arktypeValidator("json", portalSchema), async (c) => {
   const { email, returnUrl } = c.req.valid("json");
 
+  log.debug({ email }, "Looking up customer for portal");
+
   const customers = await stripe.customers.list({ email, limit: 1 });
 
   if (customers.data.length === 0) {
+    log.debug({ email }, "No customer found for portal");
+
     return c.json({ error: "No membership found for this email." }, 404);
   }
 
+  const customerId = customers.data[0].id;
+
+  log.debug({ customerId }, "Customer found, creating portal session");
+
   const portalSession = await stripe.billingPortal.sessions.create({
-    customer: customers.data[0].id,
+    customer: customerId,
     return_url: returnUrl,
   });
+
+  log.debug({ portalUrl: portalSession.url }, "Portal session created");
 
   return c.json({ url: portalSession.url });
 });
@@ -83,9 +132,13 @@ app.post(
 
     const { email, locale, returnUrl } = c.req.valid("json");
 
+    log.debug({ email }, "Looking up customer for portal request");
+
     const customers = await stripe.customers.list({ email, limit: 1 });
 
     if (customers.data.length === 0) {
+      log.debug({ email }, "No customer found for portal request");
+
       return c.json({ error: "No donation found for this email." }, 404);
     }
 
@@ -105,7 +158,11 @@ app.post(
     });
     const magicLink = `${apiBaseUrl}/portal/verify?${params.toString()}`;
 
+    log.debug({ email, locale }, "Sending magic link email");
+
     await sendMagicLinkEmail({ to: email, magicLink, locale });
+
+    log.debug({ email }, "Magic link email sent");
 
     return c.json({ sent: true });
   },
@@ -125,20 +182,30 @@ app.get("/portal/verify", async (c) => {
     return c.text("Invalid link.", 400);
   }
 
-  if (!verifyToken(token, email, exp)) {
+  const valid = verifyToken(token, email, exp);
+
+  log.debug({ email, valid }, "Magic link token verification");
+
+  if (!valid) {
     return c.text("This link has expired or is invalid.", 403);
   }
 
   const customers = await stripe.customers.list({ email, limit: 1 });
 
   if (customers.data.length === 0) {
+    log.debug({ email }, "No customer found during verify");
+
     return c.text("No donation found.", 404);
   }
 
+  const customerId = customers.data[0].id;
+
   const portalSession = await stripe.billingPortal.sessions.create({
-    customer: customers.data[0].id,
+    customer: customerId,
     return_url: returnUrl,
   });
+
+  log.debug({ customerId }, "Redirecting to portal after verify");
 
   return c.redirect(portalSession.url);
 });
@@ -152,6 +219,8 @@ app.get("/donations", async (c) => {
   const products = await stripe.products.search({
     query: "metadata['category']:'donation' AND active:'true'",
   });
+
+  log.debug({ productCount: products.data.length }, "Fetched donation products");
 
   const tiers: Record<string, { priceId: string; amount: number }[]> = {};
 
@@ -170,6 +239,11 @@ app.get("/donations", async (c) => {
         amount: (p.unit_amount ?? 0) / 100,
       }));
   }
+
+  log.debug(
+    { types: Object.keys(tiers), tierCounts: Object.fromEntries(Object.entries(tiers).map(([k, v]) => [k, v.length])) },
+    "Donation tiers assembled",
+  );
 
   return c.json(tiers);
 });

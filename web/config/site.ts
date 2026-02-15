@@ -17,6 +17,10 @@ export const siteConfig = {
       key: "engage",
       href: "/engage",
     },
+    {
+      key: "donate",
+      href: "/donate",
+    },
   ],
   navMenuItems: [],
   links: {
