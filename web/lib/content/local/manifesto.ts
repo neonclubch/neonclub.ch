@@ -151,7 +151,7 @@ const content: Record<Locale, PageContent> = {
           },
           {
             title: "Verlust der Kontinuität",
-            text: "Wir beobachten, wie die Schließung fester Orte unser kollektives Gedächtnis erodiert und tiefe Verwurzelung durch flüchtige, transaktionale Events ersetzt wird.",
+            text: "Wir beobachten, wie die Schliessung fester Orte unser kollektives Gedächtnis erodiert und tiefe Verwurzelung durch flüchtige, transaktionale Events ersetzt wird.",
           },
         ],
       },

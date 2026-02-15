@@ -30,7 +30,7 @@ const content: Record<Locale, PageContent> = {
             status: "incubation",
             codename: "OPERATION VOID",
             objective:
-              "Strategische Erschließung von industriellem Leerstand. Rückführung einer 400 m² Kfz-Werkstatt in eine 48-stündige temporäre Klangzone.",
+              "Strategische Erschliessung von industriellem Leerstand. Rückführung einer 400 m² Kfz-Werkstatt in eine 48-stündige temporäre Klangzone.",
             location: "ALTSTETTEN / INDUSTRIE",
           },
 
