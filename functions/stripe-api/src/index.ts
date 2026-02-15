@@ -10,6 +10,7 @@ import {
   portalSchema,
   portalRequestSchema,
 } from "./schemas.js";
+import type Stripe from "stripe";
 import { stripe } from "./stripe.js";
 import { createToken, verifyToken } from "./token.js";
 import { sendMagicLinkEmail, isEmailEnabled } from "./email.js";
@@ -73,8 +74,16 @@ app.post(
 
     log.debug({ priceId, mode, locale }, "Creating checkout session");
 
+    // TWINT only supports one-time payments, not subscriptions.
+    // Apple Pay & Google Pay surface automatically when "card" is included.
+    const paymentMethodTypes: Stripe.Checkout.SessionCreateParams["payment_method_types"] =
+      mode === "payment"
+        ? ["card", "twint", "link"]
+        : ["card", "link"];
+
     const session = await stripe.checkout.sessions.create({
       mode,
+      payment_method_types: paymentMethodTypes,
       line_items: [{ price: priceId, quantity: 1 }],
       locale: locale === "de" ? "de" : "en",
       success_url: successUrl,
