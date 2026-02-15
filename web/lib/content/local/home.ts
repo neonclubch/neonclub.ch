@@ -18,7 +18,7 @@ const content: Record<Locale, PageContent> = {
             status: "live",
             codename: "KERN-REKRUTIERUNG",
             objective:
-              "Formierung der Primärzelle. Suche nach Architekten, Sound-Ingenieuren und Kulturkuratoren für den strukturellen Ausbau der Organisation.",
+              "Formierung der Primärzelle. Suche nach visuellen Architekten, Sound-Ingenieuren und Kulturkuratoren für den strukturellen Ausbau der Organisation.",
             location: "ZÜRICH / HYBRID",
             cta: {
               label: "MITWIRKEN",
@@ -72,7 +72,7 @@ const content: Record<Locale, PageContent> = {
             status: "live",
             codename: "CORE RECRUITMENT",
             objective:
-              "Assembling the primary cell. Seeking architects, sound engineers, and cultural curators to manage the organization's expansion.",
+              "Assembling the primary cell. Seeking visual architects, sound engineers, and cultural curators to manage the organization's expansion.",
             location: "ZÜRICH / HYBRID",
             cta: {
               label: "ENGAGE",
