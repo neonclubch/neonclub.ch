@@ -8,7 +8,7 @@ const content: Record<Locale, ImpressumContent> = {
 NEON - Neue Elektronische Organisation für Nachtkultur
 CH-8000 Zürich
 Switzerland
-Email: hello@neonclub.ch
+Email: hello@neoncollective.ch
 
 **Persons**
 Michael DALDINI
@@ -42,7 +42,7 @@ Source: BrainBox Solutions`,
 NEON - Neue Elektronische Organisation für Nachtkultur
 CH-8000 Zürich
 Schweiz
-E-Mail: hello@neonclub.ch
+E-Mail: hello@neoncollective.ch
 
 **Personen**
 Michael DALDINI

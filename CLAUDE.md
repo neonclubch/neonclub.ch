@@ -14,7 +14,7 @@ You are a senior engineer working on a pnpm monorepo that contains a Next.js 16 
 This is a pnpm workspace monorepo. The Next.js site lives in `web/` and Google Cloud Functions live under `functions/`.
 
 ```
-neo-neonclub.ch/
+neo-neoncollective.ch/
 ├── pnpm-workspace.yaml          # Declares web and functions/* workspaces
 ├── package.json                  # Root: workspace scripts, packageManager field
 ├── .npmrc                        # HeroUI public-hoist-pattern

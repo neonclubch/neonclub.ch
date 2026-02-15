@@ -13,7 +13,7 @@ const content: Record<Locale, PrivacyPolicyContent> = {
 - Google Sign-in
 
 ## 2. Contact Information
-If you have any questions or concerns about our protection of your data, you can always reach us by email at hello@neonclub.ch.
+If you have any questions or concerns about our protection of your data, you can always reach us by email at hello@neoncollective.ch.
 
 Responsible for data processing done through this website is:
 NEON - Neue Elektronische Organisation für Nachtkultur
@@ -86,7 +86,7 @@ Within our website, we use the SSL (Secure Socket Layer) procedure in conjunctio
 
 ### 3.7 What rights do you have?
 #### a. Right to information
-You can request information about the data we have stored about you at any time. We ask you to send your request for information together with proof of identity to hello@neonclub.ch.
+You can request information about the data we have stored about you at any time. We ask you to send your request for information together with proof of identity to hello@neoncollective.ch.
 
 You also have the right to receive your data in a common file format if we process your data automatically and if:
 - you have given your consent for the processing of this data; or
@@ -105,12 +105,12 @@ Please note that exercising your rights may be in conflict with contractual agre
 If you are affected by the processing of personal data, you have the right to enforce your rights in court or to file a complaint with the competent supervisory authority. The competent supervisory authority in Switzerland is the Federal Data Protection and Information Commissioner: https://www.edoeb.admin.ch
 
 ### 3.8 Changes to the privacy policy
-We may change this privacy policy at any time. The changes will be published on https://neonclub.ch, you will not be informed separately.
+We may change this privacy policy at any time. The changes will be published on https://neoncollective.ch, you will not be informed separately.
 
 ## 4. Individual data processing operations
 ### 4.1 Providing the website and creating log files
 #### What information do we receive and how do we use it?
-By visiting https://neonclub.ch, certain data is automatically stored on our servers or on servers of services and products that we obtain and / or have installed, for purposes of system administration, for statistical or backup purposes or for tracking purposes. These are:
+By visiting https://neoncollective.ch, certain data is automatically stored on our servers or on servers of services and products that we obtain and / or have installed, for purposes of system administration, for statistical or backup purposes or for tracking purposes. These are:
 - the name of your Internet service provider;
 - Your IP address (in some circumstances);
 - the version of your browser software;
@@ -165,7 +165,7 @@ No personal data is collected or processed in the process.`,
 - Google Sign-in
 
 ## 2. Kontaktinformationen
-Bei Fragen oder Anliegen zum Schutz Ihrer Daten erreichen Sie uns jederzeit per E-Mail unter hello@neonclub.ch.
+Bei Fragen oder Anliegen zum Schutz Ihrer Daten erreichen Sie uns jederzeit per E-Mail unter hello@neoncollective.ch.
 
 Verantwortlich für die Datenverarbeitung über diese Website ist:
 NEON - Neue Elektronische Organisation für Nachtkultur
@@ -238,7 +238,7 @@ Innerhalb unserer Website verwenden wir das SSL-Verfahren (Secure Socket Layer) 
 
 ### 3.7 Welche Rechte haben Sie?
 #### a. Auskunftsrecht
-Sie können jederzeit Auskunft über die von uns über Sie gespeicherten Daten verlangen. Wir bitten Sie, Ihr Auskunftsgesuch zusammen mit einem Identitätsnachweis an hello@neonclub.ch zu senden.
+Sie können jederzeit Auskunft über die von uns über Sie gespeicherten Daten verlangen. Wir bitten Sie, Ihr Auskunftsgesuch zusammen mit einem Identitätsnachweis an hello@neoncollective.ch zu senden.
 
 Sie haben ausserdem das Recht, Ihre Daten in einem gängigen Dateiformat zu erhalten, wenn wir Ihre Daten automatisiert verarbeiten und wenn:
 - Sie Ihre Einwilligung zur Verarbeitung dieser Daten erteilt haben; oder
@@ -257,12 +257,12 @@ Bitte beachten Sie, dass die Ausübung Ihrer Rechte im Widerspruch zu vertraglic
 Wenn Sie von der Verarbeitung personenbezogener Daten betroffen sind, haben Sie das Recht, Ihre Rechte gerichtlich durchzusetzen oder eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen. Die zuständige Aufsichtsbehörde in der Schweiz ist der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte: https://www.edoeb.admin.ch
 
 ### 3.8 Änderungen der Datenschutzerklärung
-Wir können diese Datenschutzerklärung jederzeit ändern. Die Änderungen werden auf https://neonclub.ch veröffentlicht, Sie werden nicht gesondert darüber informiert.
+Wir können diese Datenschutzerklärung jederzeit ändern. Die Änderungen werden auf https://neoncollective.ch veröffentlicht, Sie werden nicht gesondert darüber informiert.
 
 ## 4. Einzelne Datenverarbeitungsvorgänge
 ### 4.1 Bereitstellung der Website und Erstellung von Logdateien
 #### Welche Informationen erhalten wir und wie nutzen wir sie?
-Beim Besuch von https://neonclub.ch werden bestimmte Daten automatisch auf unseren Servern oder auf Servern von Diensten und Produkten, die wir beziehen und/oder installiert haben, zu Zwecken der Systemverwaltung, für statistische oder Sicherungszwecke oder zu Trackingzwecken gespeichert. Dies sind:
+Beim Besuch von https://neoncollective.ch werden bestimmte Daten automatisch auf unseren Servern oder auf Servern von Diensten und Produkten, die wir beziehen und/oder installiert haben, zu Zwecken der Systemverwaltung, für statistische oder Sicherungszwecke oder zu Trackingzwecken gespeichert. Dies sind:
 - der Name Ihres Internetdienstanbieters;
 - Ihre IP-Adresse (unter Umständen);
 - die Version Ihrer Browser-Software;

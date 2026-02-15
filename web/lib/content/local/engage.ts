@@ -14,7 +14,7 @@ const content: Record<Locale, EngageContent> = {
         body: "We are assembling a collective of artists, strategic thinkers, technical experts, and organizers who recognize that subculture requires focused attention and constant innovation. This is the mandate of the Prosumer. By contributing your expertise, you help us redefine cultural formats—ensuring that the core values of the dancefloor are preserved and accessible despite shifting social habits and urban limitations. We operate as a sophisticated force, securing cultural sovereignty through innovative design and socially grounded standards.",
         cta: {
           label: "JOIN",
-          href: "https://tickets.neonclub.ch/account/login?next=/membership-2025",
+          href: "https://tickets.neoncollective.ch/account/login?next=/membership-2025",
         },
       },
       {
@@ -45,7 +45,7 @@ const content: Record<Locale, EngageContent> = {
         body: "Wir versammeln ein Kollektiv aus Künstlern, strategischen Köpfen, technischen Experten und Organisatoren, die erkennen, dass Subkultur gezielte Aufmerksamkeit und ständige Innovation benötigt. Dies ist das Mandat des Prosumenten. Durch deine Expertise helfen wir dabei, kulturelle Formate neu zu definieren – um sicherzustellen, dass die Kernwerte der Tanzfläche trotz veränderter sozialer Gewohnheiten und urbaner Einschränkungen erhalten und zugänglich bleiben. Wir agieren als qualifizierte Kraft, die kulturelle Souveränität durch innovatives Design und gesellschaftlich fundierte Standards sichert.",
         cta: {
           label: "MITWIRKEN",
-          href: "https://tickets.neonclub.ch/account/login?next=/membership-2025",
+          href: "https://tickets.neoncollective.ch/account/login?next=/membership-2025",
         },
       },
       {

@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "NEON",
-  url: "https://neonclub.ch",
+  url: "https://neoncollective.ch",
   /** Nav items with translation keys (labels come from dictionary). */
   navItems: [
     {
@@ -24,10 +24,10 @@ export const siteConfig = {
   ],
   navMenuItems: [],
   links: {
-    instagram: "https://www.instagram.com/neonclub.ch/",
+    instagram: "https://www.instagram.com/neoncollective.ch/",
     membership:
-      "https://tickets.neonclub.ch/account/login?next=/membership-2025",
-    tickets: "https://tickets.neonclub.ch/",
+      "https://tickets.neoncollective.ch/account/login?next=/membership-2025",
+    tickets: "https://tickets.neoncollective.ch/",
     statutes:
       "https://drive.google.com/uc?export=download&id=1y8fKbgmIRkfN1GI5aC4IT_RuIgeJV9pP",
   },

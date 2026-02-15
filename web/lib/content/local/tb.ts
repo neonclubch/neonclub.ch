@@ -67,7 +67,7 @@ Confirmed guests will receive a welcome kit with:
 - Packing list and camping tips`,
     rsvpFooterButtonText: "Save Your Spot",
     contactWhatsapp: "https://wa.me/message/V3ZNVR77EPHSN1",
-    contactEmail: "hello@neonclub.ch",
+    contactEmail: "hello@neoncollective.ch",
   },
   de: {
     title: "TECHNOBOSCO 2025",
@@ -134,7 +134,7 @@ Bestätigte Gäste erhalten ein Welcome Kit mit:
 - Packliste und Campingtipps`,
     rsvpFooterButtonText: "Platz reservieren",
     contactWhatsapp: "https://wa.me/message/V3ZNVR77EPHSN1",
-    contactEmail: "hello@neonclub.ch",
+    contactEmail: "hello@neoncollective.ch",
   },
 };
 

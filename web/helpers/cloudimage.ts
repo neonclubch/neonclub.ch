@@ -2,7 +2,7 @@ import urlJoin from "url-join";
 
 const breakpoints = [640, 768, 1024, 1280, 1536];
 
-const baseUrl = "https://chyxanezva.cloudimg.io/neonclub.ch";
+const baseUrl = "https://chyxanezva.cloudimg.io/neoncollective.ch";
 
 export function cloudimage(src: string, operations = {}) {
   const url = urlJoin(baseUrl, src);
