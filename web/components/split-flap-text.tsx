@@ -38,7 +38,11 @@ export function SplitFlapText({
   const hasTriggered = useRef(false);
   const cleanupRef = useRef<(() => void) | null>(null);
 
-  const [display, setDisplay] = useState(text);
+  // Initialize as non-breaking spaces to hold layout while staying invisible.
+  // Content only appears when the IntersectionObserver triggers the animation.
+  const [display, setDisplay] = useState(() =>
+    Array.from(text, (ch) => (ch === " " ? " " : "\u00A0")).join(""),
+  );
 
   const animate = useCallback(() => {
     const chars = Array.from(text);
